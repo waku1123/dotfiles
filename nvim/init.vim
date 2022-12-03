@@ -2,6 +2,7 @@ let g:rehash256 = 1
 set ttimeoutlen=10
 " フォントの設定
 set guifont=Ricty\ Diminished:h20
+let g:fern#renderer = 'nerdfont'
 
 """"""""""""""""""""
 " GENERAL SETTINGS
@@ -39,7 +40,7 @@ endif
 " VISUAL SETTINGS
 """"""""""""""""""""
 set termguicolors                " ターミナルでもカラーテーマを使う
-colorscheme monokai_pro          " カラーテーマをmonokai_proに変更https://github.com/phanviet/vim-monokai-pro
+colorscheme codedark             " カラーテーマをmonokai_proに変更https://github.com/phanviet/vim-monokai-pro
 set winblend=30                  " 現在のウィンドウの透明度を指定0〜100
 set pumblend=10                  " ポップアップメニューを半透明にする0〜100
 set background=dark
@@ -233,6 +234,5 @@ endif
 
 " skkeleton(日本語入力)の設定
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
-" Ctrl+jで日本語入力のON/OFF
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)

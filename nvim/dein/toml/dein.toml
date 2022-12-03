@@ -28,6 +28,11 @@ hook_add = '''
 # y      : ファイルパスをコピーする
 # z      : ファイル名に合わせてウィンドウ幅を広げる
 # !      : 隠しファイルを表示/非表示する
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 
 [[plugins]]
 # skkeletonの依存(denoを利用できるようにするプラグイン)
