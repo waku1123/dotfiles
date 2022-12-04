@@ -5,5 +5,5 @@ arguments:
     default_value: $HOME/.config/nvim
     description: local nvim setting files path
   - name: to_path
-    default_value: $(ghq list -p | grep dotfiles)/nvim/
+    default_value: $(ghq list -p | grep dotfiles)/
     description: repository nvim path
