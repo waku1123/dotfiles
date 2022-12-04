@@ -38,7 +38,7 @@ repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 # dein.vimにプラグインが認識された時に、rendererを設定する
 hook_add = '''
     let g:fern#renderer = 'nerdfont'
-''
+'''
 
 [[plugins]]
 # skkeletonの依存(denoを利用できるようにするプラグイン)
