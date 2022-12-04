@@ -3,5 +3,4 @@ command: brew bundle dump --force --file {{path}}Brewfile
 arguments:
   - name: path
     default_value: $(ghq list -p | grep Dot)/dotfiles/homebrew/
-    descroption: file path of my Brewfile
-
+    description: file path of my Brewfile

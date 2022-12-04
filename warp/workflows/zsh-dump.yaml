@@ -3,4 +3,4 @@ command: cp -f ~/.zshrc {{path}}.zshrc && cp -f ~/.zprofile {{path}}.zprofile
 arguments:
   - name: path
     default_value: $(ghq list -p | grep dotfiles)/zsh/
-    descroption: path to repositry
+    description: path to repositry
