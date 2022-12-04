@@ -28,6 +28,7 @@ hook_add = '''
 # y      : ファイルパスをコピーする
 # z      : ファイル名に合わせてウィンドウ幅を広げる
 # !      : 隠しファイルを表示/非表示する
+
 [[plugins]]
 # ファイルツリーにアイコンを表示するためのフォントプラグイン
 repo = 'lambdalisue/nerdfont.vim'
@@ -120,6 +121,7 @@ repo = 'nvim-treesitter/nvim-treesitter'
 [[plugins]]
 # テキストを囲う操作を行えるようにするプラグイン
 repo = 'machakann/vim-sandwich'
+
 [[plugins]]
 # VScodeの機能を使用できるようにするプラグイン
 repo = 'neoclide/coc.nvim'
@@ -134,6 +136,7 @@ hook_add =  '''
     nmap <silent> [coc]d <Plug>(coc-definition)
     nmap <silent> [coc]rf <Plug>(coc-references)
 '''
+
 [[plugins]]
 # インデントを可視化するプラグイン
 repo = 'Yggdroot/indentLine'
