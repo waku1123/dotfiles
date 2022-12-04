@@ -1,25 +1,26 @@
 let g:rehash256 = 1
 set ttimeoutlen=10
-" フォントの設定
-set guifont=Ricty\ Diminished:h20
-let g:fern#renderer = 'nerdfont'
+" フォントはhomebrewで入れた
+" hack-nerd-fontを指定(Fernでファイルアイコンを表示するため)
+set guifont=Hack\ Nerd\ Font:h20
 
 """"""""""""""""""""
 " GENERAL SETTINGS
 """"""""""""""""""""
-set autochdir                    " 開いているファイルのあるディレクトリをカレントにする
+"set autochdir                    " 開いているファイルのあるディレクトリをカレントにする
 set noundofile                   " undoファイルを自動作成しない
-scriptencoding utf-8
-set encoding=utf-8
+scriptencoding utf-8             " vimスクリプト内で使用する日本語エンコーディング文字コード
+set encoding=utf-8               " nvimの文字コードをUTF-8に設定
 set fenc=utf-8                   " 文字コードをUTF-8に設定
 set nobackup                     " バックアップファイルを作らない
 set noswapfile                   " スワップファイルを作らない
+set nowritebackup                " 上書き保存前の一時ファイルを作成しない
 set autoread                     " 編集中のファイルが変更されたら自動で読み直す
 set hidden                       " バッファが編集中でもその他のファイルを開けるようにする
 " ステータス行に情報表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する
-set browsedir=buffer
+" set browsedir=buffer
 " ESCでコマンドモード時にIMEを自動OFF
 if has('multi_byte_ime') || has('xim') || has('gui_macvim')
   " Insert mode: lmap off, IME ON
@@ -43,12 +44,12 @@ set termguicolors                " ターミナルでもカラーテーマを使
 colorscheme codedark             " カラーテーマをmonokai_proに変更https://github.com/phanviet/vim-monokai-pro
 set winblend=30                  " 現在のウィンドウの透明度を指定0〜100
 set pumblend=10                  " ポップアップメニューを半透明にする0〜100
-set background=dark
-syntax on
+set background=dark              " 暗い背景色を指定
+syntax on                        " シンタックスハイライトの有効化(デフォルトの色設定で変更)
+syntax enable                    " シンタックスハイライトの有効化(現在の色設定を変更しない)
 set t_Co=256                     " 256色対応する
 set number                       " 行番号を表示
-" ウインドウのタイトルバーにファイルのパス情報等を表示する
-set title
+set title                        " ウィンドウのタイトルバーにファイルのパス情報等を表示する
 set list                         " 不可視文字の可視化
 set ruler                        " カーソル位置が右下に表示される
 set showmode                     " 現在のモードを表示する
@@ -59,7 +60,6 @@ set visualbell                   " ビープ音を可視化
 set showmatch                    " 括弧入力時に対応する括弧を表示
 set laststatus=2                 " ステータスラインを常に表示する
 set wildmenu                     " コマンドラインの補完
-syntax enable                    " シンタックスハイライトの有効化
 set wrap                         " 長いテキストの折り返し
 set textwidth=0                  " 自動的に改行が入るのを無効化
 set colorcolumn=80               " その代わり80文字目にラインを入れる
@@ -125,11 +125,6 @@ else
     set clipboard& clipboard+=unnamed
 endif
 
-" Swapファイル, Backupファイルを全て無効化する
-set nowritebackup
-set nobackup
-set noswapfile
-
 " 全角スペースの表示
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
@@ -175,6 +170,10 @@ nnoremap g# g#zz
 """""""""""""""
 " KEY BIND
 """""""""""""""
+" Ctrl+lで次のタブへ移動
+nmap <C-l> :tabnext<CR>
+" Ctrl+Shift+lで前のタブへ移動
+nmap <C-S-l> :tabprevious<CR>
 " TABにて対応ペアにジャンプ
 nnoremap <Tab> %
 vnoremap <Tab> %
@@ -216,9 +215,6 @@ if dein#load_state($HOME . '/.cache/dein')
   " Required:
   call dein#add($HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
   " Required:
   call dein#end()
   call dein#save_state()
@@ -232,7 +228,3 @@ if dein#check_install()
   call dein#install()
 endif
 
-" skkeleton(日本語入力)の設定
-call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
-imap <C-j> <Plug>(skkeleton-enable)
-cmap <C-j> <Plug>(skkeleton-enable)

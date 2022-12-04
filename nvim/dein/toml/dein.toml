@@ -29,10 +29,16 @@ hook_add = '''
 # z      : ファイル名に合わせてウィンドウ幅を広げる
 # !      : 隠しファイルを表示/非表示する
 [[plugins]]
+# ファイルツリーにアイコンを表示するためのフォントプラグイン
 repo = 'lambdalisue/nerdfont.vim'
 
 [[plugins]]
+# ファイルツリーにアイコンを表示するためのプラグイン
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+# dein.vimにプラグインが認識された時に、rendererを設定する
+hook_add = '''
+    let g:fern#renderer = 'nerdfont'
+''
 
 [[plugins]]
 # skkeletonの依存(denoを利用できるようにするプラグイン)
@@ -41,20 +47,19 @@ repo = 'vim-denops/denops.vim'
 [[plugins]]
 # 日本語入力プラグイン
 repo = 'vim-skk/skkeleton'
+# Ctrl+jにアサイン
+hook_add = '''
+    imap <C-j> <Plug>(skkeleton-enable)
+    cmap <C-j> <Plug>(skkeleton-enable)
+'''
+# 辞書ファイルを指定
+hook_post_source= '''
+    call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+'''
 
 [[plugins]]
 # Fernのファイルツリーにgitの差分が表示できるプラグイン
 repo = 'lambdalisue/fern-git-status.vim'
-
-[[plugins]]
-# ファイルツリーにアイコンを表示するためのフォントプラグイン
-repo = 'lambdalisue/nerdfont.vim'
-
-[[plugins]]
-repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-hook_add = '''
-    let g:fern#renderer = 'hack-nerd-font'
-'''
 
 [[plugins]]
 # ファイルツリーのアイコンに色をつけるプラグイン
@@ -129,3 +134,6 @@ hook_add =  '''
     nmap <silent> [coc]d <Plug>(coc-definition)
     nmap <silent> [coc]rf <Plug>(coc-references)
 '''
+[[plugins]]
+# インデントを可視化するプラグイン
+repo = 'Yggdroot/indentLine'
