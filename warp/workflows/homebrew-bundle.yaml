@@ -2,5 +2,5 @@ name: Brewfileをリポジトリに出力
 command: brew bundle dump --force --file {{path}}Brewfile
 arguments:
   - name: path
-    default_value: $(ghq list -p | grep Dot)/dotfiles/homebrew/
+    default_value: $(ghq list -p | grep dotfiles)/dotfiles/homebrew/
     description: file path of my Brewfile
