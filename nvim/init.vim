@@ -63,7 +63,7 @@ set wildmenu                     " コマンドラインの補完
 set wrap                         " 長いテキストの折り返し
 set textwidth=0                  " 自動的に改行が入るのを無効化
 set colorcolumn=80               " その代わり80文字目にラインを入れる
-set cursorline                   " その代わり80文字目にラインを入れる
+set cursorline                   " カーソルが居る行にラインを入れる
 set foldmethod=indent            " 折りたたみ
 set foldlevel=100                " ファイルを開く時に折りたたみをしない
 
@@ -190,7 +190,7 @@ nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 
 " TerminalのINSERT モードからの離脱をesc キーにマッピング
 tnoremap <Esc> <C-\><C-n>
-" TeminalをVSCodeのように現在のウィンドウの下に開く
+" TerminalをVSCodeのように現在のウィンドウの下に開く
 command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 " 常にインサートモードでTerminalを開く
 autocmd TermOpen * startinsert
@@ -227,4 +227,3 @@ filetype plugin indent on
 if dein#check_install()
   call dein#install()
 endif
-
