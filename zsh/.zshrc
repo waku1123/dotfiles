@@ -65,61 +65,58 @@ set -o vi
 ##########
 # PROMPT #
 ##########
-# vcs_infoロード
-autoload -Uz vcs_info
-# PROMPT変数内で変数参照する
-setopt prompt_subst
-# vcsの表示
-zstyle ':vcs_info:*' enable git svn hg bzr
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr "+"
-zstyle ':vcs_info:*' unstagedstr "*"
-zstyle ':vcs_info:*' formats '(%b%c%u)'
-zstyle ':vcs_info:*' actionformats '(%b(%a)%c%u)'
+if type starship > /dev/null 2>&1; then
+  # Starshipがインストールされている場合はPROMPTのセットアップはしない
+else
+  if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+    # vcs_infoロード
+    autoload -Uz vcs_info
+    # PROMPT変数内で変数参照する
+    setopt prompt_subst
+    # vcsの表示
+    zstyle ':vcs_info:*' enable git svn hg bzr
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*' stagedstr "+"
+    zstyle ':vcs_info:*' unstagedstr "*"
+    zstyle ':vcs_info:*' formats '(%b%c%u)'
+    zstyle ':vcs_info:*' actionformats '(%b(%a)%c%u)'
 
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  ##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
-
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-  ##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
-  add_newline() {
-    if [[ -z $PS1_NEWLINE_LOGIN ]]; then
+    add_newline() {
+      if [[ -z $PS1_NEWLINE_LOGIN ]]; then
         PS1_NEWLINE_LOGIN=true
-    else
+      else
         printf '\n'
-    fi
-  }
-  # プロンプト表示直前にvcs_info呼び出し
-  # コマンド実行結果後に改行を入れて見やすくする
-  precmd() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-    # アクティブなGCPプロジェクトを表示
-    #    [[ -n "$(gcloud-current)" ]] && psvar[2]="$(gcloud-current)"
-    add_newline
-  }
+      fi
+    }
+    # プロンプト表示直前にvcs_info呼び出し
+    # コマンド実行結果後に改行を入れて見やすくする
+    precmd() {
+      psvar=()
+      LANG=en_US.UTF-8 vcs_info
+      [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+      # アクティブなGCPプロジェクトを表示
+      #    [[ -n "$(gcloud-current)" ]] && psvar[2]="$(gcloud-current)"
+          add_newline
+    }
 
-  # 右側にはカレントディレクトリのパスを表示
-  RPROMPT='[%F{green}%d%f]'
+    # 右側にはカレントディレクトリのパスを表示
+    RPROMPT='[%F{green}%d%f]'
 
-
-# vimモードの現在モードをプロンプトに表示
-function zle-line-init zle-keymap-select {
-  case $KEYMAP in
-    vicmd)
-    PROMPT="%{${fg[green]}%}%n%{${reset_color}%}@%F{blue}%m%f [%F{cyan}NORMAL%f] : %1(v|%F{red}%1v%f|) $ "
-    ;;
-    main|viins)
-    PROMPT="%{${fg[green]}%}%n%{${reset_color}%}@%F{blue}%m%f [%F{magenta}INSERT%f] : %1(v|%F{red}%1v%f|) $ "
-    ;;
-  esac
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-  
+    # vimモードの現在モードをプロンプトに表示
+    function zle-line-init zle-keymap-select {
+      case $KEYMAP in
+        vicmd)
+          PROMPT="%{${fg[green]}%}%n%{${reset_color}%}@%F{blue}%m%f [%F{cyan}NORMAL%f] : %1(v|%F{red}%1v%f|) $ "
+          ;;
+        main|viins)
+          PROMPT="%{${fg[green]}%}%n%{${reset_color}%}@%F{blue}%m%f [%F{magenta}INSERT%f] : %1(v|%F{red}%1v%f|) $ "
+          ;;
+      esac
+      zle reset-prompt
+    }
+    zle -N zle-line-init
+    zle -N zle-keymap-select
+  fi
 fi
 
 ###############
@@ -423,3 +420,5 @@ source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completi
 
 # asdf
 . /opt/homebrew/opt/asdf/asdf.sh
+
+eval "$(starship init zsh)"
