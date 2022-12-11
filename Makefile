@@ -1,4 +1,4 @@
-.PHONY: zsh vim homebrew git warp all
+.PHONY: zsh vim starship homebrew git warp all
 # GLOBALS
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SHELL=/bin/zsh
@@ -51,7 +51,11 @@ vim:
 	cp -r ${PROJECT_DIR}/nvim $(HOME)/.config/
 	@echo "nvim settings deploy --- finished"
 
-# TODO: if使わない
+starship:
+	@echo "starship toml deploy --- start"
+	cp ${PROJECT_DIR}/starship/starship.toml $(HOME)/${CONFIG_DIR}/
+	@echo "starship toml deploy --- end"
+
 homebrew:
 	@echo "brew bundle --- start"
 	brew bundle --file ${PROJECT_DIR}/homebrew/Brewfile
