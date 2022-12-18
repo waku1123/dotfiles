@@ -283,6 +283,9 @@ alias vim="nvim"
 # brew実行時のみ、pyenvがPATHに含まれないようにする。（configファイルが複数あると怒られることを回避）
 alias brew="PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin brew"
 
+# vimでの定義ジャンプのため、brewで入れたctagsを呼ぶようにする
+alias ctags="$(brew --prefix)/bin/ctags"
+
 # catをbatで上書き
 if type "bat" > /dev/null 2>&1; then
   alias oldcat="/bin/cat"
@@ -418,7 +421,6 @@ ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
-# asdf
-. /opt/homebrew/opt/asdf/asdf.sh
-
 eval "$(starship init zsh)"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
