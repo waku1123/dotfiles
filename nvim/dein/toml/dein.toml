@@ -87,6 +87,7 @@ hook_add = '''
     " Ctrl+g で曖昧ファイル内文字検索
     nnoremap <C-g> <cmd>Telescope live_grep theme=get_dropdown<cr>
 '''
+
 [[plugins]]
 # 曖昧検索結果表示にアイコンを表示できるプラグイン
 repo = 'kyazdani42/nvim-web-devicons'
@@ -98,6 +99,10 @@ repo = 'leoco/autodate.vim'
 [[plugins]]
 # neosnippet用デフォルトスニペット定義ファイル
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+# TODOコメントをハイライトするプラグイン
+repo = 'folke/todo-comments.nvim'
 
 [[plugins]]
 # neovimの非同期jobを制御する
