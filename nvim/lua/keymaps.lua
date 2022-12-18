@@ -36,9 +36,6 @@ keymap("n", "gl", "gt", opts)
 keymap("n", "ss", ":split<Return><C-w>w", opts)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
 
--- Select all
-keymap("n", "<C-a>", "gg<S-v>G", opts)
-
 -- Do not yank with x
 keymap("n", "x", '"_x', opts)
 
@@ -48,9 +45,6 @@ keymap("n", "dw", 'vb"_d', opts)
 -- 行の端に行く
 keymap("n", "<Space>h", "^", opts)
 keymap("n", "<Space>l", "$", opts)
-
--- ;でコマンド入力( ;と:を入れ替)
-keymap("n", ";", ":", opts)
 
 -- 行末までのヤンクにする
 keymap("n", "Y", "y$", opts)
@@ -76,5 +70,15 @@ keymap("v", ">", ">gv", opts)
 -- ビジュアルモード時vで行末まで選択
 keymap("v", "v", "$h", opts)
 
--- 0番レジスタを使いやすくした
-keymap("v", "<C-p>", '"0p', opts)
+-- インサートモードのままカーソル移動
+-- Ctrl+fで一つ右へ移動
+keymap("i", "<C-f>", "<C-g>U<Right>", opts)
+-- Ctrl+f Ctrl+fで一番外へ移動
+keymap("i", "<C-f><C-f>", "<C-g>U<Esc><S-a>", opts)
+
+-- :Tでターミナル
+vim.cmd([[
+    command! -nargs=* T split | wincmd j | resize 30 | terminal <args>
+]])
+vim.cmd([[autocmd Termopen * startinsert]])
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
