@@ -18,7 +18,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # export PATH="$HOME/.anyenv/bin:$PATH"
 # eval "$(anyenv init -)"
 
+#-------
 # pyenv
+#-------
 # export PYENV_ROOT="$HOME/.anyenv/envs/pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
@@ -28,6 +30,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #--------
 # goenv
 #--------
+export GOPATH="$HOME/go"
+export PATH="$GOPATH:$PATH"
 # export GOENV_ROOT="$HOME/.anyenv/envs/goenv"
 # export PATH="$GOENV_ROOT/bin:$PATH"
 # export GOENV_DISABLE_GOPATH=1
