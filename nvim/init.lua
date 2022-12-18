@@ -1,4 +1,5 @@
 require("plugins.setup")
+require("base")
 require("keymaps")
 require("options")
 
