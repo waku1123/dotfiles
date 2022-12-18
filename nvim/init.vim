@@ -141,13 +141,6 @@ endif
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""
-" TAB SETTINGS
-""""""""""""""""""""
-set expandtab                    " Tab文字を半角スペースにする
-set autoindent                   " 改行時にインデントを引き継いで改行する
-set shiftwidth=4                 " インデントにつかわれる空白の数
-
-""""""""""""""""""""
 " SEARCH SETTINGS
 """"""""""""""""""""
 set ignorecase                   " 大文字小文字を区別しない
@@ -178,7 +171,6 @@ nmap <C-S-l> :tabprevious<CR>
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-
 " insertモードから抜けるキーバインド
 inoremap <silent> jj <ESC>
 inoremap <silent> <C-j> j
@@ -186,7 +178,7 @@ inoremap <silent> <C-j> j
 filetype indent on
 
 " Escの2回押しで検索ハイライト消去
-nmap <ESC><ESC> ;nohlsearch<CR><ESC>
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " TerminalのINSERT モードからの離脱をesc キーにマッピング
 tnoremap <Esc> <C-\><C-n>
