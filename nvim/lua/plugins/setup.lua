@@ -46,6 +46,9 @@ return packer.startup(function(use)
     -- display git status in filer
     use "lambdalisue/fern-git-status.vim"
 
+    -- Terminal Plugin
+    use "kassio/neoterm"
+
     -- use deno
     use "vim-denops/denops.vim"
 
