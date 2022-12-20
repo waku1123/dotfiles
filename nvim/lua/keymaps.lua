@@ -59,8 +59,13 @@ keymap("n", "<Esc><Esc>", ":<C-u>set nohlsearch<Return>", opts)
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 
--- コンマの後に自動的にスペースを挿入
-keymap("i", ",", ",<Space>", opts)
+-- 検索結果を画面中央に持ってくる
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+keymap("n", "*", "*zz", opts)
+keymap("n", "#", "#zz", opts)
+keymap("n", "g*", "g*zz", opts)
+keymap("n", "g#", "g#zz", opts)
 
 -- Visual --
 -- Stay in indent mode
