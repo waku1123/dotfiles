@@ -36,9 +36,6 @@ keymap("n", "gl", "gt", opts)
 keymap("n", "ss", ":split<Return><C-w>w", opts)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
 
--- Do not yank with x
-keymap("n", "x", '"_x', opts)
-
 -- Delete a word backwards
 keymap("n", "dw", 'vb"_d', opts)
 

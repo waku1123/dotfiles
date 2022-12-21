@@ -45,6 +45,8 @@ return packer.startup(function(use)
     use "lambdalisue/fern-renderer-nerdfont.vim"
     -- display git status in filer
     use "lambdalisue/fern-git-status.vim"
+    -- Fern上でファイルのプレビューを表示するプラグイン
+    use "yuki-yano/fern-preview.vim"
 
     -- Terminal Plugin
     use "kassio/neoterm"
@@ -67,6 +69,8 @@ return packer.startup(function(use)
 
     -- 括弧を自動で閉じるプラグイン
     use "windwp/nvim-autopairs"
+
+    use "andymass/vim-matchup"
 
     -- コードとテストコードのファイルを行き来できるプラグイン
     use "rgroli/other.nvim"
