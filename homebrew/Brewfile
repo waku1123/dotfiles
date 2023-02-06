@@ -53,7 +53,6 @@ brew "krb5"
 brew "luajit", args: ["HEAD"]
 brew "mas"
 brew "minikube"
-brew "mosquitto"
 brew "ripgrep"
 brew "nb"
 brew "neovim"
@@ -87,7 +86,6 @@ cask "1password"
 cask "1password-cli"
 cask "alfred"
 cask "appcleaner"
-cask "arctype"
 cask "audacity"
 cask "cheatsheet"
 cask "chromedriver"
@@ -101,10 +99,7 @@ cask "fliqlo"
 cask "font-hack-nerd-font"
 cask "font-hackgen"
 cask "font-hackgen-nerd"
-cask "font-ricty-diminished"
 cask "fork"
-cask "gather"
-cask "gimp"
 cask "gitify"
 cask "google-chrome"
 cask "google-cloud-sdk"
@@ -113,10 +108,8 @@ cask "jetbrains-toolbox"
 cask "keycastr"
 cask "ngrok"
 cask "notion"
-cask "obs"
 cask "postman"
 cask "raycast"
-cask "sequel-ace"
 cask "skitch"
 cask "slack"
 cask "spotify"
@@ -125,9 +118,9 @@ cask "tableplus"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "warp"
-cask "zoom"
 cask "zulu11"
 mas "1Password for Safari", id: 1569813296
+mas "FlipClock", id: 1181028777
 mas "GarageBand", id: 682658836
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
@@ -141,5 +134,5 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
-mas "TweetDeck", id: 485812721
+mas "Toggl Track", id: 1291898086
 mas "Xcode", id: 497799835
