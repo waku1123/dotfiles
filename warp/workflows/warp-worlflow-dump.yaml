@@ -1,6 +1,0 @@
-name: warpのworlflowファイルをリポジトリにdump
-command: cp -f ~/.warp/workflows/*.yaml {{path}}
-arguments:
-  - name: path
-    default_value: $(ghq list -p | grep dotfiles)/dotfiles/warp/workflows/
-    description: file path of my Brewfile
