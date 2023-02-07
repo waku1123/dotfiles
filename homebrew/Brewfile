@@ -121,17 +121,11 @@ cask "warp"
 cask "zulu11"
 mas "1Password for Safari", id: 1569813296
 mas "FlipClock", id: 1181028777
-mas "GarageBand", id: 682658836
 mas "GIPHY CAPTURE", id: 668208984
-mas "iMovie", id: 408981434
 mas "Keepa - Price Tracker", id: 1533805339
-mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "LINE", id: 539883307
-mas "Messenger", id: 1480068668
 mas "Notion Web Clipper", id: 1559269364
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Toggl Track", id: 1291898086
