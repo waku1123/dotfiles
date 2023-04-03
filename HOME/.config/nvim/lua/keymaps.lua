@@ -6,8 +6,8 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = 'n',
@@ -19,10 +19,10 @@ vim.g.maplocalleader = ","
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "sh", "<C-w>h", opts)
+keymap("n", "sj", "<C-w>j", opts)
+keymap("n", "sk", "<C-w>k", opts)
+keymap("n", "sl", "<C-w>l", opts)
 
 -- New tab
 keymap("n", "te", ":tabedit", opts)
@@ -53,8 +53,8 @@ keymap("n", "<Space>q", ":<C-u>q!<Return>", opts)
 keymap("n", "<Esc><Esc>", ":<C-u>set nohlsearch<Return>", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode
-keymap("i", "jk", "<ESC>", opts)
+-- Press jj fast to exit insert mode
+keymap("i", "jj", "<ESC>", opts)
 
 -- 検索結果を画面中央に持ってくる
 keymap("n", "n", "nzz", opts)
