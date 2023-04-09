@@ -249,9 +249,9 @@ alias de='docker exec -it $(docker ps | gum filter --prompt="SELECT CONTAINER YO
 
 # Git/Github系のalias
 # ローカルにあるgitリポジトリを選択してpathに移動
-alias repo='cd $(ghq list -p | gum filter --prompt="SELECT REPOSITORY >")'
+alias repo='cd $(ghq list -p | gum filter --no-fuzzy --prompt="SELECT REPOSITORY >")'
 # 選択したリモートリポジトリをGithubで開く
-alias remote='$(hub browse $(ghq list | gum filter --prompt="SELECT REPOSITORY >"))'
+alias remote='$(hub browse $(ghq list | gum filter --no-fuzzy --value=$(basename $(pwd)) --prompt="SELECT REPOSITORY >"))'
 
 # AWS CLI系のalias
 alias profiles='aws configure list-profiles'
@@ -432,3 +432,8 @@ function download-s3(){
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # starshipを起動
 eval "$(starship init zsh)"
+# pipenv補完設定
+if type pipenv &>/dev/null; then
+  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+fi
+
