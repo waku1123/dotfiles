@@ -27,7 +27,7 @@
       "kotlin": {
         "command": "~/lsp/kotlin/server/bin/kotlin-language-server",
         "filetypes": ["kotlin"]
-      },
+      }
     },
     "diagnostic-languageserver.formatFiletypes": {
         "python": ["black", "isort"]
