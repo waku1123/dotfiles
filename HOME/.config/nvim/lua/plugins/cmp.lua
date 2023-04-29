@@ -29,7 +29,11 @@ cmp.setup({
         -- { name = 'snippy' }, -- For snippy users.
     }, {
         { name = 'buffer' },
-    })
+        { name = 'path' },
+    }),
+    experimental = {
+        ghost_text = true,
+    }
 })
 
 -- Set configuration for specific filetype.
