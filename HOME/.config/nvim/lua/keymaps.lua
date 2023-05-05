@@ -18,26 +18,29 @@ vim.g.maplocalleader = " "
 --   command_mode = 'c',
 
 -- Normal --
--- Better window navigation
+-- タブを新規作成
+keymap("n", "te", ":tabedit", opts)
+-- 新しいタブを一番右に作る
+keymap("n", "gn", ":tabnew<Return>", opts)
+-- 左右にタブ移動
+keymap("n", "gh", "gT", opts)
+keymap("n", "gl", "gt", opts)
+
+-- ペイン分割('s'plit)
+keymap("n", "ss", ":split<Return><C-w>w", opts)
+keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
+-- ペインのフォーカス移動
 keymap("n", "sh", "<C-w>h", opts)
 keymap("n", "sj", "<C-w>j", opts)
 keymap("n", "sk", "<C-w>k", opts)
 keymap("n", "sl", "<C-w>l", opts)
-
--- New tab
-keymap("n", "te", ":tabedit", opts)
--- 新しいタブを一番右に作る
-keymap("n", "gn", ":tabnew<Return>", opts)
--- move tab
-keymap("n", "gh", "gT", opts)
-keymap("n", "gl", "gt", opts)
-
--- Split window
-keymap("n", "ss", ":split<Return><C-w>w", opts)
-keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
-
--- Delete a word backwards
-keymap("n", "dw", 'vb"_d', opts)
+-- ペインサイズ調整
+-- 横幅 ('r'esize)
+keymap("n", "rh", "<C-w>10<", opts)
+keymap("n", "rl", "<C-w>10>", opts)
+-- 縦幅
+keymap("n", "rk", "<C-w>10+", opts)
+keymap("n", "rj", "<C-w>10-", opts)
 
 -- 行の端に行く
 keymap("n", "<Space>h", "^", opts)
