@@ -73,6 +73,9 @@ vim:
 
 brew_restore:
 	@echo "brew bundle --- start"
+	if test ! $(which brew); then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	fi
 	brew bundle --file ${PROJECT_DIR}/homebrew/Brewfile
 	@echo "brew bundle --- finished"
 
