@@ -18,39 +18,25 @@ vim.g.maplocalleader = " "
 --   command_mode = 'c',
 
 -- Normal --
--- タブを新規作成
-keymap("n", "te", ":tabedit", opts)
--- 新しいタブを一番右に作る
-keymap("n", "gn", ":tabnew<Return>", opts)
--- 左右にタブ移動
-keymap("n", "gh", "gT", opts)
-keymap("n", "gl", "gt", opts)
-
--- ペイン分割('s'plit)
+-- ウィンドウを水平分割(上下)
 keymap("n", "ss", ":split<Return><C-w>w", opts)
+-- ウィンドウを垂直分割(左右)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
--- ペインのフォーカス移動
+
+-- ウィンドウ移動(左下上右)
 keymap("n", "sh", "<C-w>h", opts)
 keymap("n", "sj", "<C-w>j", opts)
 keymap("n", "sk", "<C-w>k", opts)
 keymap("n", "sl", "<C-w>l", opts)
--- ペインサイズ調整
--- 横幅 ('r'esize)
-keymap("n", "rh", "<C-w>10<", opts)
-keymap("n", "rl", "<C-w>10>", opts)
--- 縦幅
-keymap("n", "rk", "<C-w>10+", opts)
-keymap("n", "rj", "<C-w>10-", opts)
 
--- 行の端に行く
-keymap("n", "<Space>h", "^", opts)
-keymap("n", "<Space>l", "$", opts)
+-- 新しいタブを一番右に作る
+keymap("n", "gn", ":tabnew<Return>", opts)
+-- タブ移動(左右)
+keymap("n", "gh", "gT", opts)
+keymap("n", "gl", "gt", opts)
 
 -- 行末までのヤンクにする
 keymap("n", "Y", "y$", opts)
-
--- <Space>q で強制終了
-keymap("n", "<Space>q", ":<C-u>q!<Return>", opts)
 
 -- ESC*2 でハイライトやめる
 keymap("n", "<Esc><Esc>", ":<C-u>set nohlsearch<Return>", opts)
