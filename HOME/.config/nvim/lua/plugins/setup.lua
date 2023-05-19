@@ -77,6 +77,10 @@ return packer.startup(function(use)
   -- 曖昧検索できるようにする
   use {"nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim"}
   use "nvim-telescope/telescope-ui-select.nvim"
+  -- telescopeでチートシートを表示できる
+  use {"sudormrfbin/cheatsheet.nvim", requires = {{"nvim-telescope/telescope.nvim"}, {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"},}}
+  -- telescopeでdockerを操作する
+  use {"lpoto/telescope-docker.nvim"}
   -- 曖昧検索結果にアイコンを表示できるプラグイン
   use "kyazdani42/nvim-web-devicons"
   -- TODOコメントをハイライトするプラグイン
