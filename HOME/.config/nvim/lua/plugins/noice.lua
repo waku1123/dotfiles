@@ -15,12 +15,14 @@ require('noice').setup {
             ['cmp.entry.get_documentation'] = true,
         },
     },
+    presets = {
+      bottom_search = false,
+      command_palette = false,
+      inc_rename = false,
+      lsp_doc_border = false,
+    },
     views = {
       cmdline_popup = {
-        position = {
-          row = 5,
-          col = "50%",
-        },
         size = {
           width = 60,
           height = "auto",
