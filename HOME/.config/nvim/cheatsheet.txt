@@ -30,3 +30,7 @@
 イメージ一覧 | <C-d>i
 compose一覧 | <C-d>p
 ファイル一覧 | <C-d>l
+
+## Noice
+直前のエラーを表示 | <Leader>nl
+エラーリストをtelescopeで表示 | <Leader>nh
