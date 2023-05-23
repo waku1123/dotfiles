@@ -25,6 +25,18 @@
 次のエラー箇所へジャンプ | gj
 前のエラー箇所へジャンプ | gk
 
+## git
+git blameを表示 | <Leader>gb
+git blameを非表示 | q
+選択したblameのcommit内容を表示 | <Leader>go
+カーソル行をgithubで表示 | <Leader>go
+現在のブランチのpull requestを表示 | <Leader>gp
+現在のブランチでpull requestを作成 | <Leader>gn
+diffを表示 | <Leader>gd
+diffを閉じる | <Leader>gD
+選択してコミットまでrevertする | <Leader>gr
+現在のファイルをrevertする | <Leader>gR
+
 ## Docker
 コンテナ一覧 | <C-d>c
 イメージ一覧 | <C-d>i
