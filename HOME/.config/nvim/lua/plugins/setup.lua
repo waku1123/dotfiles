@@ -59,6 +59,7 @@ return packer.startup(function(use)
     "hrsh7th/cmp-path",
     "hrsh7th/vim-vsnip",
     "hrsh7th/nvim-cmp",
+    "onsails/lspkind.nvim"
   }
   use "j-hui/fidget.nvim"
   use "ray-x/lsp_signature.nvim"
