@@ -40,6 +40,8 @@ end
 
 require('mason').setup()
 require('mason-lspconfig').setup({
+  -- LSP install
+  ensure_installed = {
     -- python
     "pyright",
     -- rust
@@ -62,6 +64,8 @@ require('mason-lspconfig').setup({
     "jsonls",
     -- toml
     "taplo",
+  },
+  automatic_installation = true,
 })
 require('mason-lspconfig').setup_handlers({ function(server)
   local opt = {

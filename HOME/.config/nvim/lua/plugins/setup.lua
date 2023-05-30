@@ -100,6 +100,8 @@ return packer.startup(function(use)
   use "rgroli/other.nvim"
   -- 囲う系の操作を便利にするプラグイン
   use "kylechui/nvim-surround"
+  -- コードアウトラインを表示する
+  use "stevearc/aerial.nvim"
   -- markdownをプレビューできるプラグイン
   use {
     "iamcco/markdown-preview.nvim",
@@ -124,6 +126,8 @@ return packer.startup(function(use)
   use "rktjmp/lush.nvim"
   -- inlineにgitblame等を表示するプラグイン
   use { "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
+  -- csvを色付け
+  use "Decodetalkers/csv-tools.lua"
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
