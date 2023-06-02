@@ -187,19 +187,20 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
   done
 fi
 
+BREWPREFIX=$(brew --prefix)
 ###########################
 # zsh-completions         #
 # zsh-autosuggestions     #
 ###########################
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    FPATH=${BREWPREFIX}/share/zsh-completions:$FPATH
+    source $BREWPREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     autoload -Uz compinit && compinit
 fi
 ###########################
 # zsh-syntax-highlighting #
 ###########################
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $BREWPREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # 6type syntax highlight
 #    main     : 基本ハイライト。デフォルトではこれのみ有効
 #    brackets : 括弧
@@ -238,8 +239,8 @@ ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 # gcloud関連  #
 ###############
 # プラグイン
-source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source $BREWPREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source $BREWPREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 function gcloud-activate() {
   name="$1"
