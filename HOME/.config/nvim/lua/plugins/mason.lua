@@ -37,6 +37,8 @@ my_on_attach = function(client, bufnr)
         autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
       augroup END
     ]]
+  else
+    print("this language server is not support documentHighlightProvider")
   end
 end
 
@@ -99,7 +101,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
 )
 -- エラーアイコンの変更
-local signs = { Error = "🐞", Warn = "⚠️", Hint = "♻️", Info = "ℹ️" }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
