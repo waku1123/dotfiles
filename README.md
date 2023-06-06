@@ -75,4 +75,5 @@ My dotfiles for MacOSX.
 | [itchyny/vim-gitbranch](https://github.com/itchyny/vim-gitbranch)                                   | display git branch name to status bar of Neovim                |
 | [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                               | display git blame/line status to buffer                        |
 | [Decodetalkers/csv-tools.lua](https://github.com/Decodetalkers/csv-tools.lua)                       | column highlight at csv file                                   |
+| [voldikss/vim-translator](https://github.com/voldikss/vim-translator)                               | tranlate ja <--> en by keybind                                 |
 
