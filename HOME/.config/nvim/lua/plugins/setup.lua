@@ -132,7 +132,6 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   -- ステータスバーにgitbranchを表示するプラグイン
   use "itchyny/vim-gitbranch"
-  use "rktjmp/lush.nvim"
   -- inlineにgitblame等を表示するプラグイン
   use { "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" }
   -- csvを色付け
