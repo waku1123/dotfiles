@@ -50,11 +50,12 @@ u.keymap("n", "<C-g>", ":Telescope live_grep<CR>", opt)
 -- Ctrl+b でプロジェクト内のTODOを検索
 u.keymap("n", "<C-b>", ":TodoTelescope theme=dropdown<CR>", opt)
 -- gr で カーソル下変数参照一覧を検索
-u.keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references() theme=get_cursor<CR>", opt)
+u.keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>", opt)
 
 -- docker
 u.keymap("n", "<C-d>c", ":Telescope docker containers theme=ivy<CR>")
 u.keymap("n", "<C-d>i", ":Telescope docker images theme=ivy<CR>")
 u.keymap("n", "<C-d>p", ":Telescope docker compose theme=ivy<CR>")
 u.keymap("n", "<C-d>l", ":Telescope docker files theme=ivy<CR>")
+-- アウトライン
 u.keymap("n", "<C-s>t", ":Telescope aerial theme=dropdown<CR>")
