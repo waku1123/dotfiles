@@ -39,8 +39,9 @@ return packer.startup(function(use)
   -- Packer (プラグイン管理) →自分自身も管理する
   use "wbthomason/packer.nvim"
   -- カラーテーマ
-  --use "marko-cerovac/material.nvim"
   use "EdenEast/nightfox.nvim"
+  -- Dashbordカスタマイズとセッション
+  use {"goolord/alpha-nvim", requires = "nvim-tree/nvim-web-devicons"}
   -- focusがないペインを暗く表示する
   use "sunjon/shade.nvim"
   -- ファイラープラグイン
@@ -97,6 +98,8 @@ return packer.startup(function(use)
   use { "lpoto/telescope-docker.nvim" }
   -- 曖昧検索結果にアイコンを表示できるプラグイン
   use "kyazdani42/nvim-web-devicons"
+  -- Bookmark機能
+  use { "tom-anders/telescope-vim-bookmarks.nvim", requires = "MattesGroeger/vim-bookmarks"}
   -- 一括コメントアウト
   use "tpope/vim-commentary"
   -- TODOコメントをハイライトするプラグイン
