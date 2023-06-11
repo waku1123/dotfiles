@@ -58,6 +58,8 @@ return packer.startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   -- バッファ領域にコマンドの出力結果を表示する
   use "tyru/capture.vim"
+  -- Insert Mode時に絶対行表示にする
+  use "myusuf3/numbers.vim"
   -- LSP サーバ管理
   use {
     "hrsh7th/cmp-buffer",
