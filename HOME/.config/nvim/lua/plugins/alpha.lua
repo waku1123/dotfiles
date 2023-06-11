@@ -67,6 +67,33 @@ local efficientLines  = {
   [[  ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝  ]],
 }
 
+vim.cmd[[
+hi StartLogo1 ctermfg=18 guifg=#14067E
+hi StartLogo2 ctermfg=18 guifg=#15127B
+hi StartLogo3 ctermfg=18 guifg=#171F78
+hi StartLogo4 ctermfg=18 guifg=#182B75
+hi StartLogo5 ctermfg=23 guifg=#193872
+hi StartLogo6 ctermfg=23 guifg=#1A446E
+hi StartLogo7 ctermfg=23 guifg=#1C506B
+hi StartLogo8 ctermfg=23 guifg=#1D5D68
+hi StartLogo9 ctermfg=23 guifg=#1E6965
+hi StartLogo10 ctermfg=29 guifg=#1F7562
+hi StartLogo11 ctermfg=29 guifg=#21825F
+hi StartLogo12 ctermfg=29 guifg=#228E5C
+hi StartLogo13 ctermfg=35 guifg=#239B59
+hi StartLogo14 ctermfg=35 guifg=#24A755
+hi StartLogo15 ctermfg=35 guifg=#26B352
+hi StartLogo16 ctermfg=35 guifg=#27C04F
+hi StartLogo17 ctermfg=41 guifg=#28CC4C
+hi StartLogo18 ctermfg=41 guifg=#29D343
+hi StartLogoPop1 ctermfg=214 guifg=#EC9F05
+hi StartLogoPop2 ctermfg=208 guifg=#F08C04
+hi StartLogoPop3 ctermfg=208 guifg=#F37E03
+hi StartLogoPop4 ctermfg=202 guifg=#F77002
+hi StartLogoPop5 ctermfg=202 guifg=#FB5D01
+hi StartLogoPop6 ctermfg=202 guifg=#FF4E00
+]]
+
 local function lineToStartGradient(lines)
   local out = {}
   for i, line in ipairs(lines) do
