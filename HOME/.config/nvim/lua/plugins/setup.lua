@@ -116,6 +116,8 @@ return packer.startup(function(use)
   use "rgroli/other.nvim"
   -- 囲う系の操作を便利にするプラグイン
   use "kylechui/nvim-surround"
+  -- インクリメント(C-A) / デクリメント(C-X) を賢く
+  use { "monaqa/dial.nvim", requires = "nvim-lua/plenary.nvim" }
   -- コードアウトラインを表示する
   use "stevearc/aerial.nvim"
   -- markdownをプレビューできるプラグイン
