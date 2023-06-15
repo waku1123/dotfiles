@@ -39,7 +39,7 @@ return packer.startup(function(use)
   -- Packer (プラグイン管理) →自分自身も管理する
   use "wbthomason/packer.nvim"
   -- カラーテーマ
-  use "EdenEast/nightfox.nvim"
+  use "folke/tokyonight.nvim"
   -- Dashbordカスタマイズとセッション
   use {"goolord/alpha-nvim", requires = "nvim-tree/nvim-web-devicons"}
   -- focusがないペインを暗く表示する
@@ -54,8 +54,6 @@ return packer.startup(function(use)
   use "lambdalisue/fern-git-status.vim"
   -- ファイラーでファイルのプレビューを表示する
   use "yuki-yano/fern-preview.vim"
-  -- タブごとに表示するバッファを切り替える
-  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   -- バッファ領域にコマンドの出力結果を表示する
   use "tyru/capture.vim"
   -- Insert Mode時に絶対行表示にする
@@ -136,7 +134,9 @@ return packer.startup(function(use)
   -- Neovim上で直接Gitに関する操作を行うプラグイン
   use "dinhhuy258/git.nvim"
   -- ステータスバーに色付けして表示するプラグイン
-  use "nvim-lualine/lualine.nvim"
+  use {"nvim-lualine/lualine.nvim", require = {"nvim-tree/nvim-web-devicons", opt = true}}
+  -- タブごとに表示するバッファを切り替える
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   -- ステータスバーにgitbranchを表示するプラグイン
   use "itchyny/vim-gitbranch"
   -- inlineにgitblame等を表示するプラグイン

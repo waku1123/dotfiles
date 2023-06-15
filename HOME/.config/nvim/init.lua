@@ -3,13 +3,14 @@ require("base")
 require("keymaps")
 require("options")
 
-require("plugins.nightfox")
+require("plugins.colortheme")
 
 require("plugins.fern")
 require("plugins.fern-renderer")
 require("plugins.fern-preview")
 
 require("plugins.lualine")
+require("plugins.bufferline")
 
 require("plugins.telescope")
 require("plugins.treesitter")
