@@ -15,6 +15,14 @@ require("telescope").setup({
       "^node_modules/",
       "^__pycache__/",
     },
+    mappings = {
+      n = {
+        ['<C-d>'] = require('telescope.actions').delete_buffer
+      },
+      i = {
+        ['<C-d>'] = require('telescope.actions').delete_buffer
+      }
+    }
   },
   pickers = {
     find_files = {
@@ -69,6 +77,8 @@ u.keymap("n", "<C-d>i", ":Telescope docker images theme=ivy<CR>")
 u.keymap("n", "<C-d>p", ":Telescope docker compose theme=ivy<CR>")
 u.keymap("n", "<C-d>l", ":Telescope docker files theme=ivy<CR>")
 
+-- バッファー一覧
+u.keymap("n", "<C-S-b>", ":Telescope buffers<CR>")
 -- ブックマーク一覧
 u.keymap("n", "<C-v>bm", ":Telescope vim_bookmarks all<CR>")
 -- アウトライン
