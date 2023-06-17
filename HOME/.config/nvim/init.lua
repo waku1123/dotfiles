@@ -31,6 +31,8 @@ require("plugins.git")
 require("plugins.gitsigns")
 
 require("plugins.indent")
+require("plugins.scrollbar")
+require("plugins.hlslens")
 
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
