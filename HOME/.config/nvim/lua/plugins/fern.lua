@@ -1,3 +1,4 @@
+vim.g["fern#default_hidden"] = true --隠しファイルは表示する
 local u = require("utils")
 local opt = {noremap = true, silent = true}
 --  <C-n> で Fernのトグル
