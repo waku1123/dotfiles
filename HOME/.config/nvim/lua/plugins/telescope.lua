@@ -51,35 +51,35 @@ require("telescope").setup({
       yaml = true,
     },
   },
-})
-require("telescope").load_extension("ui-select")
-require("telescope").load_extension("noice")
-require("telescope").load_extension("docker")
-require("telescope").load_extension("aerial")
-require("telescope").load_extension("vim_bookmarks")
-
-vim.g["fern#default_hidden"] = true --隠しファイルは表示する
-
--- Ctrl+p で曖昧ファイル検索
-u.keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", opt)
--- Ctrl+g で曖昧ファイル内文字列検索
-u.keymap("n", "<C-g>", ":Telescope live_grep hidden=true<CR>", opt)
--- Ctrl+b でプロジェクト内のTODOを検索
-u.keymap("n", "<C-b>", ":TodoTelescope<CR>", opt)
--- gr で カーソル下変数参照一覧を検索
-u.keymap("n", "gr", ":Telescope lsp_references<CR>", opt)
+},
+require("telescope").load_extension("ui-select"),
+require("telescope").load_extension("noice"),
+require("telescope").load_extension("docker"),
+require("telescope").load_extension("aerial"),
+require("telescope").load_extension("vim_bookmarks"),
+-- 曖昧ファイル名検索
+u.keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", opt),
+-- 曖昧ファイル内文字列検索
+u.keymap("n", "<C-g>", ":Telescope live_grep hidden=true<CR>", opt),
+-- プロジェクト内のTODOを検索
+u.keymap("n", "<C-b>", ":TodoTelescope<CR>", opt),
+-- カーソル下変数参照一覧を検索
+u.keymap("n", "gr", ":Telescope lsp_references<CR>", opt),
 -- Git ブランチ一覧からチェックアウト
-u.keymap("n", "<S-g>b", ":Telescope git_branches<CR>", opt)
-
--- docker
-u.keymap("n", "<C-d>c", ":Telescope docker containers theme=ivy<CR>")
-u.keymap("n", "<C-d>i", ":Telescope docker images theme=ivy<CR>")
-u.keymap("n", "<C-d>p", ":Telescope docker compose theme=ivy<CR>")
-u.keymap("n", "<C-d>l", ":Telescope docker files theme=ivy<CR>")
-
+u.keymap("n", "<S-g>b", ":Telescope git_branches<CR>", opt),
+-- docker container一覧
+u.keymap("n", "<C-d>c", ":Telescope docker containers theme=ivy<CR>"),
+-- docker image一覧
+u.keymap("n", "<C-d>i", ":Telescope docker images theme=ivy<CR>"),
+-- docker compose一覧
+u.keymap("n", "<C-d>p", ":Telescope docker compose theme=ivy<CR>"),
+-- docker files一覧
+u.keymap("n", "<C-d>l", ":Telescope docker files theme=ivy<CR>"),
 -- バッファー一覧
-u.keymap("n", "<C-S-b>", ":Telescope buffers<CR>")
+u.keymap("n", "<F10>", ":Telescope buffers<CR>"),
 -- ブックマーク一覧
-u.keymap("n", "<C-v>bm", ":Telescope vim_bookmarks all<CR>")
+u.keymap("n", "<C-<F10>>", ":Telescope vim_bookmarks all<CR>"),
 -- アウトライン
 u.keymap("n", "<C-s>t", ":Telescope aerial theme=dropdown<CR>")
+)
+
