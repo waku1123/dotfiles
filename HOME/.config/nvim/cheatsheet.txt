@@ -12,7 +12,7 @@
 パスをコピー | y
 隠しファイルを表示 | !
 
-## バッファ操作
+## バッファ操作(buffer)
 左のバッファにフォーカス | <S-h>
 右のバッファにフォーカス | <S-l>
 バッファ一覧(Telescope) | <F10>
@@ -23,7 +23,7 @@
 右側のバッファを全て閉じる | <C-S-l>
 
 
-## ターミナル
+## ターミナル(terminal)
 float windowで表示 | <C-t><C-t>
 垂直分割で表示 | <C-t><C-v>
 lazygitを表示 | <Leader>g
@@ -86,11 +86,11 @@ visualで選択状態の文字を<記号>囲む | (選択状態で) <S-s><記号
 直前のエラーを表示 | <Leader>nl
 エラーリストをtelescopeで表示 | <Leader>nh
 
-## インクリメント
+## インクリメント(increment)
 インクリメント(increment) | <C-a>
 デクリメント(decrement) | <C-x>
 
-## アウトライン
+## アウトライン(outline)
 現在のファイルのアウトラインを選択(Telescope) | <C-s>t
 アウトラインペイン表示をトグル | <leader>a
 前のアウトラインにジャンプ | <Leader>k
@@ -105,13 +105,13 @@ visualで選択状態の文字を<記号>囲む | (選択状態で) <S-s><記号
 keymap一覧 | <C-k><C-m>
 
 
-## Bookmark
+## ブックマーク(Bookmark)
 ブックマークをトグル | mm
 ブックマーク一覧 | <C-<F10>>
 
-## Translate
+## 翻訳(translate)
 日本語に翻訳 | <C-t>j
 英語に翻訳 | <C-t>e
 
-## 日本語入力
+## 日本語入力(ime)
 インラインIMEをトグル | <C-j>
