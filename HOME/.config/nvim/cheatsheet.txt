@@ -86,6 +86,10 @@ visualで選択状態の文字を<記号>囲む | (選択状態で) <S-s><記号
 直前のエラーを表示 | <Leader>nl
 エラーリストをtelescopeで表示 | <Leader>nh
 
+## インクリメント
+インクリメント(increment) | <C-a>
+デクリメント(decrement) | <C-x>
+
 ## アウトライン
 現在のファイルのアウトラインを選択(Telescope) | <C-s>t
 アウトラインペイン表示をトグル | <leader>a
