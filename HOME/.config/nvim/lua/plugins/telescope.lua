@@ -17,10 +17,12 @@ require("telescope").setup({
     },
     mappings = {
       n = {
-        ['<C-d>'] = require('telescope.actions').delete_buffer
+        ['<ESC>'] = function(...) return require("telescope.actions").close(...) end,
       },
       i = {
-        ['<C-d>'] = require('telescope.actions').delete_buffer
+        ['<C-c>'] = require('telescope.actions').delete_buffer,
+        ['<C-u>'] = function(...) return require("telescope.actions").preview_scrolling_up(...) end,
+        ['<C-d>'] = function(...) return require("telescope.actions").preview_scrolling_down(...) end,
       }
     }
   },
