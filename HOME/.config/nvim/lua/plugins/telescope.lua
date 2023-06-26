@@ -60,28 +60,32 @@ require("telescope").load_extension("docker"),
 require("telescope").load_extension("aerial"),
 require("telescope").load_extension("vim_bookmarks"),
 -- 曖昧ファイル名検索
-u.keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", opt),
+u.keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opt),
 -- 曖昧ファイル内文字列検索
-u.keymap("n", "<C-g>", ":Telescope live_grep hidden=true<CR>", opt),
+u.keymap("n", "<C-g>", "<cmd>Telescope live_grep hidden=true<CR>", opt),
 -- プロジェクト内のTODOを検索
-u.keymap("n", "<C-b>", ":TodoTelescope<CR>", opt),
+u.keymap("n", "<C-b>", "<cmd>TodoTelescope<CR>", opt),
 -- カーソル下変数参照一覧を検索
-u.keymap("n", "gr", ":Telescope lsp_references<CR>", opt),
+u.keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opt),
 -- Git ブランチ一覧からチェックアウト
-u.keymap("n", "<S-g>b", ":Telescope git_branches<CR>", opt),
+u.keymap("n", "<S-g>b", "<cmd>Telescope git_branches<CR>", opt),
 -- docker container一覧
-u.keymap("n", "<C-d>c", ":Telescope docker containers theme=ivy<CR>"),
+u.keymap("n", "<C-d>c", "<cmd>Telescope docker containers theme=ivy<CR>"),
 -- docker image一覧
-u.keymap("n", "<C-d>i", ":Telescope docker images theme=ivy<CR>"),
+u.keymap("n", "<C-d>i", "<cmd>Telescope docker images theme=ivy<CR>"),
 -- docker compose一覧
-u.keymap("n", "<C-d>p", ":Telescope docker compose theme=ivy<CR>"),
+u.keymap("n", "<C-d>p", "<cmd>Telescope docker compose theme=ivy<CR>"),
 -- docker files一覧
-u.keymap("n", "<C-d>l", ":Telescope docker files theme=ivy<CR>"),
+u.keymap("n", "<C-d>l", "<cmd>Telescope docker files theme=ivy<CR>"),
+-- vim コマンド履歴一覧
+u.keymap("n", "<C-h>", "<cmd>Telescope command_history<CR>"),
 -- バッファー一覧
-u.keymap("n", "<F10>", ":Telescope buffers<CR>"),
+u.keymap("n", "<F10>", "<cmd>Telescope buffers show_all_buffers=true<CR>"),
 -- ブックマーク一覧
-u.keymap("n", "<C-<F10>>", ":Telescope vim_bookmarks all<CR>"),
+u.keymap("n", "<F34>", "<cmd>Telescope vim_bookmarks all<CR>"),
 -- アウトライン
-u.keymap("n", "<C-s>t", ":Telescope aerial theme=dropdown<CR>")
+u.keymap("n", "<C-s>t", "<cmd>Telescope aerial theme=dropdown<CR>"),
+-- keymap一覧
+u.keymap("n", "<C-k><C-m>", "<cmd>Telescope keymaps<CR>")
 )
 
