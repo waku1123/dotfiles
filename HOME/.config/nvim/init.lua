@@ -17,6 +17,7 @@ require("plugins.bufferline")
 
 require("plugins.telescope")
 require("plugins.treesitter")
+require("plugins.ufo")
 
 require("plugins.noice")
 require("plugins.fidget")

@@ -143,6 +143,8 @@ return packer.startup(function(use)
   ---------------
   -- 一括コメントアウト
   use "tpope/vim-commentary"
+  -- 折りたたみ
+  use { "kevinhwang91/nvim-ufo", requires = { "kevinhwang91/promise-async" } }
   -- 翻訳プラグイン
   use "voldikss/vim-translator"
   -- 括弧を自動で閉じるプラグイン
