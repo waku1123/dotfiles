@@ -143,6 +143,7 @@ return packer.startup(function(use)
   ---------------
   -- 一括コメントアウト
   use "tpope/vim-commentary"
+  use "luukvbaal/statuscol.nvim"
   -- 折りたたみ
   use { "kevinhwang91/nvim-ufo", requires = { "kevinhwang91/promise-async" } }
   -- 翻訳プラグイン
