@@ -15,7 +15,6 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
     local sufWidth = vim.fn.strdisplaywidth(suffix)
     local targetWidth = width - sufWidth
     local curWidth = 0
-    print("hoge")
     for _, chunk in ipairs(virtText) do
       local chunkText = chunk[1]
       local chunkWidth = vim.fn.strdisplaywidth(chunkText)
@@ -38,12 +37,12 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
   return newVirtText
 end
 
+vim.api.nvim_set_option("fillchars", [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]])
+vim.api.nvim_set_option("foldcolumn", "2")
+vim.api.nvim_set_option("foldlevel", 99)
+vim.api.nvim_set_option("foldlevelstart", 99)
+vim.api.nvim_set_option("foldenable", true)
 ufo.setup(
-  vim.api.nvim_set_option("fillchars", [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]),
-  vim.api.nvim_set_option("foldcolumn", "2"),
-  vim.api.nvim_set_option("foldlevel", 99),
-  vim.api.nvim_set_option("foldlevelstart", 99),
-  vim.api.nvim_set_option("foldenable", true),
   {
     open_fold_hl_timeout = 150,
     close_fold_kinds = { "imports", "comment" },
