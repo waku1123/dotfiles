@@ -15,13 +15,12 @@
 ## バッファ操作(buffer)
 左のバッファにフォーカス | <S-h>
 右のバッファにフォーカス | <S-l>
-バッファ一覧(Telescope) | <F10>
+バッファ一覧(Telescope) | <F5>
 選択したバッファをclose(Telescope) | (insert mode) <C-c>
 バッファを左に移動 | <Leader>h
 バッファを右に移動 | <Leader>l
 左側のバッファを全て閉じる | <C-S-h>
 右側のバッファを全て閉じる | <C-S-l>
-カーソル位置を折り畳みトグル | za
 全て折り畳み | zM
 全て展開 | zR
 折り畳み | zm
@@ -47,6 +46,18 @@ lazygitを表示 | <Leader>g
 コードフォーマット実行 | gf
 次のエラー箇所へジャンプ | gj
 前のエラー箇所へジャンプ | gk
+
+## Debugger
+UIを起動 | <Leader>d
+BreakPointをトグル | <Leader>b
+条件付きBreakPointをセット | <Leader>B
+ログ出力付きBreakPointをセット | <Leader>lp
+対話インタプリタを起動 | <Leader>dr
+直前の実行を再実行 | <Leader>dl
+コンティニュー | <F8>
+ステップオーバー | <F9>
+ステップイン | <F10>
+ステップアウト | <F7>
 
 ## Git
 git blameを表示 | <Leader>gb
@@ -112,7 +123,7 @@ keymap一覧 | <C-k><C-m>
 
 ## ブックマーク(Bookmark)
 ブックマークをトグル | mm
-ブックマーク一覧 | <C-<F10>>
+ブックマーク一覧 | <C-<F5>>
 
 ## 翻訳(translate)
 日本語に翻訳 | <C-t>j
