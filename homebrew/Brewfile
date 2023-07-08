@@ -13,8 +13,8 @@ tap "leoafarias/fvm"
 tap "universal-ctags/universal-ctags"
 tap "xwmx/taps"
 brew "xz"
-brew "coreutils"
 brew "openssl@3"
+brew "coreutils"
 brew "asdf"
 brew "sqlite"
 brew "awscli"
@@ -28,6 +28,7 @@ brew "csview"
 brew "curl"
 brew "dash", link: false
 brew "delta", link: false
+brew "direnv"
 brew "docker", link: false
 brew "exa"
 brew "fd"
@@ -110,7 +111,6 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keycastr"
 cask "ngrok"
-cask "notion"
 cask "obsidian"
 cask "postman"
 cask "raindropio"
@@ -126,12 +126,12 @@ cask "warp"
 cask "wezterm"
 cask "zulu11"
 mas "1Password for Safari", id: 1569813296
+mas "feedly", id: 865500966
 mas "FlipClock", id: 1181028777
 mas "GIPHY CAPTURE", id: 668208984
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Kindle", id: 405399194
 mas "LINE", id: 539883307
-mas "Notion Web Clipper", id: 1559269364
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Toggl Track", id: 1291898086
