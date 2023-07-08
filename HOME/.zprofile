@@ -133,3 +133,8 @@ export PATH="$HOME/PROJECTS/sugawarayss/ts_playground/node_modules/.bin:$PATH"
 
 typeset -U path cdpath fpath manpath # パスの重複登録を避ける
 
+##############
+# direnv     #
+##############
+export EFITOR="nvim"
+eval "$(direnv hook zsh)"

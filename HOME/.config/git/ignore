@@ -9,3 +9,4 @@ node_modules/
 .mypy_cache/
 __pycache__/
 .coverage
+.envrc
