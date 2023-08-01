@@ -10,11 +10,11 @@ export PATH="$PATH:$HOME/.local/bin:/usr/local/bin"
 ################
 # Apple Silicon用とIntel用homebrewにパスを通す
 if [[ $(uname -m) == "arm64" ]]; then
-  export BREWPATH="/opt/homebrew/bin"
+  export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/sbin:$PATH"
 else
-  export BREWPATH="/usr/local/bin"
+  export PATH="/usr/local/bin:$PATH"
 fi
-export PATH="$BREWPATH:$PATH"
 
 # homebrewでインストールしたpostgresは5433ポートに変更
 export PGPORT=5433
