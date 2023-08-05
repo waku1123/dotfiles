@@ -177,8 +177,10 @@ return packer.startup(function(use)
   --     sr    : (foo) → "foo"
   -- Neovim上で直接Gitに関する操作を行うプラグイン
   use "dinhhuy258/git.nvim"
-
+  --
+  use "which-key.nvim"
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
+  --
 end)
