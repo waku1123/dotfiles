@@ -55,11 +55,11 @@ nnoremap gt :action GotoTest<CR>
 " エディター (コード編集)        "
 """"""""""""""""""""""""""""""""""
 " ブックマークリストを表示
-nnoremap <F10> :action ShowBookmarks<CR>
+nnoremap <C-<F5>> :action ShowBookmarks<CR>
 " カーソル行でブックマークをトグル
 nnoremap mm :action ToggleBookmark<CR>
 " 次の分割グループへ移動
-nnoremap <S-l> :action NextSplitter<CR>
+nnoremap <S-h> :action NextSplitter<CR>
 " 前の分割グループへ移動
 nnoremap <S-h> :action PrevSplitter<CR>
 
