@@ -37,6 +37,7 @@ require("plugins.dap")
 
 require("plugins.nvim-surround")
 require("plugins.nvim-autopairs")
+require("plugins.hop")
 require("plugins.dial")
 require("plugins.aerial")
 require("plugins.csvtools")

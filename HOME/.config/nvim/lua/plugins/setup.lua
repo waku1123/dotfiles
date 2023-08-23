@@ -151,6 +151,8 @@ return packer.startup(function(use)
   -- 一括コメントアウト
   use "tpope/vim-commentary"
   use "luukvbaal/statuscol.nvim"
+  -- 少ないキー数で様々な場所に遷移できるモーションを提供
+  use {"phaazon/hop.nvim", branch = 'v2'}
   -- 折りたたみ
   use { "kevinhwang91/nvim-ufo", requires = { "kevinhwang91/promise-async" } }
   -- 翻訳プラグイン
