@@ -24,8 +24,6 @@ local sources = {
   }),
   -- Lua
   null_ls.builtins.formatting.stylua,
-  -- Rust
-  null_ls.builtins.formatting.rustfmt,
   -- Golang
   null_ls.builtins.formatting.gofumpt,
   null_ls.builtins.formatting.goimports,
