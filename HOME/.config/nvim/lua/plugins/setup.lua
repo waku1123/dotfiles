@@ -151,6 +151,9 @@ return packer.startup(function(use)
   -- 一括コメントアウト
   use "tpope/vim-commentary"
   use "luukvbaal/statuscol.nvim"
+  -- 日本語をローマ字で/で検索できる
+  use { "lambdalisue/kensaku.vim", requires = { "vim-denops/denops.vim" } }
+  use { "lambdalisue/kensaku-command.vim", requires = { "lambdalisue/kensaku.vim" } }
   -- 少ないキー数で様々な場所に遷移できるモーションを提供
   use {"phaazon/hop.nvim", branch = 'v2'}
   -- 折りたたみ
