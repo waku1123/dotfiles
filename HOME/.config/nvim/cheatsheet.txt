@@ -13,19 +13,27 @@
 隠しファイルを表示 | !
 
 ## バッファ操作(buffer)
-左のバッファにフォーカス | <S-h>
-右のバッファにフォーカス | <S-l>
-バッファ一覧(Telescope) | <F5>
-選択したバッファをclose(Telescope) | (insert mode) <C-c>
-バッファを左に移動 | <Leader>h
-バッファを右に移動 | <Leader>l
-左側のバッファを全て閉じる | <C-S-h>
-右側のバッファを全て閉じる | <C-S-l>
+左のbufferにfocus | sh
+右のbufferにfocus | sl
+上のbufferにfocus | sk
+下のbufferにfocus  | sj
+buffer一覧(Telescope) | <F5>
+選択したbufferをclose(Telescope) | (insert mode) <C-c>
+bufferを左に移動 | <Leader>h
+bufferを右に移動 | <Leader>l
+左側のbufferを全て閉じる | <C-S-h>
+右側のbufferを全て閉じる | <C-S-l>
 全て折り畳み | zM
 全て展開 | zR
 折り畳み | zm
 展開 | zr
 折り畳み箇所のプレビュー表示 | zn
+
+## 分割(split)
+垂直分割 | ss
+水平分割 | sv
+window の resize mode | <C-E>
+size調整 | h, j, k, l
 
 ## ターミナル(terminal)
 float windowで表示 | <C-t><C-t>

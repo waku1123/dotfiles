@@ -131,6 +131,9 @@ return packer.startup(function(use)
   use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
   -- スクロールバーを表示
   use { "petertriho/nvim-scrollbar", requires = "kevinhwang91/nvim-hlslens" }
+  -- ウィンドウサイズを調整できる
+  use { "simeji/winresizer" }
+
   --------------
   -- ファイラー
   ---------------
