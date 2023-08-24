@@ -49,8 +49,8 @@ lazygitを表示 | <Leader>g
 
 ## Debugger
 UIを起動 | <Leader>d
-BreakPointをトグル | <Leader>b
-条件付きBreakPointをセット | <Leader>B
+BreakPointをトグル | <M-b><M-b>
+条件付きBreakPointをセット | <M-S-b><M-S-b>
 ログ出力付きBreakPointをセット | <Leader>lp
 対話インタプリタを起動 | <Leader>dr
 直前の実行を再実行 | <Leader>dl
@@ -73,10 +73,10 @@ diffを閉じる | <Leader>gD
 ブランチ一覧からチェックアウト(Telescope) | <S-g>b : 'G'it 'b'ranch
 
 ## Docker
-コンテナ一覧(Telescope) | <C-d>c
-イメージ一覧(Telescope) | <C-d>i
-compose一覧(Telescope) | <C-d>p
-ファイル一覧(Telescope) | <C-d>l
+コンテナ一覧(Telescope) | <M-d><M-c>
+イメージ一覧(Telescope) | <M-d><M-i>
+compose一覧(Telescope) | <M-d><M-p>
+ファイル一覧(Telescope) | <M-d><M-l>
 
 ## TODO
 次のTODOへジャンプ | ;t
@@ -118,12 +118,12 @@ visualで選択状態の文字を<記号>囲む | (選択状態で) <S-s><記号
 プロジェクト内TODO検索 | <C-b>
 プレビューを上にスクロール | <C-u>
 プレビューを下にスクロール | <C-d>
-keymap一覧 | <C-k><C-m>
+keymap一覧 | <M-k><M-m>
 
 
 ## ブックマーク(Bookmark)
 ブックマークをトグル | mm
-ブックマーク一覧 | <C-<F5>>
+ブックマーク一覧 | <M-b>
 
 ## 翻訳(translate)
 日本語に翻訳 | <C-t>j
