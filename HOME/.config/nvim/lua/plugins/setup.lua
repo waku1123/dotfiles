@@ -133,6 +133,8 @@ return packer.startup(function(use)
   use { "petertriho/nvim-scrollbar", requires = "kevinhwang91/nvim-hlslens" }
   -- ウィンドウサイズを調整できる
   use { "simeji/winresizer" }
+  -- csv 操作を便利に
+  use { "mechatroner/rainbow_csv" }
 
   --------------
   -- ファイラー
