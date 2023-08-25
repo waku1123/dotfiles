@@ -188,8 +188,12 @@ return packer.startup(function(use)
   --     sr    : (foo) → "foo"
   -- Neovim上で直接Gitに関する操作を行うプラグイン
   use "dinhhuy258/git.nvim"
-  --
+  -- keybindのヒントをpopupで表示する
   use "folke/which-key.nvim"
+
+  --------------
+  -- 起動時に自動でプラグインを更新
+  ---------------
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
