@@ -82,7 +82,7 @@ require("telescope").setup({
   -- バッファー一覧
   u.keymap("n", "<F5>", "<cmd>Telescope buffers show_all_buffers=true<CR>"),
   -- ブックマーク一覧
-  u.keymap("n", "<M-b>", "<cmd>Telescope vim_bookmarks all<CR>"),
+  u.keymap("n", "<M-b><M-m>", "<cmd>Telescope vim_bookmarks all<CR>"),
   -- アウトライン
   u.keymap("n", "<M-o><M-l>", "<cmd>Telescope aerial theme=dropdown<CR>"),
   -- keymap一覧
