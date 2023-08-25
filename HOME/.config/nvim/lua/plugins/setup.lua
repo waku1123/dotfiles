@@ -160,6 +160,8 @@ return packer.startup(function(use)
   -- 日本語をローマ字で/で検索できる
   use { "lambdalisue/kensaku.vim", requires = { "vim-denops/denops.vim" } }
   use { "lambdalisue/kensaku-command.vim", requires = { "lambdalisue/kensaku.vim" } }
+  -- w/bモーションでの移動をスマートにする
+  use "kana/vim-smartword"
   -- 少ないキー数で様々な場所に遷移できるモーションを提供
   use {"phaazon/hop.nvim", branch = 'v2'}
   -- 折りたたみ
@@ -181,11 +183,6 @@ return packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end
   }
-  --  テキストを囲う操作を行えるようにするプラグイン
-  use "machakann/vim-sandwich"
-  --     saiw( : foo   → (foo)
-  --     sd    : (foo) → foo
-  --     sr    : (foo) → "foo"
   -- Neovim上で直接Gitに関する操作を行うプラグイン
   use "dinhhuy258/git.nvim"
   -- keybindのヒントをpopupで表示する
