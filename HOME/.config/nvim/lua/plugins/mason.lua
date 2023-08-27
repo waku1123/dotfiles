@@ -141,8 +141,6 @@ require("mason-lspconfig").setup_handlers({
         "eslint_d",
         -- lua
         "stylua",
-        -- Rust
-        "rustfmt",
         -- python
         "black",
         "isort",
