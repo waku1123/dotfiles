@@ -53,6 +53,7 @@ My dotfiles for MacOSX.
 | [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)                                               | カーソルジャンプを拡張                                         |
 | [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)         | display indentation guides                                     |
 | [lambdalisue/kensaku.vim](https://github.com/lambdalisue/kensaku.vim)                                 | インクリメンタルサーチで日本語をローマ字で検索                 |
+| [lambdalisue/kensaku-search.vim](https://github.com/lambdalisue/kensaku-search.vim/tree/main)         | /コマンドで日本語を検索できる                                  |
 | [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               | show function signature                                        |
 | [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)                                       | diaplay pictograms to completion list                          |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                             | enhance status line of Neovim                                  |
