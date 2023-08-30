@@ -4,11 +4,6 @@ local opt = { silent = true }
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 require("telescope").setup(
-  require("telescope").load_extension("ui-select"),
-  require("telescope").load_extension("noice"),
-  require("telescope").load_extension("docker"),
-  require("telescope").load_extension("aerial"),
-  require("telescope").load_extension("vim_bookmarks"),
   {
     defaults = {
       vimgrep_arguments = {
@@ -83,6 +78,11 @@ require("telescope").setup(
       },
     },
   },
+  require("telescope").load_extension("ui-select"),
+  require("telescope").load_extension("noice"),
+  require("telescope").load_extension("docker"),
+  require("telescope").load_extension("aerial"),
+  require("telescope").load_extension("vim_bookmarks"),
   -- 曖昧ファイル名検索
   u.keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opt),
   -- 曖昧ファイル内文字列検索
