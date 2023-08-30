@@ -83,6 +83,10 @@ require("telescope").setup(
   require("telescope").load_extension("docker"),
   require("telescope").load_extension("aerial"),
   require("telescope").load_extension("vim_bookmarks"),
+  vim.api.nvim_set_hl(0, "FloatBorder", {bg="#313244"}),
+  vim.api.nvim_set_hl(0, "NormalFloat", {bg="#313244"}),
+  vim.api.nvim_set_hl(0, "TelescopeNormal", {bg="#313244", fg="#94E2D5"}),
+  vim.api.nvim_set_hl(0, "TelescopeBorder", {bg="#313244", fg="#94E2D5"}),
   -- 曖昧ファイル名検索
   u.keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opt),
   -- 曖昧ファイル内文字列検索
