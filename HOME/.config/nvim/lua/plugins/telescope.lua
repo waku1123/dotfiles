@@ -1,9 +1,15 @@
+local telescope_ok, telescope = pcall(require, "telescope")
+if not telescope_ok then
+  return
+end
+
+
 local u = require("utils")
 local opt = { silent = true }
 -- Telescope
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
-require("telescope").setup(
+telescope.setup(
   {
     defaults = {
       vimgrep_arguments = {
