@@ -145,16 +145,17 @@ return packer.startup(function(use)
   --------------
   -- ファイラー
   ---------------
-  -- ファイラープラグイン
-  use "lambdalisue/fern.vim"
-  -- フォント
-  use "lambdalisue/nerdfont.vim"
-  -- ファイラーでNerdFontを使用できるようにする
-  use "lambdalisue/fern-renderer-nerdfont.vim"
-  -- ファイラーにgitステータスを表示する
-  use "lambdalisue/fern-git-status.vim"
-  -- ファイラーでファイルのプレビューを表示する
-  use "yuki-yano/fern-preview.vim"
+  use { "nvim-tree/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }
+  -- -- ファイラープラグイン
+  -- use "lambdalisue/fern.vim"
+  -- -- フォント
+  -- use "lambdalisue/nerdfont.vim"
+  -- -- ファイラーでNerdFontを使用できるようにする
+  -- use "lambdalisue/fern-renderer-nerdfont.vim"
+  -- -- ファイラーにgitステータスを表示する
+  -- use "lambdalisue/fern-git-status.vim"
+  -- -- ファイラーでファイルのプレビューを表示する
+  -- use "yuki-yano/fern-preview.vim"
 
   --------------
   -- Edit
