@@ -136,5 +136,5 @@ typeset -U path cdpath fpath manpath # パスの重複登録を避ける
 ##############
 # direnv     #
 ##############
-export EFITOR="nvim"
+export EDITOR="nvim"
 eval "$(direnv hook zsh)"
