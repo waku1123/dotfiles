@@ -61,14 +61,20 @@ git:
 	@echo "git commit_template deploy --- start"
 	$(call file-exist, $(HOME)/${COMMIT_TEMPLATE})
 	ln -s ${PROJECT_DIR}/HOME/${CONFIG_DIR}/git/${COMMIT_TEMPLATE} $(HOME)/${CONFIG_DIR}/git/${COMMIT_TEMPLATE}
-	git config --global commit.template $(HOME)/${CONFIG_DIR}/git/${COMMIT_TEMPLATE}
 	ls -l ~/${CONFIG_DIR}/git/${COMMIT_TEMPLATE}
+	git config --global commit.template $(HOME)/${CONFIG_DIR}/git/${COMMIT_TEMPLATE}
 	@echo "git commit_template deploy --- finished"
+
+	@echo "git global config deploy --- start"
+	ln -s ${PROJECT_DIR}/HOME/.gitconfig ${HOME}/.gitconfig
+	@echo "git global config deploy --- finished"
 
 vim:
 	@echo "nvim settings deploy --- start"
 	$(call dir-exist $(HOME)/${NVIM_DIR})
 	ln -s ${PROJECT_DIR}/HOME/${CONFIG_DIR}/nvim $(HOME)/${CONFIG_DIR}/nvim
+	ln -s ${PROJECT_DIR}/HOME/skkeleton/dictionary $(HOME)/.skk
+	ln -s ${PROJECT_DIR}/HOME/skkeleton/my_dictionay $(HOME)/.skkeleton
 	@echo "nvim settings deploy --- finished"
 
 brew_restore:
