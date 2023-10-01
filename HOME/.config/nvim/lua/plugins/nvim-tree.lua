@@ -32,7 +32,7 @@ local function my_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set("n", "l", edit_or_open, opt("edit or open"))
-  vim.keymap.set("n", "h", api.tree.close, opt("close"))
+  vim.keymap.set("n", "h", api.tree.collapse_all, opt("close"))
   vim.keymap.set("n", "<C-v>", api.node.open.vertical, opt("open vertical"))
   vim.keymap.set("n", "<C-s>", api.node.open.horizontal, opt("open split"))
   vim.keymap.set("n", "<C-p>", api.node.open.preview, opt("open preview"))
