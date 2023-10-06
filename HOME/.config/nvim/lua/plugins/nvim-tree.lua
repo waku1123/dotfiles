@@ -66,15 +66,17 @@ nvim_tree.setup({
     },
   },
   view = {
-    -- number = true,
-    -- width = 50,
-    float = {
-      enable = true,
-      open_win_config = {
-        width = 50,
-        height = 70,
-      },
-    }
+    -- windowで表示
+    number = true,
+    width = 50,
+    -- floating windowで表示
+    -- float = {
+    --   enable = true,
+    --   open_win_config = {
+    --     width = 50,
+    --     height = 70,
+    --   },
+    -- }
   },
 },
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "nvim-tree: toggle" })
