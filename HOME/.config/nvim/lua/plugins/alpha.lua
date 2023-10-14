@@ -184,7 +184,7 @@ end
 
 local function lineToStartWhite(lines)
   local out = {}
-  for i, line in ipairs(lines) do
+  for _, line in ipairs(lines) do
     table.insert(out, { hi = "StartLogo" .. 0, line = line })
   end
   return out
@@ -227,7 +227,7 @@ end
 
 local function header_color()
   local lines = {}
-  for i, lineConfig in pairs(header_chars()) do
+  for _, lineConfig in pairs(header_chars()) do
     local hi = lineConfig.hi
     local line_chars = lineConfig.line
     local line = {
