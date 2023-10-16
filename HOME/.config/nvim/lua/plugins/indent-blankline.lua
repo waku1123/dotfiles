@@ -1,6 +1,8 @@
 -- インデントを可視化するプラグイン
 return {
   "lukas-reineke/indent-blankline.nvim",
+  lazy = true,
+  event = { "BufReadPre" },
   config = function()
     vim.opt.list = true
     vim.opt.listchars:append "space:⋅"
