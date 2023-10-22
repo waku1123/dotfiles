@@ -20,14 +20,14 @@ return {
           end
           end,
           float_opts = {
-          border = "curved",
-          winblend = 20,
+            border = "curved",
+            winblend = 20,
           },
           winbar = {
-          enabled = true,
-          name_formatter = function(term)
-              return term.name
-          end
+            enabled = true,
+            name_formatter = function(term)
+                return term.name
+            end
           },
       }
     )
