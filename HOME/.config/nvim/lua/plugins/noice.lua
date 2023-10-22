@@ -47,7 +47,7 @@ return {
       },
       presets = {
         bottom_search = false,
-        command_palette = false,
+        command_palette = true,
         long_message_to_split = false,
         inc_rename = false,
         lsp_doc_border = true,
@@ -55,17 +55,17 @@ return {
       views = {
         notify = {
           win_options = {
-            winblend = 0,
+            winblend = 10,
           }
         },
         cmdline = {
           win_options = {
-            winblend = 0,
+            winblend = 10,
           }
         },
         cmdline_popup = {
           win_options = {
-            winblend = 0,
+            winblend = 10,
           },
           position = {
             row = "30",
