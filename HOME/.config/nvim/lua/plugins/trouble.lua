@@ -1,5 +1,5 @@
 return {
-  "olke/trouble.nvim",
+  "folke/trouble.nvim",
   lazy = true,
   dependencies = {
     "kyazdani42/nvim-web-devicons",
