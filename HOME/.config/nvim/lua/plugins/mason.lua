@@ -177,7 +177,7 @@ return {
             automatic_installation = true,
             ensure_installed = {
               -- JS/TS
-              "prittiered",
+              "prettier",
               "eslint_d",
               -- lua
               "stylua",
