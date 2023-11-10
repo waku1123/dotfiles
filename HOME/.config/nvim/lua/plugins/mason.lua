@@ -102,8 +102,6 @@ return {
           "lua_ls",
           -- deno
           "denols",
-          -- eslint
-          "eslint",
           -- php
           "intelephense",
           -- kotlin
@@ -142,11 +140,6 @@ return {
           end
 
           if server == "tsserver" then
-            if not is_node_repo then
-              return
-            end
-            opt.root_dir = node_root_dir
-          elseif server == "eslint" then
             if not is_node_repo then
               return
             end
