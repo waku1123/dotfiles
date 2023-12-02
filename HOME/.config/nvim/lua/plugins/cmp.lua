@@ -1,4 +1,4 @@
-
+-- 自動補完プラグイン
 return {
   {
     "hrsh7th/nvim-cmp",

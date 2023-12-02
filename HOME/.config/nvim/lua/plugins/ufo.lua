@@ -1,3 +1,4 @@
+-- コード折り畳みプラグイン
 local ftMap = {
   vim = "indent",
   python = { "indent" },

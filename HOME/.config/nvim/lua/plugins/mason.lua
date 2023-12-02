@@ -1,3 +1,4 @@
+-- LSPを管理するプラグイン
 local my_on_attach = function(client, bufnr)
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   local opts = { noremap = true, silent = false }
