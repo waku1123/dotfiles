@@ -90,13 +90,14 @@ noremap so :action MoveEditorToOppositeTabGroup<CR>
 """"""""""""""""""""""""""""""""""
 
 " easymotion plugin
+Plug easymotion/vim-easymotion
 set easymotion
 " デフォルトのキーマップを無効化
 let g:EasyMotion_do_mapping = 0
 " 大文字小文字を区別しない
 let g:EasyMotion_smartcase = 1
 
-map <Leader> <Plug>(easymotion-prefix)
+nmap <Leader> <Plug>(easymotion-prefix)
 " カーソル以降の単語の先頭にジャンプ
 nmap <Leader>w <Plug>(easymotion-wl)
 " カーソル以前の単語の先頭にジャンプ
@@ -106,11 +107,12 @@ nmap <Leader>e <Plug>(easymotion-el)
 " カーソル以前の単語の末尾にジャンプ
 nmap <Leader>ge <Plug>(easymotion-ge)
 " カーソル以降の行の先頭にジャンプ
-map <Leader>j <Plug>(easymotion-j)
+nmap <Leader>j <Plug>(easymotion-j)
 " カーソル以前の行の先頭にジャンプ
-map <Leader>k <Plug>(easymotion-k)
+nmap <Leader>k <lug>(easymotion-k)
 
 " which-key plugin
+" NOTE: install by plugin marketplace
 set which-key
 " disable the timeout option
 set notimeout
