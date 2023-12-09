@@ -29,7 +29,6 @@ nnoremap ,g :action FindInPath<CR>
 nnoremap ,r :action RecentFiles<CR>
 " 呼び出し階層一覧viewを表示
 nnoremap ,c :action CallHierarchy<CR>
-eap <Space><Space> :<C-u>acton AceAction<CR>
 " 水平分割
 nnoremap <C-s> :action MoveTabDown<CR>
 " 垂直分割
