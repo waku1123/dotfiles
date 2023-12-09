@@ -47,7 +47,7 @@ nnoremap gi :action GotoImplementation<CR>
 " 曖昧ファイル検索
 nnoremap gf :action GotoFile<CR>
 " 直近の変更箇所へジャンプ
-nnoremap gb :acton JumpToLastChange<CR>
+nnoremap gb :action JumpToLastChange<CR>
 " 呼び出し箇所一覧をあいまい検索
 nnoremap gr :action ShowUsages<CR>
 " 呼び出し箇所を検索
