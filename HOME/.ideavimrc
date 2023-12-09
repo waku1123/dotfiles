@@ -109,3 +109,9 @@ nmap <Leader>ge <Plug>(easymotion-ge)
 map <Leader>j <Plug>(easymotion-j)
 " カーソル以前の行の先頭にジャンプ
 map <Leader>k <Plug>(easymotion-k)
+
+" which-key plugin
+set which-key
+" disable the timeout option
+set notimeout
+"
