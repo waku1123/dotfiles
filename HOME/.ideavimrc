@@ -59,7 +59,7 @@ nnoremap gt :action GotoTest<CR>
 " エディター (コード編集)        "
 """"""""""""""""""""""""""""""""""
 " ブックマークリストを表示
-nnoremap <C-<F5>> :action ShowBookmarks<CR>
+nnoremap <C-b><C-m> :action ShowBookmarks<CR>
 " カーソル行でブックマークをトグル
 nnoremap mm :action ToggleBookmark<CR>
 " 次の分割グループへ移動
