@@ -116,4 +116,7 @@ nmap <Leader>k <lug>(easymotion-k)
 set which-key
 " disable the timeout option
 set notimeout
-"
+
+" surround plugin
+Plug tpope/vim-surround
+set surround
