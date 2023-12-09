@@ -89,7 +89,7 @@ noremap so :action MoveEditorToOppositeTabGroup<CR>
 " IdeaVim Plugin
 """"""""""""""""""""""""""""""""""
 
-" easymotion
+" easymotion plugin
 set easymotion
 " デフォルトのキーマップを無効化
 let g:EasyMotion_do_mapping = 0
