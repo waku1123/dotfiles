@@ -38,7 +38,7 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = true,
-    event = { "VimEnter" },
+    event = { "LspAttach" },
     build = ":MasonUpdate",
     config = function()
       require("mason").setup({
@@ -54,7 +54,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = true,
-    event = { "VimEnter" },
+    event = { "LspAttach" },
     dependencies = {
       { "jay-babu/mason-null-ls.nvim", dependencies = "jose-elias-alvarez/null-ls.nvim" },
       { "neovim/nvim-lspconfig"},
@@ -64,7 +64,7 @@ return {
       -- LSP handlers
       vim.lsp.handlers["textDocument/publishDiagnostics"] =
       vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
+      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(require("noice.lsp.hover").on_hover, { border = "double" })
 
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup({
