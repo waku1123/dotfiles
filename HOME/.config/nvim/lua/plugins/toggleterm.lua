@@ -4,6 +4,8 @@ return {
   version = '*',
   keys = {
     {"<c-t><c-m>", ":ToggleTerm direction=float<CR>", mode = "n", desc = "Toggle Terminal as float Window"},
+    {"<c-t><c-v>", ":ToggleTerm direction=vertical<CR>", mode = "n", desc = "Toggle Terminal as float Window"},
+    {"<c-t><c-h>", ":ToggleTerm direction=horizontal<CR>", mode = "n", desc = "Toggle Terminal as float Window"},
     {"<c-t><c-m>", "<c-\\><c-n>:ToggleTerm<CR>", mode = "t", desc = "Close Terminal"},
     {"<leader>g", "<cmd>lua _lazygit_toggle()<cr>", mode = "n", desc = "Toggle Lazygit"},
   },
