@@ -12,7 +12,7 @@ return {
   config = function()
     require("toggleterm").setup(
       {
-          size = function(term)
+        size = function(term)
           if term.direction == "horizontal" then
               return 15
           elseif term.direction == "vertical" then
@@ -20,17 +20,18 @@ return {
           else
               return 20
           end
-          end,
-          float_opts = {
-          border = "curved",
-          winblend = 20,
-          },
-          winbar = {
-          enabled = true,
-          name_formatter = function(term)
-              return term.name
-          end
-          },
+        end,
+        dicrection = "float",
+        float_opts = {
+        border = "curved",
+        winblend = 20,
+        },
+        winbar = {
+        enabled = true,
+        name_formatter = function(term)
+            return term.name
+        end
+        },
       }
     )
     local Terminal = require("toggleterm.terminal").Terminal
