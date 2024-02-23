@@ -42,9 +42,9 @@ return {
   lazy = true,
   event = "VeryLazy",
   keys = {
-    { "zr", function() require('ufo').openAllFolds() end, mode = "n" },
-    { "zm", function() require('ufo').closeAllFolds() end, mode = "n" },
-    { "zn", function() require('ufo').peekFoldedLinesUnderCursor() end, mode = "n" },
+    { "zr", function() require('ufo').openAllFolds() end, mode = "n", desc = "Open All folds" },
+    { "zm", function() require('ufo').closeAllFolds() end, mode = "n", desc = "Close All folds" },
+    { "zn", function() require('ufo').peekFoldedLinesUnderCursor() end, mode = "n", desc = "Preview Folded Lines at Under Cursor" },
   },
   config = function()
     vim.api.nvim_set_option("fillchars", [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]])
