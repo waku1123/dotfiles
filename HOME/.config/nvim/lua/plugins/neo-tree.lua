@@ -19,7 +19,7 @@ return {
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
-          hide_hidden = false, -- only worked on Windows
+          hide_hidden = false, -- only workd on Windows
         },
         follow_current_file = {
           enabled = true, -- focus があるbufferに追従する
