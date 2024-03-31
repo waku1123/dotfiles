@@ -4,6 +4,7 @@ return {
   lazy = true,
   dependencies = {
     "mfussenegger/nvim-dap",
+    "nvim-neotest/nvim-nio",
     "mfussenegger/nvim-dap-python",
   },
   -- pythonファイルを開いた時にloadする
