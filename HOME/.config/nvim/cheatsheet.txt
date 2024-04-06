@@ -191,11 +191,11 @@ New Window | <⌘-n>
 Toggle Fullscreen | <A-Enter>
 Quit Wezterm | <⌘-q>
 Reload Configuration | <⌘-r>
-Show Command Palette | <S-C-p>
+Show Command Palette | F1
 Quick Select Mode | <S-C-Space>
 Search Mode | <⌘-f>
-Copy Mode | <S-C-c>
-Debug Overlay | <S-A-d>
+Copy Mode | F4
+Debug Overlay | F12
 
 ## Wezterm-Tab @wezterm @tab
 New Tab | <⌘-t>

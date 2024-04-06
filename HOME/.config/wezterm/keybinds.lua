@@ -11,14 +11,14 @@ return {
     { key = 'q', mods = 'SUPER', action = act.QuitApplication },
     -- Weztermの設定をロード
     { key = 'r', mods = 'SUPER', action = act.ReloadConfiguration },
-    -- コマンドパレットを表示
-    { key = 'p', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
     -- クイックセレクトモード
     { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
     -- コピーモードを開始
-    { key = 'c', mods = 'SHIFT|CTRL', action = act.ActivateCopyMode },
+    { key = 'F4', mods = 'NONE', action = act.ActivateCopyMode },
+    -- コマンドパレットを表示
+    { key = 'F1', mods = 'NONE', action = act.ActivateCommandPalette },
     -- デバッグ情報を表示
-    { key = 'd', mods = 'SHIFT|ALT', action = act.ShowDebugOverlay },
+    { key = 'F12', mods = 'NONE', action = act.ShowDebugOverlay },
 
     ----------------
     -- タブ操作   --
