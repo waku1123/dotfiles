@@ -44,10 +44,11 @@ end)
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
+config.enable_scroll_bar = true
+config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 -- Color Theme -- NOTE: see all themes https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
--- config.color_scheme = 'Catppuccin Macchiato'
-config.color_scheme = 'Catppuccin Frappe'
+config.color_scheme = 'Hybrid'
 -- Background Opacity
 config.window_background_opacity = 0.93
 -- Font
