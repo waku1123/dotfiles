@@ -10,7 +10,7 @@ config.enable_scroll_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 -- Color Theme
--- NOTE: see all themes at https://wezfurlong.org/wezterm/colorschemes/index.html
+-- NOTE: see all themes https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = 'Hybrid'
 config.foreground_text_hsb = {
   hue = 1.0,
@@ -35,5 +35,21 @@ local keybind = require 'keybinds'
 -- keybinds configuration
 config.keys = keybind.keys
 config.key_tables = keybind.key_tables
+
+config.background = {
+  {
+    source = {
+      File = wezterm.config_dir .. '/bgimage/rain.jpg'
+    },
+    vertical_align = 'Middle',
+    horizontal_align = 'Center',
+    hsb = {
+      hue = 0.05,
+      saturation = 0.05,
+      brightness = 0.05
+    },
+    opacity = 0.85
+  }
+}
 
 return config
