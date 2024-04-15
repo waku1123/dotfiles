@@ -27,7 +27,7 @@ local my_on_attach = function(client, bufnr)
 end
 
 -- エラーアイコンの変更
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+local signs = { Error = "⛔", Warn = "⚠️", Hint = "💬", Info = "ℹ️" }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
