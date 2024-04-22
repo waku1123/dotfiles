@@ -7,10 +7,6 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       "lpoto/telescope-docker.nvim",
-      {
-        "tom-anders/telescope-vim-bookmarks.nvim",
-        dependencies = {"MattesGroeger/vim-bookmarks"}
-      },
       "stevearc/aerial.nvim",
       {
         "danielfalk/smart-open.nvim",
@@ -28,7 +24,7 @@ return {
       {"<C-p>", "<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", mode = "n", opt, desc = "Show Fuzzy Finder by FileName"},
       {"<C-g>", "<cmd>Telescope live_grep hidden=true<CR>", mode = "n", opt, desc = "Show Fuzzy Finder by LiveGrep"},
       {"<C-s>", "<cmd>Telescope smart_open<CR>", mode = "n", opt, desc = "Smart Search"},
-      {"<C-t><C-d>", "<cmd>TodoTelescope<CR>", mode = "n", opt, desc = "Show Fuzzy Finder by ToDo Comment"},
+      {"<C-t><C-d>", "<cmd>TodoTelescope keywords=TODO,FIXME,WARN<CR>", mode = "n", opt, desc = "Show Fuzzy Finder by ToDo Comment"},
       {"gr", "<cmd>Telescope lsp_references<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of References"},
       {"<M-g><M-b>", "<cmd>Telescope git_branches<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Git Branch"},
       {"<M-d><M-c>", "<cmd>Telescope docker containers theme=ivy<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Docker Containers"},
@@ -37,7 +33,7 @@ return {
       {"<M-d><M-l>", "<cmd>Telescope docker files theme=ivy<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Dockerfile"},
       {"<C-c><C-h>", "<cmd>Telescope command_history<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Command History"},
       {"<F5>", "<cmd>Telescope buffers show_all_buffers=true<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Buffers"},
-      {"<C-b><C-m>", "<cmd>Telescope vim_bookmarks all<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Bookmarks"},
+      {"<C-b><C-m>", "<cmd>Telescope bookmarks list<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Bookmarks"},
       {"<C-k><C-m>", "<cmd>Telescope keymaps<CR>", mode = "n", opt, desc = "Show Fuzzy Finder of Keymaps"},
     },
     config = function()
@@ -132,7 +128,7 @@ return {
       telescope.load_extension("noice")
       telescope.load_extension("docker")
       telescope.load_extension("aerial")
-      telescope.load_extension("vim_bookmarks")
+      telescope.load_extension("bookmarks")
       telescope.load_extension("smart_open")
       local color_palette = require("hybrid.colors").setup()
       vim.api.nvim_set_hl(0, "FloatBorder", {bg=color_palette.bg_hard, fg=color_palette.dull_cyan})
