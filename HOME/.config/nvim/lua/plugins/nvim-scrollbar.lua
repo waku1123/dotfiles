@@ -20,6 +20,7 @@ return {
           Misc = { color = color_palette.bright_magenta }, -- "#c397d8"
         },
         handlers = {
+          gitsigns = true,
           search = true
         }
       })
@@ -28,10 +29,12 @@ return {
 -- 検索結果をvirtual textで表示するプラグイン
   {
     "kevinhwang91/nvim-hlslens",
+    enabled = true,
     lazy = true,
     event = { "BufReadPre" },
     config = function()
       require("hlslens").setup({
+        -- 検索結果に対してvirtual text (例[▼ 1/5] )を表示する設定
         override_lens = function(render, posList, nearest, idx, relIdx)
           local sfw = vim.v.searchforward == 1
           local indicator, text, chunks
@@ -52,12 +55,16 @@ return {
             else
               text = ('[%d/%d]'):format(idx, cnt)
             end
-            chunks = {{" ", "Ignore"}, {text, "HLSearchLensNear"}}
+            chunks = {{" "}, {text, "HLSearchLensNear"}}
           else
             text = ('[%s %d]'):format(indicator, idx)
-            chunks = {{' ', 'Ignore'}, {text, 'HLSearchLens'}}
+            chunks = {{' '}, {text, 'HLSearchLens'}}
           end
           render.setVirt(0, lnum - 1, col - 1, chunks, nearest)
+        end,
+        -- nvim-scrollbar に検索位置を表示する設定
+        build_position_cb = function(plist, _, _, _)
+          require("scrollbar.handlers.search").handler.show(plist.start_pos)
         end
       })
     end
