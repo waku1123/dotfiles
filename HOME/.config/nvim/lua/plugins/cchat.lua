@@ -23,12 +23,68 @@ return {
   branch = "canary",
   lazy = false,
   dependencies = {
-    { "github/copilot.vim" },
+    { "zbirenbaum/copilot.lua" },
     { "nvim-lua/plenary.nvim" },
   },
   keys = {
     -- Toggle CopilotChat
-    { "<Leader>cco", "<Cmd>CopilotChatToggle<CR>", mode = {"n", "v"}, desc = "CopilotChat - Toggle" },
+    {
+      "<Leader>cco",
+      function()
+        local chat = require("CopilotChat")
+        chat.toggle({
+          window = {
+            layout = 'float',
+            relative = 'cursor',
+            border = 'double',
+            width = 1,
+            height = 0.4,
+            title = 'Copilot Chat',
+            footer = nil,
+            row = 1,
+            zindex = 1000,
+          },
+        })
+      end,
+      mode = { "n", "v" },
+      desc = "CopilotChat - Toggle as float window" 
+    },
+    {
+      "<Leader>ccb",
+      function()
+        local chat = require("CopilotChat")
+        chat.toggle({
+          window = {
+            layout = 'horizontal',
+            relative = 'win',
+            border = 'double',
+            title = 'Copilot Chat',
+            footer = nil,
+          },
+        })
+      end,
+      mode = { "n", "v" },
+      desc = "CopilotChat - Toggle as bottom window" 
+    },
+    {
+      "<Leader>ccn",
+      function()
+        local chat = require("CopilotChat")
+        chat.toggle({
+          window = {
+            layout = "float",
+            relative = "editor",
+            border = "double",
+            width = 1,
+            height = 0.4,
+            title = "Copilot Chat",
+            footer = nil,
+          },
+        })
+      end,
+      mode = { "n", "v" },
+      desc = "CopilotChat - Open New Prompt"
+    },
     -- Quick Chat Key Mapping
     {
       "<Leader>ccq",
@@ -56,8 +112,8 @@ return {
       mode = {"n", "v"},
       desc = "CopilotChat - Prompt Actions"
     },
+    { "<Leader>ccs", "<Cmd>CopilotChatStop<CR>", mode = { "n", "v" }, desc = "CopilotChat - Stop Output" }
   },
-  opts = {},
   config = function()
     -- vim.api.nvim_set_keymap('n', '<Leader>ccc', ':lua disable_review_on_current_line()<CR>', { noremap = true, silent = true })
     local select = require("CopilotChat.select")
@@ -136,12 +192,12 @@ return {
       auto_follow_cursor = true,
       auto_insert_mode = false,
       clear_chat_on_new_prompt = false,
-      context = nil,
+      context = 'buffers',
       history_path = vim.fn.stdpath('data') .. '/copilotchat_history',
       callback = nil,
       window = {
-        layout = 'float',
-        relative = 'cursor',
+        layout = 'horizontal',
+        relative = 'win',
         border = 'double',
         width = 1,
         height = 0.4,
