@@ -11,7 +11,7 @@ return {
         delay_ms = 0,
         inc_ms = 10,
         blend = 80,
-        width = 20,
+        width = 40,
         winhl = "Pmenu",
         -- Faders:
         -- sinus_fader  ⌣/⌢\⌣/⌢\⌣/⌢\⌣/⌢
