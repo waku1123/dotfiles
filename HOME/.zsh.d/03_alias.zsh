@@ -1,3 +1,6 @@
+#########
+# Alias #
+#########
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   alias phis='peco-select-history'
   alias pcdr='peco-cdr'
@@ -19,15 +22,15 @@ if type "bat" > /dev/null 2>&1; then
   alias catl='(){bat $1 -l $(bat -L | gum filter | cut -d ":" -f 1)}'
 fi
 
-# lsをezaで上書き
-if type "eza" > /dev/null 2>&1; then
+# lsをlsdで上書き
+if type "lsd" > /dev/null 2>&1; then
   alias oldls="/bin/ls"
-  alias ls='eza -@ --git'
-  alias la='eza --long --all --header --created --modified --bytes --icons --git --time-style=long-iso --group-directories-first'
-  alias ll='eza --long --header --created --modified --bytes --icons --git --time-style=long-iso --group-directories-first'
-  alias lla="eza --long --all --header --created --modified --bytes --icons --git --time-style=long-iso --group-directories-first"
-  alias lt="eza -T --icons"
-  alias ld="eza --long --only-dirs --header --created --modified --bytes --icons --git --time-style=long-iso --group-directories-first"
+  alias ls='lsd --git'
+  alias la='lsd --all --header --size bytes --git --group-directories-first'
+  alias ll='lsd --long --header --size bytes --git --group-directories-first'
+  alias lla='lsd --long --all --header --size bytes --git --group-directories-first'
+  alias lt="lsd --tree"
+  alias ld="lsd --directory-only --tree --icon never"
 else
   alias ls="ls -Gh"
   alias la="ls -aGh"
@@ -73,19 +76,34 @@ fi
 alias lsusb="system_profiler SPUSBDataType"
 
 # docker系のalias
-# pecoを使って調べたdockerコンテナに入る
-alias de='docker exec -it $(docker ps | gum filter --prompt="SELECT CONTAINER YOU WANT INTO >" | cut -d " " -f 1) /bin/bash'
+if type "docker" > /dev/null 2>&1; then
+  # gum chooseを使って調べたdockerコンテナに入る
+  alias de='docker exec -it $(docker ps | gum choose --header="Choose Container" | cut -d " " -f 1) /bin/bash'
+
+  # 選択したコンテナを削除する
+  alias drm='docker rm $(docker ps | gum choose --header="Choose Delete Container" | cut -d " " -f 1)'
+  # 選択したdocker imageを削除する
+  alias drmi='docker rm $(docker images -a | gum choose --header="Choose Delete Image" | cut -d " " -f 8)'
+  # 選択したdocker volumeを削除する
+  alias dvrm='docker volume rm $(docker volume ls | gum choose --header="Choose Delete Volume" | cut -d " " -f 6)'
+fi
 
 # Git/Github系のalias
-# ローカルにあるgitリポジトリを選択してpathに移動
-alias repo='cd $(ghq list -p | gum filter --no-fuzzy --prompt="SELECT REPOSITORY >")'
-# 選択したリモートリポジトリをGithubで開く
-alias remote='$(hub browse $(ghq list | gum filter --no-fuzzy --value=$(basename $(pwd)) --prompt="SELECT REPOSITORY >"))'
+if type "ghq" > /dev/null 2>&1; then
+  # ローカルにあるgitリポジトリを選択してpathに移動
+  alias repo='cd $(ghq list -p | gum filter --no-fuzzy --prompt="SELECT REPOSITORY >")'
+fi
+
+if type "hub" > /dev/null 2>&1; then
+  # 選択したリモートリポジトリをGithubで開く
+  alias remote='$(hub browse $(ghq list | gum filter --no-fuzzy --value=$(basename $(pwd)) --prompt="SELECT REPOSITORY >"))'
+fi
 
 # AWS CLI系のalias
 alias profiles='aws configure list-profiles'
 # aws cliでprofileを楽に指定する
 alias -g lp='$(aws configure list-profiles | gum filter --prompt="AWS PROFILE >")'
+
 alias tailcwlog='tail-cloudwatch-log'
 alias scan='scan-dynamodb-table'
 alias lss3='file-list-s3'
@@ -96,3 +114,12 @@ alias gcswpj="gx"
 
 # adb系のalias
 alias -g dv='$(adb devices | tail -n +2 | gum filter --prompt="SELECT SIRIAL NO >" | head -n 1 | sd "\s+\w+$" "")'
+
+# kiconia works - kobashi project で使用するlocalstack のalias
+alias -g localstackendpoint='$(echo "--endpoint-url=http://s3.localhost.localstack.cloud:4566")'
+
+# xsv でcsv を扱えるように
+if type "xsv" > /dev/null 2>&1; then
+  alias csv='xsv'
+  alias csvheader='xsv headers'
+fi
