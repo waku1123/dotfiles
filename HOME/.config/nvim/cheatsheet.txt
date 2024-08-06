@@ -24,7 +24,7 @@ Prev source          | <
 Next source          | >
 Show file details    | i
 
-## Mason
+## Mason @lsp
 Install Package      | i
 Uninstall Package    | X
 Update Package       | u
@@ -50,7 +50,7 @@ Show Prompt Actions with Telescope | <Leader>ccp
 Stop Output                        | <Leader>ccs
 
 
-## BufferEdit
+## BufferEdit @buffer
 Focus Left Buffer       | sh
 Focus Right Buffer      | sl
 Focus upper Buffer      | sk
@@ -84,7 +84,7 @@ Display terminal as float window    | <C-t><C-t>
 Display terminal as vertical window | <C-t><C-v>
 Display lazygit as float window     | <Leader>g
 
-## LSP
+## LSP @lsp
 back                              | <C-o>
 Display variable information      | <S-k>
 Jump to definition                | gd
@@ -100,7 +100,7 @@ Jump to Next error                | gj
 Jump to prev error                | gk
 
 ## Debugger
-Display dap-ui                 | <Leader>d
+Display dap-ui                 | <Leader>db
 Toggle breakPoint              | <M-b><M-b>
 Set breakpoint with condition  | <M-S-b><M-S-b>
 Set breakpoint with log output | <Leader>lp
@@ -111,8 +111,12 @@ Step over                      | <F9>
 Step in                        | <F10>
 Step out                       | <F7>
 
-## Git
+## Git @git @diff
 Branch List(Telescope)         | <M-g><M-b>
+Show Diff HEAD~1               | <Leader>df
+Show File History              | <Leader>dh
+Close Diffview                 | <Leader>dc
+
 
 ## Docker
 docker Container List(Telescope) | <M-d><M-c>
