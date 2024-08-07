@@ -1,187 +1,49 @@
 [
-  {
-    "name": "Master Password",
-    "text": "zR5ldY3Zy7pH",
-    "keyword": "!master;"
-  },
-  {
-    "name": "Slack - Subscribe Github Repo",
-    "text": "/github subscribe  releases reviews issues pulls comments branches commits:*",
-    "keyword": "!slack-subscribe;"
-  },
-  {
-    "name": "Slack - Unsubscribe Github Repo",
-    "text": "/github unsubscribe ",
-    "keyword": "!slack-unsubscribe;"
-  },
-  {
-    "name": "Slack - Remind",
-    "text": "/remind me to {cursor} on {date +1d \"yyyy-MM-dd\"} at {time}",
-    "keyword": "!slack-remind;"
-  },
-  {
-    "name": "Date - Today (yyyy-MM-dd)",
-    "text": "{date \"yyyy-MM-dd\"}",
-    "keyword": "!today;"
-  },
-  {
-    "name": "Date - Now (yyyy/MM/dd HH:mm:ss)",
-    "text": "{date \"yyyy/MM/dd HH:mm:ss\"}",
-    "keyword": "!now;"
-  },
-  {
-    "name": "Date - 本日日付",
-    "text": "{date \"yyyy年MM月dd日\"}",
-    "keyword": "!jptoday;"
-  },
-  {
-    "name": "Date - Time (HH:mm:ss)",
-    "text": "{date \"HH:mm:ss\"}",
-    "keyword": "!time;"
-  },
-  {
-    "name": "Copy to Clipboard",
-    "text": "| pbcopy",
-    "keyword": "!copy;"
-  },
-  {
-    "name": "MacOS - Change Screenshot Filename Postfix to Number",
-    "text": "defaults write com.apple.screencapture include-date -bool false",
-    "keyword": ""
-  },
-  {
-    "name": "MacOS - Change Screenshot Filename Postfix to Date",
-    "text": "defaults delete com.apple.screencapture include-date",
-    "keyword": ""
-  },
-  {
-    "name": "MacOS - Change Screenshot Filename Prefix to 'screenshot'",
-    "text": "defaults write com.apple.screencapture name screenshot",
-    "keyword": ""
-  },
-  {
-    "name": "MacOS - Add ssh-key (inap)",
-    "text": "ssh-add -K ~/.ssh/sugawarayss-GitHub",
-    "keyword": ""
-  },
-  {
-    "name": "MacOS - Add ssh-key (mac mini)",
-    "text": "ssh-add -K ~/.ssh/waku1123-GitHub",
-    "keyword": ""
-  },
-  {
-    "name": "Golang - Build for Windows",
-    "text": "GOOS=windows GOARCH=amd64 go build -o ./build/windows-amd64/{hoge}.exe ./{hoge}.go",
-    "keyword": "!go-build-windows;"
-  },
-  {
-    "name": "Golang - Build for MacOS",
-    "text": "GOOS=darwin GOARCH=amd64 go build -o ./darwin-amd64/{hoge} {hoge}.go",
-    "keyword": "!go-build-macos;"
-  },
-  {
-    "name": "Golang - Build for Linux",
-    "text": "GOOS=linux GOARCH=amd64 go build -o l./build/inux-amd64/{hoge} ./{hoge}.go",
-    "keyword": "!go-build-linux;"
-  },
-  {
-    "name": "Pipenv - Install Packages form requirement.txt",
-    "text": "pipenv install -r requirements.txt",
-    "keyword": "!pipenv-intall;"
-  },
-  {
-    "name": "Poetry - Add Package",
-    "text": "poetry add {cursor}",
-    "keyword": "!poetry-add;"
-  },
-  {
-    "name": "Poetry - Remove Package",
-    "text": "poetry remove {cursor} ",
-    "keyword": "!poetry-remove;"
-  },
-  {
-    "name": "Poetry - Config virtualenvs.in-project",
-    "text": "poetry config virtualenvs.in-project true",
-    "keyword": "!poetry-config;"
-  },
-  {
-    "name": "pyproject.toml - black",
-    "text": "[tool.black]\nline-length = 150",
-    "keyword": "!pyproject-black;"
-  },
-  {
-    "name": "pyproject.toml - lint",
-    "text": "[tool.rye.scripts]\nlint = { chain = [\"lint:black\", \"lint:ruff\"] }\n\"lint:black\" = \"black ./src/\"  \n\"lint:ruff\" = \"ruff ./src/{cursor} \"",
-    "keyword": "!pyproject-lint;"
-  },
-  {
-    "name": "pyproject.toml - test",
-    "text": "[tool.rye.scripts]\ntest = { cmd = \"pytest -v -s --cov\" }",
-    "keyword": "!pyproject-test;"
-  },
-  {
-    "name": "pyproject.toml - ruff",
-    "text": "[tool.ruff]\nselect = [\"ALL\"]\nignore = [\n  \"ANN101\",  # missing-type-function-argument\n  \"D100\",  # missing docstring in public module\n  \"D102\",  # missing docstring in public method\n  \"D104\",  # missing docstring in public package\n  \"D105\",  # missing docstring in magic method\n  \"D106\",  # missing docstring in public nested class\n  \"D107\",  # missing docstring in __init__\n  \"D203\",  # 1 blank line required before class docstring\n  \"D205\",  # 1 blank line required between summary line and description\n  \"D212\",  # Multi-line docstring summary should start at the first line\n  \"D400\",  # First line should end with a period\n  \"D415\",  # First line should end with a period, question mark, or exclamation point\n  \"BLE\",  # flake8-blind-except\n  \"FA\",  # flake8-future-annotation\n  \"TRY\",  # tryceratops\n  \"TD\",  # flake8-todo\n  \"FIX\",  # flake8-fixme\n]\nline-length = 150",
-    "keyword": "!pyproject-ruff;"
-  },
-  {
-    "name": "Github - Table",
-    "text": "| Title1 | Title2 |\n| ------- | ------- |\n| Content1 | Content2 |\n  ",
-    "keyword": "!gh-table;"
-  },
-  {
-    "name": "Github - Detail",
-    "text": "<details>\n<summary>Title</summary>\n\n</details>",
-    "keyword": "!gh-detail;"
-  },
-  {
-    "name": "Github - Warning",
-    "text": "> **Warning**\n> ",
-    "keyword": "!gh-warning;"
-  },
-  {
-    "name": "Github - Note",
-    "text": "> **Note**\n> ",
-    "keyword": "!gh-note;"
-  },
-  {
-    "name": "Neovim - Startuptime with Log",
-    "text": "nvim --startuptime ~/nvim.log +q",
-    "keyword": "!nvim-startuptime;"
-  },
-  {
-    "name": "echo $PATH",
-    "text": "echo $PATH | tr ':' '\n'",
-    "keyword": "!echo-path;"
-  },
-  {
-    "name": "Homebrew - Uninstall",
-    "text": "brew list | gum choose --no-limit | xargs brew uninstall",
-    "keyword": "!brew-uninstall;"
-  },
-  {
-    "name": "Pipenv - Install Packages form requirement.txt",
-    "text": "pipenv install -r requirements.txt",
-    "keyword": "!pipenv-intall;"
-  },
-  {
-    "name": "Terminal - Copy to Clipboard",
-    "text": "| pbcopy",
-    "keyword": "!copy;"
-  },
-  {
-    "name": "Service - control",
-    "text": "sudo systemctl {cursor} {name}",
-    "keyword": "!systemctl;"
-  },
-  {
-    "name": "Service - log",
-    "text": "sudo journalctl -u <name>",
-    "keyword": "!journalctl;"
-  },
-  {
-    "name": "HTML5 Boilerplate",
-    "text": "<html class=\"no-js\" lang=\"\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <title></title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n  <meta property=\"og:title\" content=\"\">\n  <meta property=\"og:type\" content=\"\">\n  <meta property=\"og:url\" content=\"\">\n  <meta property=\"og:image\" content=\"\">\n\n  <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n  <link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\">\n  <link rel=\"apple-touch-icon\" href=\"icon.png\">\n\n  <link rel=\"stylesheet\" href=\"css/normalize.css\">  <link rel=\"stylesheet\" href=\"css/style.css\">\n\n  <link rel=\"manifest\" href=\"site.webmanifest\">\n  <meta name=\"theme-color\" content=\"#fafafa\">\n</head>\n\n<body>\n\n  <p>Hello world! This is HTML5 Boilerplate.</p>\n  <script src=\"js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js\"></script>\n  <script src=\"js/app.js\"></script>\n\n</body>\n\n</html>",
-    "keyword": "!html;"
-  }
+  {"text":"zR5ldY3Zy7pH","name":"Master Password","keyword":"!master;"},
+  {"name":"Slack - Subscribe Github Repo","text":"\/github subscribe  releases reviews issues pulls comments branches commits:*","keyword":"!slack-subscribe;"},
+  {"keyword":"!slack-unsubscribe;","name":"Slack - Unsubscribe Github Repo","text":"\/github unsubscribe "},
+  {"keyword":"!slack-remind;","text":"\/remind me to {cursor} on {date +1d \"yyyy-MM-dd\"} at {time}","name":"Slack - Remind"},
+  {"keyword":"!today;","name":"Date - Today (yyyy-MM-dd)","text":"{date \"yyyy-MM-dd\"}"},
+  {"name":"Date - Now (yyyy\/MM\/dd HH:mm:ss)","text":"{date \"yyyy\/MM\/dd HH:mm:ss\"}","keyword":"!now;"},
+  {"keyword":"!jptoday;","text":"{date \"yyyy年MM月dd日\"}","name":"Date - 本日日付"},
+  {"keyword":"!time;","text":"{date \"HH:mm:ss\"}","name":"Date - Time (HH:mm:ss)"},
+  {"text":"| pbcopy","name":"Copy to Clipboard","keyword":"!copy;"},
+  {"name":"MacOS - Change Screenshot Filename Postfix to Number","text":"defaults write com.apple.screencapture include-date -bool false","keyword":""},
+  {"name":"MacOS - Change Screenshot Filename Postfix to Date","text":"defaults delete com.apple.screencapture include-date"},
+  {"text":"defaults write com.apple.screencapture name screenshot","name":"MacOS - Change Screenshot Filename Prefix to 'screenshot'"},
+  {"name":"MacOS - Add ssh-key (inap)","text":"ssh-add -K ~\/.ssh\/sugawarayss-GitHub"},
+  {"text":"ssh-add -K ~\/.ssh\/waku1123-GitHub","name":"MacOS - Add ssh-key (mac mini)"},
+  {"keyword":"!go-build-windows;","name":"Golang - Build for Windows","text":"GOOS=windows GOARCH=amd64 go build -o .\/build\/windows-amd64\/{hoge}.exe .\/{hoge}.go"},
+  {"name":"Golang - Build for MacOS","text":"GOOS=darwin GOARCH=amd64 go build -o .\/darwin-amd64\/{hoge} {hoge}.go","keyword":"!go-build-macos;"},
+  {"keyword":"!go-build-linux;","name":"Golang - Build for Linux","text":"GOOS=linux GOARCH=amd64 go build -o l.\/build\/inux-amd64\/{hoge} .\/{hoge}.go"},
+  {"keyword":"!pipenv-intall;","name":"Pipenv - Install Packages form requirement.txt","text":"pipenv install -r requirements.txt"},
+  {"keyword":"!poetry-add;","name":"Poetry - Add Package","text":"poetry add {cursor}"},
+  {"keyword":"!poetry-remove;","name":"Poetry - Remove Package","text":"poetry remove {cursor} "},
+  {"name":"Poetry - Config virtualenvs.in-project","keyword":"!poetry-config;","text":"poetry config virtualenvs.in-project true"},
+  {"name":"pyproject.toml - black","text":"[tool.black]\nline-length = 150","keyword":"!pyproject-black;"},
+  {"name":"pyproject.toml - fmt","text":"[tool.rye.scripts]\nfmt = { chain = [\"fmt:black\", \"fmt:ruff\"] }\n\"fmt:black\" = \"black .\/src\/\"  \n\"fmt:ruff\" = \"ruff format .\/src\/\"\nlint = { cmd = \"ruff check .\/src\/\" }\n","keyword":"!pyproject-lint;"},
+  {"name":"pyproject.toml - test","keyword":"!pyproject-test;","text":"[tool.rye.scripts]\ntest = { cmd = \"pytest -v -s --cov\" }"},
+  {"name":"pyproject.toml - ruff","keyword":"!pyproject-ruff;","text":"[tool.ruff]\nline-length = 150\n\n[tool.ruff.lint]\nselect = [\"ALL\"]\nignore = [\n  \"D\",       # pydocstyle: docstring系の警告はしない\n  \"ANN101\",  # missing-type-self: 引数selfには型ヒントを付けなくても警告しない\n  \"ANN102\",  # missing-type-cls: 引数clsには型ヒントを付けなくても警告しない\n  \"ANN204\",  # missing-return-type-special-method: 特殊メソッドの戻り値には型ヒントを付けなくても警告しない\n  \"BLE\",     # flake8-blind-except: except節でExceptionを使っても警告しない\n  \"COM812\",  # missing-trailing-comma: 末尾のカンマがなくても警告しない ISC001 と競合する\n  \"FA\",      # flake8-future-annotation: アノテーションにfutureモジュールを使っても警告しない\n  \"FIX\",     # flake8-fixme: FIXMEコメントを警告しない\n  \"G004\",    # logging-f-string: ロギングメッセージにf-stringを使っても警告しない\n  \"ISC001\",  # single-line-implicit-string-concatenation: 1行での文字列連結を警告しない COM812 と競合する\n  \"TD\",      # flake8-todo: TODO コメントを警告しない\n  \"TRY\",     # tryceratops: 例外処理まわりのチェック\n]\n\n[tool.isort]\ncombine-as-imports = true\nsection-order = [\"future\", \"standard_library\", \"third_party\", \"first_party\", \"localfolder\"]\nsplit-on-trailing-comma = true\n"},
+  {"text":"| Title1 | Title2 |\n| ------- | ------- |\n| Content1 | Content2 |\n  ","name":"Github - Table","keyword":"!gh-table;"},
+  {"name":"Github - Detail","keyword":"!gh-detail;","text":"<details>\n<summary>Title<\/summary>\n\n<\/details>"},
+  {"name":"Github - Warning","text":"> **Warning**\n> ","keyword":"!gh-warning;"},
+  {"keyword":"!gh-note;","text":"> **Note**\n> ","name":"Github - Note"},
+  {"text":"nvim --startuptime ~\/nvim.log +q","name":"Neovim - Startuptime with Log","keyword":"!nvim-startuptime;"},
+  {"name":"echo $PATH","keyword":"!echo-path;","text":"echo $PATH | tr ':' '\n'"},
+  {"keyword":"!brew-uninstall;","name":"Homebrew - Uninstall","text":"brew list | gum choose --no-limit | xargs brew uninstall"},
+  {"name":"Terminal - Copy to Clipboard","text":"| pbcopy"},
+  {"name":"Service - control","keyword":"!systemctl;","text":"sudo systemctl {cursor} {name}"},
+  {"keyword":"!journalctl;","name":"Service - log","text":"sudo journalctl -u <name>"},
+  {"keyword":"!html;","text":"<html class=\"no-js\" lang=\"\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <title><\/title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n  <meta property=\"og:title\" content=\"\">\n  <meta property=\"og:type\" content=\"\">\n  <meta property=\"og:url\" content=\"\">\n  <meta property=\"og:image\" content=\"\">\n\n  <link rel=\"icon\" href=\"\/favicon.ico\" sizes=\"any\">\n  <link rel=\"icon\" href=\"\/icon.svg\" type=\"image\/svg+xml\">\n  <link rel=\"apple-touch-icon\" href=\"icon.png\">\n\n  <link rel=\"stylesheet\" href=\"css\/normalize.css\">  <link rel=\"stylesheet\" href=\"css\/style.css\">\n\n  <link rel=\"manifest\" href=\"site.webmanifest\">\n  <meta name=\"theme-color\" content=\"#fafafa\">\n<\/head>\n\n<body>\n\n  <p>Hello world! This is HTML5 Boilerplate.<\/p>\n  <script src=\"js\/vendor\/modernizr-{{MODERNIZR_VERSION}}.min.js\"><\/script>\n  <script src=\"js\/app.js\"><\/script>\n\n<\/body>\n\n<\/html>","name":"HTML5 Boilerplate"},
+  {"text":"&emi=AN1VRQENFRJN5","name":"[Amazon]Amazonから出品の商品のみ"},
+  {"text":"&pct-off=50-","name":"[Amazon]50%以上割引の商品を検索"},
+  {"text":"&high-price=3000","name":"[Amazon]3,000円以下の商品を検索"},
+  {"name":"[Amazon]5,000~10,000円の商品を検索","text":"&low-price=5000%high-price=10000"},
+  {"text":"&sort=salesrank","name":"[Amazon]売れている順に表示"},
+  {"text":"&sort=-salesrank","name":"[Amazon]売れていない順に表示"},
+  {"text":"&sort=popularity-rank","name":"[Amazon]人気順に表示"},
+  {"text":"&s=review-rank","name":"[Amazon]レビュー評価降順"},
+  {"name":"[Amazon]レビュー評価昇順","text":"&s=-review-rank"},
+  {"name":"[Amazon]発売日降順","text":"&sort=-releasedate"},
+  {"name":"[Amazon]発売日昇順","text":"&sort=releasedate"}
 ]
