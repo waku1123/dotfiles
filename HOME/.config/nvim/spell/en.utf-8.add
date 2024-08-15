@@ -24,3 +24,11 @@ csv
 DatetimeFormat
 Enum
 datetime
+lazygit
+yss
+
+Linter
+builtins
+isort
+pyproject
+toml
