@@ -90,10 +90,14 @@ nnoremap gd :action GotoDeclaration<CR>
 nnoremap gb :action JumpToLastChange<CR>
 " テスト実装箇所へジャンプ
 nnoremap gt :action GotoTest<CR>
+" <C-m> で括弧ジャンプ
+noremap <C-m> %
 
 """"""""""""""""""""""""""""""""""
 " エディター (コード編集)        "
 """"""""""""""""""""""""""""""""""
+" リドゥ
+nnoremap U <C-r>
 " ブックマークリストを表示
 nnoremap <C-b><C-m> :action ShowBookmarks<CR>
 " カーソル行でブックマークをトグル
@@ -111,7 +115,14 @@ nnoremap <S-l> :action NextSplitter<CR>
 " 前の分割グループへ移動
 nnoremap <S-h> :action PrevSplitter<CR>
 " フォーカスを持つエディタタブを他のタブ分割グループに移動
-noremap so :action MoveEditorToOppositeTabGroup<CR>
+nnoremap so :action MoveEditorToOppositeTabGroup<CR>
+" 行末までヤンク
+nnoremap Y y$
+" Visual コピー時にカーソル位置を維持
+xnoremap y mzy`z
+" Visual で範囲ごと上下移動
+xnoremap <silent><S-k> :move'<-2<CR>gv=gv
+xnoremap <silent><S-j> :move'>+1<CR>gv=gv
 
 """"""""""""""""""""""""""""""""""
 " 実行                           "
