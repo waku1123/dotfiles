@@ -40,7 +40,6 @@ u.keymap("n", "gl", "gt", opts)
 
 for i = 1, 9 do
   u.keymap("n", "<leader>"..i, i.."gt", opts)
-
 end
 
 -----------------------------
@@ -51,7 +50,6 @@ end
  
 -- U で Redo 
 u.keymap("n", "U", "<C-r>", opts)
-
 
 -- ESC*2 でハイライトやめる
 u.keymap("n", "<Esc><Esc>", ":<C-u>set nohlsearch<Return>", opts)
@@ -64,6 +62,13 @@ u.keymap("i", "jj", "<ESC>", opts)
 u.keymap("i", "<C-f>", "<C-g>U<Right>", opts)
 -- Ctrl+f Ctrl+fで一番外へ移動
 u.keymap("i", "<C-f><C-f>", "<C-g>U<Esc><S-a>", opts)
+
+-- 行を上下に移動
+u.keymap("n", "<C-k>", "$'<Cmd>move-1-{v:count1}<CR>=l'")
+u.keymap("n", "<C-j>", "$'<Cmd>move+{v:count1}<CR>=l'")
+
+-- M で括弧ジャンプ
+u.keymap("n", "<S-m>", "%")
 
 -----------------------------
 ---      スクロール       ---
