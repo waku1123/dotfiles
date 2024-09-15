@@ -91,7 +91,7 @@ nnoremap gb :action JumpToLastChange<CR>
 " テスト実装箇所へジャンプ
 nnoremap gt :action GotoTest<CR>
 " <C-m> で括弧ジャンプ
-noremap <C-m> %
+noremap <S-m> %
 
 """"""""""""""""""""""""""""""""""
 " エディター (コード編集)        "
@@ -121,8 +121,15 @@ nnoremap Y y$
 " Visual コピー時にカーソル位置を維持
 xnoremap y mzy`z
 " Visual で範囲ごと上下移動
-xnoremap <silent><S-k> :move'<-2<CR>gv=gv
-xnoremap <silent><S-j> :move'>+1<CR>gv=gv
+xnoremap <S-k> :move'<-2<CR>gv=gv
+xnoremap <S-j> :move'>+1<CR>gv=gv
+
+" 大文字に切り替え
+inoremap <C-g><C-u> <esc>gUiwgi
+" 小文字に切り替え
+inoremap <C-g><C-l> <esc>guiwgi
+" 先頭文字だけ大文字に切り替え
+inoremap <C-g><C-k> <esc>bgUlgi
 
 """"""""""""""""""""""""""""""""""
 " 実行                           "
