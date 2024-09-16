@@ -47,7 +47,7 @@ end
 -----------------------------
 -- 行末までのヤンクにする(neovimはデフォルトで行末までヤンク)
 -- u.keymap("n", "Y", "y$", opts)
- 
+
 -- U で Redo 
 u.keymap("n", "U", "<C-r>", opts)
 
@@ -64,18 +64,18 @@ u.keymap("i", "<C-f>", "<C-g>U<Right>", opts)
 u.keymap("i", "<C-f><C-f>", "<C-g>U<Esc><S-a>", opts)
 
 -- 行を上下に移動
-u.keymap("n", "<C-k>", "$'<Cmd>move-1-{v:count1}<CR>=l'")
-u.keymap("n", "<C-j>", "$'<Cmd>move+{v:count1}<CR>=l'")
+-- u.keymap("n", "<M-k>", "$'<Cmd>move-1-{v:count1}<CR>=l'")
+-- u.keymap("n", "<M-j>", "$'<Cmd>move+{v:count1}<CR>=l'")
 
 -- M で括弧ジャンプ
 u.keymap("n", "<S-m>", "%")
 
 -- 入力してから大文字を切り替え
-u.keymap("i", "<C-g><C-u>", "<ESC>gUiwgi")
+u.keymap("i", "<C-g><C-u>", "<ESC>gUiwgi", opts)
 -- 入力してから小文字を切り替え
-u.keymap("i", "<C-g><C-l>", "<ESC>guiwgi")
+u.keymap("i", "<C-g><C-l>", "<ESC>guiwgi", opts)
 -- 先頭の文字だけ大文字に切り替え
-u.keymap("i", "<C-g><C-w>", "<ESC>bgUlgi")
+u.keymap("i", "<C-g><C-w>", "<ESC>bgUlgi", opts)
 
 -----------------------------
 ---      スクロール       ---
