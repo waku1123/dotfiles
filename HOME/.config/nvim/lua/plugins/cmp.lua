@@ -21,8 +21,15 @@ return {
         formatting = {
           format = lspkind.cmp_format({
             mode = 'symbol_text',
-            maxwidth = 50,
-            ellipsis_char = '...',
+            -- maxwidth = 500,
+            -- ellipsis_char = '...',
+            menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              luasnip = "[LuaSnip]",
+              nvim_lua = "[Lua]",
+              latex_symbols = "[Latex]",
+            }),
           })
         },
         snippet = {
@@ -36,11 +43,11 @@ return {
         },
         window = {
           completion = {
-            border = 'double',
+            border = 'rounded',
             shadow = true,
           },
           documentation = {
-            border = 'rounded',
+            border = 'double',
             shadow = true,
           }
         },
@@ -74,6 +81,23 @@ return {
           { name = 'buffer' },
         })
       })
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" }
+        },
+      })
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" }
+        },
+        {
+          { name = "cmdline" }
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false }
+      })
+
       cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end
   },
