@@ -50,6 +50,9 @@ vim.api.nvim_create_user_command(
 -- LinterやFormatterを統合するプラグイン
 return {
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
+  },
   lazy = true,
   event = "LspAttach",
   config = function()
@@ -73,88 +76,21 @@ return {
         filetypes = { "python" },
         extra_args = { "--config", "./pyproject.toml" }
       }),
-      -- null_ls.builtins.formatting.isort.with({
-      --   filetypes = { "python" },
-      --   extra_args = { "--settings-path", "./pyproject.toml" }
-      -- }),
-      null_ls.builtins.formatting.ruff.with({
+      require("none-ls.formatting.ruff").with({
         filetypes = { "python" },
         extra_args = { "--config", "./pyproject.toml" }
       }),
-      --null_ls.builtins.formatting.ruff.with({
-      --  "--line-length=150",
-      --  "--ignore=ANN101",  -- Missing-type-function-argument
-      --  "--ignore=D",       -- pydocstyle
-      --  "--ignore=FA",      -- flake8-future-annotations
-      --  "--ignore=TRY",     -- tryceratops
-      --  "--ignore=TD",      -- flake8-todo
-      --  "--ignore=FIX",     -- flake8-fixme
-      --  "--ignore=YTT",     -- flake8-2020
-      --  "--ignore=S",       -- flake8-bandit
-      --  "--ignore=BLE",     -- flake8-bind-except
-      --  "--ignore=FBT",     -- flake8-boolean-trap
-      --  "--ignore=B",       -- flake8-bugbear
-      --  "--ignore=COM",     -- flake8-cmmas
-      --  "--ignore=CPY",     -- flake8-copyright
-      --  "--ignore=C4",      -- flake8-comrehensions
-      --  "--ignore=DTZ",     -- flake8-datetimez
-      --  "--ignore=T10",     -- flake8-debugger
-      --  "--ignore=EM",      -- flake8-errmsg
-      --  "--ignore=EXE",     -- flake8-executable
-      --  "--ignore=ISC",     -- fkale8-implict-str-concat
-      --  "--ignore=G",       -- flake8-logging-format
-      --  "--ignore=T20",     -- flake8-print
-      --  "--ignore=TID",     -- flake8-tidy-imports
-      --  "--ignore=ARG",     -- flake8-unused-arguments
-      --  "--ignore=PTH",     -- flake8-use-pathlib
-      --  "--ignore=ERA",     -- eradicate
-      --  "--ignore=FLY",     -- flynt
-      --  "--ignore=E501",    -- pydocstyle (line-too-log)
-      --  "--fix",            -- auto fix
-      --}),
       null_ls.builtins.diagnostics.mypy.with({
         filetypes = { "python" },
-        diagnostics_format = '[mypy] #{m}\n(#{c})',
+        diagnostics_format = '[mypy] #{m} (#{c})',
         extra_args = { "--config-file", "./pyproject.toml" }
       }),
-      null_ls.builtins.diagnostics.ruff.with({
+
+      require("none-ls.diagnostics.ruff").with({
         filetypes = { "python" },
-        diagnostics_format = '[ruff] #{m}\n(#{c})',
-        extra_args = { "--config", "./pyproject.toml" }
+        diagnostics_format = '[ruff] #{m} (#{c})',
+        extra_args = vim.fn.filereadable("./pyproject.toml") == 1 and { "--config", "./pyproject.toml" } or nil
       }),
-      --null_ls.builtins.diagnostics.ruff.with({
-      --  diagnostics_format = '[ruff] #{m}\n(#{c})',
-      --  extra_args = {
-      --    "--line-length=150",
-      --    "--ignore=ANN101",  -- Missing-type-function-argument
-      --    "--ignore=D",       -- pydocstyle
-      --    "--ignore=FA",      -- flake8-future-annotations
-      --    "--ignore=TRY",     -- tryceratops
-      --    "--ignore=TD",      -- flake8-todo
-      --    "--ignore=FIX",     -- flake8-fixme
-      --    "--ignore=YTT",     -- flake8-2020
-      --    "--ignore=S",       -- flake8-bandit
-      --    "--ignore=BLE",     -- flake8-bind-except
-      --    "--ignore=FBT",     -- flake8-boolean-trap
-      --    "--ignore=B",       -- flake8-bugbear
-      --    "--ignore=COM",     -- flake8-cmmas
-      --    "--ignore=CPY",     -- flake8-copyright
-      --    "--ignore=C4",      -- flake8-comrehensions
-      --    "--ignore=DTZ",     -- flake8-datetimez
-      --    "--ignore=T10",     -- flake8-debugger
-      --    "--ignore=EM",      -- flake8-errmsg
-      --    "--ignore=EXE",     -- flake8-executable
-      --    "--ignore=ISC",     -- fkale8-implict-str-concat
-      --    "--ignore=G",       -- flake8-logging-format
-      --    "--ignore=T20",     -- flake8-print
-      --    "--ignore=TID",     -- flake8-tidy-imports
-      --    "--ignore=ARG",     -- flake8-unused-arguments
-      --    "--ignore=PTH",     -- flake8-use-pathlib
-      --    "--ignore=ERA",     -- eradicate
-      --    "--ignore=FLY",     -- flynt
-      --    "--ignore=E501",    -- pydocstyle (line-too-log)
-      --  },
-      --}),
       -- Lua
       null_ls.builtins.formatting.stylua.with({
         filetypes = { "lua" },
@@ -167,20 +103,10 @@ return {
       null_ls.builtins.formatting.goimports.with({
         filetypes = { "go" }
       }),
-      -- null_ls.builtins.formatting.
-      -- JavaScript/TypeScript
-      -- null_ls.builtins.formatting.prettier.with({
-      --   filetypes = { "javascript", "typescript", "jsx", "html", "css", "scss", "markdown" },
-      --   only_local = "node_modules/.bin",
-      -- }),
       null_ls.builtins.formatting.biome.with({
         filetypes = { "javascript", "typescript", "jsx", "html", "css", "scss", "markdown" },
         extra_args = { "--config", "./biome.config.js" }
       }),
-      -- null_ls.builtins.diagnostics.eslint_d.with({
-      --   filetypes = { "javascript", "typescript", "jsx", "html", "css", "scss", "markdown" },
-      --   diagnostics_format = '[eslint] #{m}\n(#{c})'
-      -- }),
     }
 
     -- 辞書に単語を追加するcommandをCode Actionとして呼び出せるようにする
