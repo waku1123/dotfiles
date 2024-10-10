@@ -34,6 +34,62 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+
+-- 自動インストールするLSPサーバ
+local lsp_servers = {
+  -- python
+  "pyright",
+  -- sphinx
+  "esbonio",
+  -- rust
+  "rust_analyzer",
+  -- go
+  "gopls",
+  -- typescript
+  "ts_ls",
+  -- lua
+  "lua_ls",
+  -- deno
+  "denols",
+  -- php
+  "intelephense",
+  -- kotlin
+  "kotlin_language_server",
+  -- dockerfile
+  "dockerls",
+  -- yaml
+  "yamlls",
+  -- json
+  "jsonls",
+  -- toml
+  "taplo",
+}
+-- 自動インストールするformatter
+local formatters = {
+  -- python
+  "black",
+  -- "isort",
+  "ruff",
+  -- Go
+  "gofmpt",
+  "goimports",
+  -- lua
+  "stylua",
+}
+-- 自動インストールするlinter
+local diagnostics = {
+  -- spell check
+  "cspell",
+  -- python
+  "mypy",
+  -- TypeScript
+  "biome",
+  -- dart
+  "dcm",
+  -- Go
+  "staticcheck",
+}
+
 return {
   {
     "williamboman/mason.nvim",
@@ -57,47 +113,19 @@ return {
     event = { "LspAttach" },
     dependencies = {
       { "jay-babu/mason-null-ls.nvim", dependencies = "jose-elias-alvarez/null-ls.nvim" },
-      { "neovim/nvim-lspconfig"},
+      { "neovim/nvim-lspconfig" },
       { "hrsh7th/cmp-nvim-lsp" },
     },
     config = function()
       -- LSP handlers
-      vim.lsp.handlers["textDocument/publishDiagnostics"] =
-      vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
       -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(require("noice.lsp.hover").on_hover, { border = "double" })
 
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup({
         automatic_installation = true,
         -- LSP install
-        ensure_installed = {
-          -- python
-          "pyright",
-          -- sphinx
-          "esbonio",
-          -- rust
-          "rust_analyzer",
-          -- go
-          "gopls",
-          -- typescript
-          "ts_ls",
-          -- lua
-          "lua_ls",
-          -- deno
-          "denols",
-          -- php
-          "intelephense",
-          -- kotlin
-          "kotlin_language_server",
-          -- dockerfile
-          "dockerls",
-          -- yaml
-          "yamlls",
-          -- json
-          "jsonls",
-          -- toml
-          "taplo",
-        },
+        ensure_installed = lsp_servers,
       })
       local nvim_lsp = require("lspconfig")
       mason_lspconfig.setup_handlers({
@@ -112,11 +140,15 @@ return {
 
           if server == "pyright" then
             opt.settings = {
+              pyright = {
+                -- ruff 
+                disableOrganizeImports = true,
+              },
               python = {
                 venvPath = ".",
                 pythonPath = "./.venv/bin/python",
                 analysis = {
-                  extraPaths = { "." },
+                  ignore = { "*" },
                 },
               },
             }
@@ -127,7 +159,7 @@ return {
               return
             end
             opt.on_attach = function(client, bufnr)
-              client.resolved_capabilities.document_formatting = false
+              -- client.resolved_capabilities.document_formatting = false
               my_on_attach(client, bufnr)
             end
             opt.root_dir = node_root_dir
@@ -195,25 +227,7 @@ return {
           require("mason-null-ls").setup({
             automatic_setup = true,
             automatic_installation = true,
-            ensure_installed = {
-              -- spell check
-              "cspell",
-              -- JS/TS
-              -- "prettier",
-              "biome",
-              -- lua
-              "stylua",
-              -- python
-              "black",
-              "isort",
-              "ruff",
-              "mypy",
-              -- Go
-              "goimports",
-              "staticcheck",
-              -- json
-              -- "jq",  --deprecated
-            },
+            ensure_installed = vim.tbl_flatten({ formatters, diagnostics }),
           })
         end,
       })
