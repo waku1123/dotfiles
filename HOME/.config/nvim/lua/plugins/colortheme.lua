@@ -1,26 +1,13 @@
 -- カラーテーマ
 return {
-  "HoNamDuong/hybrid.nvim",
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
-  opts = {},
-  config = function()
-    require("hybrid").setup({
-      terminal_colors = true,
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = false,
-        emphasis = true,
-        comments = true,
-        folds = true,
-      },
-      strikethrough = true,
-      inverse = true,
-      transparent = true,
+  opts = function()
+    require("tokyonight").setup({
+      style = "night",
     })
-    vim.cmd.colorscheme("hybrid")
+    vim.cmd.colorscheme("tokyonight")
   end,
 }
 
