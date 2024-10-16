@@ -1,19 +1,19 @@
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+    diff          = delta
+    log           = delta
+    reflog        = delta
+    show          = delta
 
 [delta]
-    line-numbers = true
-    side-by-side = true
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    syntax-theme = Visual Studio Dark+
-    navigate = true
+    line-numbers  = true
+    side-by-side  = true
+    plus-style    = "syntax #012800"
+    minus-style   = "syntax #340001"
+    syntax-theme  = Visual Studio Dark+
+    navigate      = true
 
 [interractive]
-    diffFilter = delta --color-only
+    diffFilter    = delta --color-only
 
 [user]
 	name = yss
@@ -23,7 +23,8 @@
 [commit]
 	template = /Users/yss/.config/git/.commit_template
 [core]
-	quotepath = false
-	editor = nvim
+    quotepath     = false
+    editor        = nvim
+	autocrlf      = input
 [init]
-	defaultBranch = main
+    defaultBranch = main
