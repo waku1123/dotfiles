@@ -1,14 +1,50 @@
+# MacOS
 .DS_Store
+
+# vscode
+.vscode/
+
+# JetBrains IDE
 .idea/
+
+# fleet(JetBrains editor)
+.fleet/
+
+# Python virtual environment
 .venv/
 venv/
+
 .tool-versions
+
+# Node.js
 node_modules/
+
 *.py[cod]
 *$py.class
+
+# mypy
 .mypy_cache/
-.pytest_cache/
 __pycache__/
+
+# pytest
+.pytest_cache/
 .coverage
+
+hoge.*
+recreate_container.sh
+sample_csv/
+
+# direnv
 .envrc
-.ruff_cache/
+
+# pyright
+pyrightconfig.json
+
+# ruff
+.ruff_cache
+
+# local ssl
+localhost*pem
+
+# VSCODE setp counter
+.VSCodeCounter/
