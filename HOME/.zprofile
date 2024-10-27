@@ -10,11 +10,11 @@ export PATH="$PATH:$HOME/.local/bin:/usr/local/bin"
 ################
 # Apple Silicon用とIntel用homebrewにパスを通す
 if [[ $(uname -m) == "arm64" ]]; then
-  export PATH="/opt/homebrew/bin:$PATH"
-  export PATH="/opt/homebrew/sbin:$PATH"
+  export BREWPATH="/opt/homebrew/bin"
 else
-  export PATH="/usr/local/bin:$PATH"
+  export BREWPATH="/usr/local/bin"
 fi
+export PATH="$BREWPATH:$PATH"
 
 # homebrewでインストールしたpostgresは5433ポートに変更
 export PGPORT=5433
@@ -97,11 +97,11 @@ fi
 #export PATH="$PATH:$FLUTTER_PATH"
 
 # fvmでインストールする場合
-export PATH="$PATH:$HOME/.pub-cache/bin"
+#export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # fvmでインストールしたflutterをglobalで使うためにPATHを通す
-export PATH="$PATH:$HOME/fvm/default/bin"
-export FLUTTER_GIT_URL="https://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:x-oauth-basic@github.com/flutter/flutter.git"
+#export PATH="$PATH:$HOME/fvm/default/bin"
+#export FLUTTER_GIT_URL="https://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:x-oauth-basic@github.com/flutter/flutter.git"
 
 ###############
 # abdroid sdk #
@@ -133,8 +133,23 @@ export PATH="$HOME/PROJECTS/sugawarayss/ts_playground/node_modules/.bin:$PATH"
 
 typeset -U path cdpath fpath manpath # パスの重複登録を避ける
 
+# helix用のlang-serverPATHを追加
+export PATH=$PATH:`npm prefix --location=global`/bin
+
+
 ##############
-# direnv     #
+# psql       #
 ##############
-export EDITOR="nvim"
+export PATH="/opt/homebrew/Cellar/libpq/15.3_1/bin:$PATH"
+
+################
+# direnv       #
+################
+export EDITOR=nvim
 eval "$(direnv hook zsh)"
+
+
+#############
+# mysql cli #
+#############
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
