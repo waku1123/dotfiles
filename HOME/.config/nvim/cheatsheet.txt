@@ -33,11 +33,16 @@
 ヘルプを表示                                        | g?
 
 ## Copilot @copilot
-前へジャンプ                                        | [[
-次へジャンプ                                        | ]]
-採択                                                | <CR>
-リフレッシュ                                        | gr
-開く                                                | <M-CR>
+Copilotパネルを表示                                 | :Copilot panel
+(パネル) 前へジャンプ                               | [[
+(パネル) 次へジャンプ                               | ]]
+(パネル) 採択                                       | <M-l>
+(パネル) リフレッシュ                               | gr
+(パネル) 開く                                       | <M-CR>
+(サジェスト) 採択                                   | <M-l>
+(サジェスト) 次のサジェスト                         | <M-]>
+(サジェスト) 前のサジェスト                         | <M-[>
+(サジェスト) 却下                                   | <C-l>
 
 ## CopilotChat @copilot
 CopilotChatをフロートウィンドウで開く               | <Leader>cco
@@ -224,21 +229,11 @@ Toggle Bookmark                                     | mm
 Display Bookmark List(Telescope)                    | <C-b><C-m>
 
 ## Translate
-カーソル位置の単語を日本語に翻訳                    | <C-t>j
-カーソル位置の単語を英語に翻訳                      | <C-t>e
-
-## Pantran(Translate)
-Display float window Translate                      | <Leader>tr
-Show Mappings in floating window                    | <C-_>
-Replace Close Translation                           | <C-r>
-Replace Close Input                                 | <M-r>
-Append Close Translation                            | <C-a>
-Append Close Input                                  | <M-a>
-Select Engine                                       | <C-e>
-Select Source                                       | <C-s>
-Select Target                                       | <C-t>
-Switch Languages                                    | <M-s>
-Translate                                           | <M-t>
+カーソル位置の単語を日本語に翻訳                    | <Leader>tj
+(Visual)選択範囲を日本語に翻訳                      | <Leader>tj
+カーソル位置の単語を英語に翻訳                      | <Leader>te
+(Visual)選択範囲を英語に翻訳                        | <Leader>te
+(Visual)選択範囲の日本文を英語に翻訳して置換        | <Leader>tr
 
 ## NeoTest
 フォーカスがあるファイルのテストを実行              | <M-r><M-t>f
@@ -246,7 +241,6 @@ Translate                                           | <M-t>
 テスト実行をSTOP                                    | <M-r><M-t>s
 テスト結果をfloat windowで表示                      | <M-r><M-t>v
 テスト結果をパネル(バッファ)で表示                  | <M-r><M-t>o
-
 
 ## JaPaneseIME
 Toggle inLine IME                                   | <C-j>
