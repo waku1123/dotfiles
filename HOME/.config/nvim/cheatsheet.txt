@@ -65,8 +65,7 @@ CopilotChatを水平分割で開く                         | <Leader>ccb
 Telescopeで選択したバッファを閉じる                 | (insert mode) <C-c>
 バッファを左に移動                                  | <Leader>h
 バッファを右に移動                                  | <Leader>l
-左のバッファ全てを閉じる                            | <C-S-h>
-右のバッファ全てを閉じる                            | <C-S-l>
+バッファタブを選択して閉じる                        | <M-c>
 コードを折畳む                                      | zc
 コードを展開する                                    | zo
 コードを全て折畳む                                  | zM
@@ -79,9 +78,7 @@ Telescopeで選択したバッファを閉じる                 | (insert mode)
 記号の位置を整列する(パラグラフ)                    | vipga{整列する記号}
 選択範囲を記号で整列する(easy-align)                | (visual) ga{整列する記号}
 
-
-
-## Obsidian
+## Obsidian @note
 Obsidian ノートを検索する                           | <Leader>o
 Obsidian ノートを作成する                           | <Leader>on
 Obsidian デイリーノートを作成する                   | <Leader>ot
@@ -127,7 +124,6 @@ REPL を起動                                         | <Leader>dr
 ステップアウト                                      | <F7>
 
 ## Git @git @diff
-Branch List(Telescope)                              | <M-g><M-b>
 Show Diff HEAD~1                                    | <Leader>df
 Show File History                                   | <Leader>dh
 Close Diffview                                      | <Leader>dc
@@ -165,14 +161,14 @@ View pending review comments                        | :Octo review comments
 Close the review window and return to the PR        | :Octo review close
 
 ## Docker
-docker Container List(Telescope)                    | <M-d><M-c>
-docker Image List(Telescope)                        | <M-d><M-i>
+docker コンテナリストを表示(Telescope)              | <M-d><M-c>
+docker イメージリストを表示(Telescope)              | <M-d><M-i>
 docker Compose List(Telescope)                      | <M-d><M-p>
 docker File List(Telescope)                         | <M-d><M-l>
 
 ## TODO
-Jump to Next TODO                                   | ;t
-Jump to prev TODO                                   | :t
+次のTODOコメントにジャンプ                          | ;t
+前のTODOコメントにジャンプ                          | :t
 
 ## Surround
 空白あり/空白なし                                   | あり: "(" / なし: ")"
@@ -193,28 +189,27 @@ Display troubles in quickfix                        | <Leader>xq
 Display troublesin locallist                        | <Leader>xl
 
 ## Noice
-Display Latest Error                                | <Leader>nl
-Display Error List(Telescope)                       | <Leader>nh
+直近のエラーを表示                                  | <Leader>nl
+エラーリストを表示(Telescope)                       | <Leader>nh
 
 ## Increment
-Increment                                           | <C-a>
-Decrement                                           | <C-x>
+インクリメント                                      | <C-a>
+デクリメント                                        | <C-x>
 
 ## Outline
-Jump Selected Outline (Telescope)                   | <C-s>t
-Display Outline Pane                                | <leader>a
-Jump to Prev Outline                                | <Leader>k
-Jump to Next Outline                                | <leader>j
+選択したアウトラインにジャンプ(Telescope)           | <C-s>t
+アウトラインペインを表示                            | <leader>a
+前のアウトラインにジャンプ                          | <Leader>k
+次のアウトラインにジャンプ                          | <leader>j
 
 ## Telescope
-Search by Filename(Telescope)                       | <F3>
-Search by Content(Telescope)                        | <F4>
-Show Smart Open(Telescope)                          | <F5>
-Search by TODO(Telescope)                           | <C-t><C-d>
-Keymap List(Telescope)                              | <C-k><C-m>
-Search Command History(Telescope)                   | <C-c><C-h>
+ファイル名で検索(Telescope)                         | <F3>
+ファイル内容で検索(Telescope)                       | <F4>
+プロジェクト内ファイル名で検索(Telescope)           | <F5>
+TODOコメントを検索(Telescope)                       | <C-t><C-d>
+コマンド履歴を検索(Telescope)                       | <C-c><C-h>
 
-## Hop
+## Hop @easymotion
 hop to matched 'input pattern'                      | <Leader>/
 hop to vertical current Line column                 | <Leader>v
 hop to after Cursor Word                            | <Leader>w
@@ -225,8 +220,8 @@ hop before to after Cursor Line                     | <Leader>t
 hop before to before Cursor Line                    | <Leader>T
 
 ## Bookmark
-Toggle Bookmark                                     | mm
-Display Bookmark List(Telescope)                    | <C-b><C-m>
+ブックマークをトグル                                | mm
+ブックマークリストを表示(Telescope)                 | <C-b><C-m>
 
 ## Translate
 カーソル位置の単語を日本語に翻訳                    | <Leader>tj
@@ -244,30 +239,30 @@ Display Bookmark List(Telescope)                    | <C-b><C-m>
 
 
 ## Rust @rust @rustacean
-ドキュメントをブラウザで表示 | :RustLsp openDocs
-リントを実行 | :RustLsp flyCheck
-(カーソル上の)エラー説明を表示 | :RustLsp explainError cycle
-ホバーアクションを表示 | :RustLsp hover {range}
+ドキュメントをブラウザで表示                        | :RustLsp openDocs
+リントを実行                                        | :RustLsp flyCheck
+(カーソル上の)エラー説明を表示                      | :RustLsp explainError cycle
+ホバーアクションを表示                              | :RustLsp hover {range}
 
 
-## JaPaneseIME
-Toggle inLine IME                                   | <C-j>
+## 日本語入力 @skkeleton @ime
+IMEをトグル                                         | <C-j>
 
 ## Wezterm @wezterm
-New Window                                          | <⌘-n>
-Toggle Fullscreen                                   | <A-Enter>
-Quit Wezterm                                        | <⌘-q>
-Reload Configuration                                | <⌘-r>
-Show Command Palette                                | F1
+新しいウィンドウを表示                              | <⌘-n>
+全画面表示                                          | <A-Enter>
+終了                                                | <⌘-q>
+設定ファイルをリロード                              | <⌘-r>
+コマンドパレットを表示                              | F1
 Quick Select Mode                                   | <S-C-Space>
 Search Mode                                         | <⌘-f>
 Copy Mode                                           | F4
 Debug Overlay                                       | F12
 
 ## Wezterm-Tab @wezterm @tab
-New Tab                                             | <⌘-t>
-Active Right Tab                                    | <C-Tab>
-Active Left Tab                                     | <C-S-Tab>
+新しいタブを作成                                    | <⌘-t>
+右のタブをアクティブにする                          | <C-Tab>
+左のタブをアクティブにする                          | <C-S-Tab>
 
 ## Wezterm-Pane @wezterm @Pane
 Split Horizontally                                  | <⌘-d>
