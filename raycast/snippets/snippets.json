@@ -44,6 +44,5 @@
   {"name":"[Docker] Search always restart container","text":"docker inspect -f \"{{.Name}} {{.HostConfig.RestartPolicy.Name}}\" $(docker ps -aq) | grep always"},
   {"name":"[Django] dumpdata","text":"manage.py dumpdata <app>.<table> -o <path>\/fixture\/<filename>.json"},
   {"name":"[Localstack] S3","text":"aws --profile localstack --endpoint-url=http:\/\/localhost:4566 s3"},
-  {"name":"Localstack - S3", "text": "aws --profile localstack --endpoint-url=http://localhost:4566 s3", "keyword": "" },
   {"name":"[Azure] Switch Active Subscription","text":"az account set --subscription $(az account list --output json | jq -r '.[].name' | peco --prompt 'Select SubscriptionName for Switch Active Tenant to >' | xargs -I{} az account list --query \"[?name=='{}'].id\" --output tsv)\n"}
 ]
