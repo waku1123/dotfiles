@@ -12,8 +12,8 @@ if not vim.g.vscode then
         options = {
           icons_enabled = true,
           theme = "tokyonight",
-          --component_separators = { left = '', right = ''},
-          --section_separators = { left = '', right = ''},
+          --component_separators = { left = "", right = ""},
+          --section_separators = { left = "", right = ""},
           disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -28,21 +28,36 @@ if not vim.g.vscode then
           }
         },
         sections = {
-          lualine_a = { 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_a = { "mode" },
+          lualine_b = { "branch", "diff", "diagnostics" },
           lualine_c = {
-            { 'filename', path = 4 },
+            {
+              "filename",
+              file_status = true,
+              path = 3,
+              shorting_target = 60,
+              symbols = { 
+                modified = "[+]",
+                readonly = "[-]",
+                unnamed = "[No Name]",
+                newfile = "[New]",
+              }
+            },
           },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'location', 'progress' },
+          lualine_x = { 
+            { "encoding", show_bomb = true },
+            "fileformat",
+            "filetype",
+          },
+          lualine_y = { "location", "progress" },
           lualine_z = {
-            { 'datetime', style = "%Y/%m/%d %H:%M:%S" }
+            { "datetime", style = "%Y/%m/%d %H:%M:%S" }
           }
         },
         inactive_sections = {
           lualine_a = {
             {
-              'filename',
+              "filename",
               path = 4,
             },
           },
@@ -50,14 +65,14 @@ if not vim.g.vscode then
           },
           lualine_c = {
           },
-          lualine_x = { 'location' },
+          lualine_x = { "location" },
           lualine_y = {},
           lualine_z = {}
         },
         tabline = {},
         winbar = {},
         inactive_winbar = {},
-        extensions = { 'neo-tree', 'aerial', 'toggleterm', "mason", "lazy" }
+        extensions = { "neo-tree", "aerial", "toggleterm", "mason", "lazy" }
       })
     end
   }
