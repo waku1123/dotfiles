@@ -3,19 +3,18 @@ local my_on_attach = function(client, bufnr)
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.format {async=true}<CR>", { noremap = true, silent = false, desc = "フォーマットを実行" })
   -- 'K' でカーソル下の変数情報を表示
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {  noremap = true, silent = false, desc = "カーソル下の変数情報を表示" })
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {  noremap = true, silent = false, desc = "カーソル下の変数情報を表示" })
   -- 'gr' でカーソル下の変数を参照している箇所の一覧表示
   --vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  -- 定義へジャンプ
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = false, desc = "定義へジャンプ" })
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = false, desc = "定義へジャンプ" })
   -- 宣言へジャンプ
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = false, desc = "宣言へジャンプ" })
   -- 実装へジャンプ
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = false, desc = "実装へジャンプ" })
   -- 型定義へジャンプ
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = false, desc = "型定義へジャンプ" })
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = false, desc = "型定義へジャンプ" })
   -- Error/Warning/Hint が出ている箇所で実行可能な修正の候補を表示
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = false, desc = "Error/Warning/Hint が出ている箇所で実行可能な修正の候補を表示" })
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = false, desc = "Error/Warning/Hint が出ている箇所で実行可能な修正の候補を表示" })
   -- 変数名のリネーム
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = false, desc = "変数名のリネーム" })
 
@@ -225,8 +224,33 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
+    keys = {
+      -- カーソル下の情報を表示
+      { "K", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "カーソル下の情報を表示" },
+      -- 定義へジャンプ
+      { "gd", "<cmd>Lspsaga goto_definition<CR>", mode = "n", desc = "定義にジャンプ" },
+      -- 呼出階層を表示
+      { "gr", "<cmd>Lspsaga outgoing_calls<CR>", mode = "n", desc = "呼出階層を表示" },
+      -- 型定義へジャンプ
+      { "gt", "<cmd>Lspsage goto_type_definition<CR>", mode = "n", desc = "型定義にジャンプ"},
+      -- コードアクションを表示
+      { "ga", "<cmd>Lspsaga code_action<CR>", mode = "n", desc = "コードアクションを表示" },
+    },
     config = function()
-      require("lspsaga").setup({})
+      require("lspsaga").setup({
+        definition = {
+          width = 0.6,
+          height = 0.5,
+          keys = {
+            edit = { "<C-c>o", desc = "定義を編集" },
+            vsplit = { "<C-c>v", desc = "垂直分割で定義を表示" },
+            split = { "<C-c>s", desc = "水平分割で定義を表示" },
+            tab = { "<C-c>t", desc = "新しいタブで定義を表示" },
+            quit = { "q", "<ESC>", "<C-c>q", desc = "閉じる" },
+            close = { "<C-c>k", desc = "閉じる" },
+          }
+        }
+      })
     end,
   }
 }
