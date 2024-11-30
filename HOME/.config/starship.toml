@@ -117,6 +117,7 @@ format            = "$symbol(yellow) [$version](yellow) "
 cherry_pick       = "[ ](red)"
 
 [git_status]
+format            = '([\[ $all_status$ahead_behind\]](bold white) )'
 # Gitのステータス表示アイコン
 conflicted        = "[ ${count} ](bright-red) "
 ahead             = "[ ${count} ](green)"
