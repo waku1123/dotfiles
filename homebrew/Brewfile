@@ -2,6 +2,7 @@ tap "1password/tap"
 tap "azure/functions"
 tap "daipeihust/tap"
 tap "dart-lang/dart"
+tap "go-task/tap"
 tap "helix-editor/helix"
 tap "homebrew-ffmpeg/ffmpeg"
 tap "homebrew/bundle"
@@ -89,6 +90,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "azure/functions/azure-functions-core-tools@4"
 brew "daipeihust/tap/im-select"
+brew "go-task/tap/go-task"
 brew "leoafarias/fvm/fvm"
 cask "1password"
 cask "1password-cli"
@@ -126,6 +128,7 @@ cask "vivaldi"
 cask "warp"
 cask "wezterm"
 mas "1Password for Safari", id: 1569813296
+mas "Dropover", id: 1355679052
 mas "feedly", id: 865500966
 mas "FlipClock", id: 1181028777
 mas "GIPHY CAPTURE", id: 668208984
