@@ -21,12 +21,6 @@ define dir-exist
 	@test $1 || echo $1 does not exist
 endef
 
-tig:
-	@echo "tigrc --- start"
-	ln -s ${PROJECT_DIR}/HOME/.tigrc ~/.tigrc
-	@echo "tigrc --- finished"
-	ls -l $(HOME)/.tigrc
-
 tmux:
 	@echo "tmux deploy --- start"
 	ln -s ${PROJECT_DIR}/HOME/.tmux.conf $(HOME)/.tmux.conf
