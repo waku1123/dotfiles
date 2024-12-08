@@ -7,10 +7,10 @@ echo "PROJECT DIRECTORY: $PROJECT_DIR"
 echo "--- Homebrew ---"
 if ! command -v brew &> /dev/null
 then
-  echo -e "\n Homebrew is not installed. Installing Homebrew..."
+  echo -e "Homebrew is not installed. Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  echo -e "\n Homebrew is already installed."
+  echo -e "Homebrew is already installed."
 fi
 
 echo "--- Brew Bundle ---"
@@ -36,17 +36,22 @@ then
   echo "go-task is not installed."
   brew install go-task
 else
-  echo "--- Create Symbolic Links ---"
+  echo "--- Setup MacOS Settings ---"
   task macos:screenshot
   task prepare:directories
+  echo "--- Setup starship ---"
   task links:starship
+  echo "--- Setup GIt ---"
   task git:setup
   task lazygit
+  echo "--- Setup Editor ---"
   task nvim
   task links:ideavim
+  task zed:settings
+  task zed:keymap
+  echo "--- Setup Terminal App ---"
   task links:warp
   task links:wezterm
-
   echo "--- SetUp asdf ---"
   task asdf:plugins
   task asdf:latest
