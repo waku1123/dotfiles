@@ -19,9 +19,9 @@
 	name = yss
 	email = waku.pdxppxzy@gmail.com
 [ghq]
-	root = /Users/yss/PROJECTS
+	root = ~/PROJECTS
 [commit]
-	template = /Users/yss/.config/git/.commit_template
+	template = ~/.config/git/.commit_template
 [core]
     quotepath     = false
     editor        = nvim
