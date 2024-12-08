@@ -35,4 +35,3 @@ tasks:
     preconditions:
       - sh: '[ ! -L ~/.config/wezterm ]'
         msg: "~/.config/wezterm is already exists"
-

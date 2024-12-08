@@ -9,11 +9,8 @@ tasks:
     desc: Install Formulaes from Brewfile
     cmds:
       - brew bundle --file "{{.PROJECT_DIR}}/homebrew/Brewfile"
-      - mkdir ~/SCREENSHOTS
-      - mkdir ~/Documents/FREEZE_CODES
 
   dump:
     desc: Dump Installed Formulaes
     cmds:
       - brew bundle dump --force --file "{{.PROJECT_DIR}}/homebrew/Brewfile"
-

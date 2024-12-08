@@ -37,8 +37,9 @@ then
   brew install go-task
 else
   echo "--- Create Symbolic Links ---"
+  task prepare:directories
   task links:starship
-  task git
+  task git:setup
   task lazygit
   task nvim
   task links:ideavim
