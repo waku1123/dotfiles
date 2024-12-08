@@ -37,6 +37,7 @@ then
   brew install go-task
 else
   echo "--- Create Symbolic Links ---"
+  task macos:screenshot
   task prepare:directories
   task links:starship
   task git:setup

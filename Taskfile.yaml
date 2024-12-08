@@ -17,6 +17,7 @@ includes:
     taskfile: ./tasks/git.yaml
   zed: ./tasks/zed.yaml
   prepare: ./tasks/prepare.yaml
+  macos: ./tasks/macos.yaml
 
 tasks:
   default:
