@@ -7,7 +7,14 @@ vars:
 tasks:
   git:
     desc: Create Symbolic Links for git
-    deps: [config, ignore, template]
+    deps: [make_root, config, ignore, template]
+
+  make_root:
+    internal: true,
+    desc: Make ghq root Directory
+    cmds:
+      - mkdir ~/PROJECTS
+
   config:
     internal: true
     desc: Create Symbolic Link of git config
@@ -16,6 +23,7 @@ tasks:
     preconditions:
       - sh: '[ ! -L ~/.gitconfig ]'
         msg: "~/.gitconfig is already exists"
+
   ignore:
     internal: true
     desc: Create Symbolic Link of git global ignore
@@ -24,6 +32,7 @@ tasks:
     preconditions:
       - sh: '[ ! -L ~/.config/git/ignore ]'
         msg: "~/.config/git/ignore is already exists"
+
   template:
     internal: true
     desc: Create Symbolic Link of commit_template

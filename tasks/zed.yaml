@@ -13,6 +13,7 @@ tasks:
     preconditions:
       - sh: '[ ! -L ~/.config/zed/settings.json ]'
         msg: "~/.config/zed/settings.json is already exists"
+
   keymap:
     desc: Create Symbolic Link for zed editor
     cmds:
