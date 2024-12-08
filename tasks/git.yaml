@@ -10,7 +10,7 @@ tasks:
     deps: [make_root, config, ignore, template]
 
   make_root:
-    internal: true,
+    internal: true
     desc: Make ghq root Directory
     cmds:
       - mkdir ~/PROJECTS
