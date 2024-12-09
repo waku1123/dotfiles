@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
   "base_keymap": "JetBrains",
   "telemetry": {
     "metrics": false,
@@ -60,7 +67,11 @@
     "line_height": {
       "custom": 1.2
     },
-    "working_directory": "current_project_directory"
+    "working_directory": "current_project_directory",
+    "env": {
+      "LANG": "ja_JP.UTF-8",
+      "LC_ALL": "ja_JP.UTF-8"
+    }
   },
   "languages": {
     "Python": {
