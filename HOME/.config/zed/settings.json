@@ -50,7 +50,7 @@
     "toggle_relative_line_numbers": true
   },
   // 空白文字の表示
-  "show_whitespace": true,
+  "show_whitespaces": "all",
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
