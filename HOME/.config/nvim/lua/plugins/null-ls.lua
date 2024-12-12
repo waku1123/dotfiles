@@ -72,24 +72,28 @@ return {
         extra_args = { "--config", "~/.config/cspell/cspell.json" }
       }),
       -- python
-      null_ls.builtins.formatting.black.with({
-        filetypes = { "python" },
-        extra_args = { "--config", "./pyproject.toml" }
-      }),
+
+      -- ↓ 構文が間違っているが、ここを消すと ruff-lsp が動かなくなるので残す
       require("none-ls.formatting.ruff").with({
         filetypes = { "python" },
         extra_args = { "--config", "./pyproject.toml" }
       }),
+
       null_ls.builtins.diagnostics.mypy.with({
         filetypes = { "python" },
         diagnostics_format = '[#{s}] (#{c}) #{m}',
-        extra_args = { "--config-file", "./pyproject.toml" }
+        -- if you want to mypy settings to pyproject.toml, you should run the following command
+        -- cd ~/.local/share/nvim/mason/packages/mypy/ \
+        --    && source venv/bin/activate \
+        --    && pip install 'pydantic[email, timezone]` pydantic-settings \
+        --    && deactivate`
+        extra_args = { "--install-types", "--non-interactive" }
       }),
 
-      require("none-ls.diagnostics.ruff").with({
+      null_ls.builtins.diagnostics.ruff.with({
         filetypes = { "python" },
         diagnostics_format = '[#{s}] (#{c}) #{m}',
-        extra_args = vim.fn.filereadable("./pyproject.toml") == 1 and { "--config", "./pyproject.toml" } or nil
+        extra_args = { "--config", "./pyproject.toml" }
       }),
       -- markdown
       null_ls.builtins.diagnostics.markdownlint.with({
