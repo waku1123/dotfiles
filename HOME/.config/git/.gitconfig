@@ -1,14 +1,22 @@
 [pager]
-  diff          = delta
-  log           = delta
-  reflog        = delta
-  show          = delta
+    diff          = delta
+    log           = delta
+    reflog        = delta
+    show          = delta
 
 [alias]
+  # ブランチ一覧(local/remote)
+  branchs = branch -a
+  ba = branch -a
+  # リモートブランチ一覧
+  remotes = branch -r
+  br = branch -r
+  # ローカルブランチ一覧
+  locals = branch -l
+  bl = branch -l
   # git st == git status
   st = status
-  # git br == git branch -l
-  bl = branch -l
+  # ブランチ削除
   delete = branch -D
   # git branch graph
   bg = log --graph --simplify-by-decoration --pretty=format:'%d' --all
@@ -25,29 +33,25 @@
   lg = !"git log --oneline --graph --decorate $(git cb)"
 
 [delta]
-  line-numbers  = true
-  side-by-side  = true
-  syntax-theme  = Monokai Extended
-  navigate      = true
-  side-by-side  = true
+    line-numbers  = true
+    side-by-side  = true
+    syntax-theme  = Monokai Extended
+    navigate      = true
+    side-by-side  = true
 
 [interractive]
-  diffFilter    = delta --color-only
+    diffFilter    = delta --color-only
 
 [user]
-  name          = sugawarayss
-  email         = sugawarayss@inap-vision.co.jp
-
+    name          = sugawarayss
+    email         = sugawarayss@inap-vision.co.jp
 [ghq]
-  root          = ~/PROJECTS
-
+    root          = ~/PROJECTS
 [commit]
-  template      = ~/.config/git/.commit_template
-
+    template      = ~/.config/git/.commit_template
 [core]
-  quotepath     = false
-  editor        = nvim
-  autocrlf      = input
-
+    quotepath     = false
+    editor        = nvim
+	autocrlf      = input
 [init]
-  defaultBranch = main
+    defaultBranch = main
