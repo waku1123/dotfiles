@@ -6,7 +6,7 @@ tasks:
     cmds:
       - defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
       - defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool FXDefaultSearchScope
-      - defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+      # - defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
   dock:
     desc: Change Dock Settings
