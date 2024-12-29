@@ -4,8 +4,8 @@ return {
   event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local helpers = require("incline.helpers")
-    local devicons = require("nvim-web-devicons")
+    local helpers       = require("incline.helpers")
+    local devicons      = require("nvim-web-devicons")
     local color_palette = require("tokyonight.colors").setup()
     require("incline").setup({
       window = {

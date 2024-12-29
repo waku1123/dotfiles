@@ -6,7 +6,7 @@ return {
   keys = {
     { "<Leader>df", "<cmd>DiffviewOpen HEAD~1<CR>", mode = "n", desc = "Diffビューを表示" },
     { "<Leader>dh", "<cmd>DiffviewFileHistory<CR>", mode = "n", desc = "ファイル履歴を表示" },
-    { "<Leader>dc", "<cmd>DiffviewClose<CR>", mode = "n", desc = "Diffビューを閉じる"},
+    { "<Leader>dc", "<cmd>DiffviewClose<CR>",       mode = "n", desc = "Diffビューを閉じる"},
   },
   config = function()
     local actions = require("diffview.actions")

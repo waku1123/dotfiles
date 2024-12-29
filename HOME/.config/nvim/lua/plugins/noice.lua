@@ -2,14 +2,14 @@
 local color_palette = require("tokyonight.colors").setup()
 
 local noice_cmd_types = {
-  CmdLine = color_palette.blue0,     -- #3d59a1
-  Input = color_palette.fg_dark,     -- #a9b1d6
-  Lua = color_palette.purple,        -- #9d7cd8
-  Filter = color_palette.green2,     -- #41a6b5
-  Rename = color_palette.orange,     -- #ff9e64
-  Search =  color_palette. yellow,   -- #e0af68
+  CmdLine    = color_palette.blue0,     -- #3d59a1
+  Input      = color_palette.fg_dark,     -- #a9b1d6
+  Lua        = color_palette.purple,        -- #9d7cd8
+  Filter     = color_palette.green2,     -- #41a6b5
+  Rename     = color_palette.orange,     -- #ff9e64
+  Search     = color_palette. yellow,   -- #e0af68
   Substitute = color_palette.teal,   -- #1abc9c
-  Help = color_palette.comment,      -- #565f89
+  Help       = color_palette.comment,      -- #565f89
 }
 
 -- CmdLineや通知をpopupで表示するプラグイン
@@ -24,7 +24,7 @@ return {
   },
   keys = {
     { "<leader>nl", function() require("noice").cmd("last") end, mode = "n", desc = "直近の通知を表示" },
-    { "<leader>nh", "<cmd>Noice telescope<CR>", mode = "n", desc = "Telescopeで通知を表示" },
+    { "<leader>nh", "<cmd>Noice telescope<CR>",                  mode = "n", desc = "Telescopeで通知を表示" },
   },
   config = function()
     vim.opt.cmdheight = 0
@@ -35,42 +35,42 @@ return {
     require("noice").setup({
       cmdline = {
         enabled = true,
-        view = "cmdline_popup",
-        opts = {},
+        view    = "cmdline_popup",
+        opts    = {},
         format = {
-          cmdline = { pattern = "^:", icon = " ", lang = "vim" },
+          cmdline     = { pattern = "^:", icon = " ", lang = "vim" },
           search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-          search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+          search_up   = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
         },
       },
       messages = {
-        enabled = true,
-        view = "notify",
-        view_error = "notify",
-        view_warn = "notify",
+        enabled      = true,
+        view         = "notify",
+        view_error   = "notify",
+        view_warn    = "notify",
         view_history = "messages",
-        view_search = "virtualtext",
+        view_search  = "virtualtext",
       },
       popupmenu = {
-        enabled = true,
-        backend = "cmp",
+        enabled    = true,
+        backend    = "cmp",
         kind_icons = {},
       },
       redirect = {
-        view = "popup",
+        view   = "popup",
         filter = { event = "msg_show" },
       },
       commands = {
         history = {
-          view = "split",
-          opts = { enter = true, format = "details" },
+          view   = "split",
+          opts   = { enter = true, format = "details" },
           filter = {
             any = {
-              { event = "notify" },
-              { error = true },
+              { event   = "notify" },
+              { error   = true },
               { warning = true },
-              { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event   = "msg_show", kind = { "" } },
+              { event   = "lsp",      kind = "message" },
             },
           },
         },
@@ -79,11 +79,11 @@ return {
           opts = { enter = true, format = "details" },
           filter = {
             any = {
-              { event = "notify" },
-              { error = true },
+              { event   = "notify" },
+              { error   = true },
               { warning = true },
-              { event = "msg_show", kind = { "" } },
-              { event = "lsp", kind = "message" },
+              { event   = "msg_show", kind = { "" } },
+              { event   = "lsp", kind = "message" },
             },
           },
           filter_opts = { count = 1 },
@@ -119,16 +119,16 @@ return {
         },
         hover = {
           enabled = true,
-          silent = false,
-          view = nil,
-          opts = {},
+          silent  = false,
+          view    = nil,
+          opts    = {},
         },
         signature = {
           enabled = true,
           auto_open = {
-            enabled = true,
-            trigger = true,
-            luasnip = true,
+            enabled  = true,
+            trigger  = true,
+            luasnip  = true,
             throttle = 50,
           },
           view = nil,
@@ -168,11 +168,11 @@ return {
         checker = true,
       },
       presets = {
-        bottom_search = false,
-        command_palette = false,
+        bottom_search         = false,
+        command_palette       = false,
         long_message_to_split = false,
-        inc_rename = false,
-        lsp_doc_border = true,
+        inc_rename            = false,
+        lsp_doc_border        = true,
       },
       throttle = 1000 / 30,
       views = {
