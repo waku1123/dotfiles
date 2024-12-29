@@ -75,16 +75,16 @@ return {
           dynamic_preview_title = true,
           mappings = {
             n = {
-              ['<ESC>'] = function(...) return actions.close(...) end,
-              ['<C-t>'] = action_layout.toggle_preview,
+              ["<ESC>"] = function(...) return actions.close(...) end,
+              ["<C-t>"] = action_layout.toggle_preview,
             },
             i = {
-              ['<C-c>'] = actions.delete_buffer,
-              ['<C-u>'] = function(...) return actions.preview_scrolling_up(...) end,
-              ['<C-d>'] = function(...) return actions.preview_scrolling_down(...) end,
-              ['<C-s>'] = actions.select_horizontal,
-              ['<C-x>'] = false,
-              ['<C-t>'] = open_with_trouble,
+              ["<C-c>"] = actions.delete_buffer,
+              ["<C-u>"] = function(...) return actions.preview_scrolling_up(...) end,
+              ["<C-d>"] = function(...) return actions.preview_scrolling_down(...) end,
+              ["<C-s>"] = actions.select_horizontal,
+              ["<C-x>"] = false,
+              ["<C-t>"] = open_with_trouble,
             }
           }
         },

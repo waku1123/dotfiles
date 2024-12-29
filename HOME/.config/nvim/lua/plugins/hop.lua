@@ -3,7 +3,7 @@ return {
   "phaazon/hop.nvim",
   lazy = true,
   enabled = true,
-  branch = 'v2',
+  branch = "v2",
   event = { "BufReadPre" },
   keys = {
       {"<Leader>/", "<cmd>HopPattern<CR>", desc = "入力したパターンでhop"},
@@ -14,11 +14,11 @@ return {
       {"f", "<cmd>HopChar2AC<CR>", desc = "カーソルより後ろの入力文字にhop"},
       {"F", "<cmd>HopChar2BC<CR>", desc = "カーソルより前の入力文字にhop"},
       {"t", function()
-        require('hop').hint_char2({ direction = function() return require('hop.hint').HintDirection.AFTER_CURSOR end, current_line_only = true, hint_offset = -1 })
+        require("hop").hint_char2({ direction = function() return require("hop.hint").HintDirection.AFTER_CURSOR end, current_line_only = true, hint_offset = -1 })
        end, desc = "カーソル行内で指定文字の直前にhop"},
       {
         "T",
-        function() require('hop').hint_char2({ direction = function() return require('hop.hint').HintDirection.BEFORE_CURSOR end, current_line_only = true, hint_offset = 1 }) end,
+        function() require("hop").hint_char2({ direction = function() return require("hop.hint").HintDirection.BEFORE_CURSOR end, current_line_only = true, hint_offset = 1 }) end,
         desc = "カーソル行内で指定文字の直後にhop",
       },
   },

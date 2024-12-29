@@ -1,11 +1,11 @@
 -- タブごとに表示するバッファを切り替える
 if not vim.g.vscode then
   return {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     version = "*",
     lazy = true,
     dependencies = {
-      'nvim-tree/nvim-web-devicons',
+      "nvim-tree/nvim-web-devicons",
     },
     event = { "BufReadPre" },
     keys = {
@@ -118,7 +118,7 @@ if not vim.g.vscode then
           hover = {
             enabled = true,
             delay = 200,
-            reveal = {'close'}
+            reveal = {"close"}
           },
           sort_by = function(buffer_a, buffer_b)
             if not buffer_a and buffer_b then

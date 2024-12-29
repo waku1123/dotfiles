@@ -38,9 +38,9 @@ return {
         view = "cmdline_popup",
         opts = {},
         format = {
-          cmdline = { pattern = '^:', icon = ' ', lang = 'vim' },
-          search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex' },
-          search_up = { kind = 'search', pattern = '^%?', icon = ' ', lang = 'regex' },
+          cmdline = { pattern = "^:", icon = " ", lang = "vim" },
+          search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+          search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
         },
       },
       messages = {
@@ -113,9 +113,9 @@ return {
           view = "mini",
         },
         override = {
-          ['vim.lsp.util.convert_input_to_markdown_lines'] = false,
-          ['vim.lsp.util.stylize_markdown'] = false,
-          ['cmp.entry.get_documentation'] = true,
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+          ["vim.lsp.util.stylize_markdown"] = false,
+          ["cmp.entry.get_documentation"] = true,
         },
         hover = {
           enabled = true,

@@ -75,13 +75,13 @@ local dap_adapters = {
 local my_on_attach = function(client, bufnr)
   for _, value in pairs(lsp_servers) do
     if client == value then
-      -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+      -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
       -- FIXME: WhichKey が gf を使用しているので使えない。。。
       vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.format {async=true}<CR>", { noremap = true, silent = false, desc = "フォーマットを実行" })
-      -- 'K' でカーソル下の変数情報を表示
+      -- "K" でカーソル下の変数情報を表示
       -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {  noremap = true, silent = false, desc = "カーソル下の変数情報を表示" })
-      -- 'gr' でカーソル下の変数を参照している箇所の一覧表示
-      --vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+      -- "gr" でカーソル下の変数を参照している箇所の一覧表示
+      --vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
       -- 定義へジャンプ
       -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = false, desc = "定義へジャンプ" })
       -- 宣言へジャンプ

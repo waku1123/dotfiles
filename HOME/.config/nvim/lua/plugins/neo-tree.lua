@@ -141,7 +141,7 @@ return {
             -- ["w"] = "open_with_window_picker",
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_node",
-            -- ['C'] = 'close_all_subnodes',
+            -- ["C"] = "close_all_subnodes",
             ["z"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
             ["a"] = {
@@ -176,13 +176,13 @@ return {
             -- ["<C-s>"] = "split_with_window_picker",
             ["<C-v>"] = "open_vsplit",  -- 垂直分割で開く
             -- ["<C-v>"] = "vsplit_with_window_picker",
-            ['<tab>'] = function (state) -- ファイルを開いてもNeotreeを閉じない
+            ["<tab>"] = function (state) -- ファイルを開いてもNeotreeを閉じない
               local node = state.tree:get_node()
               if require("neo-tree.utils").is_expandable(node) then
                 state.commands["toggle_node"](state)
               else
-                state.commands['open'](state)
-                vim.cmd('Neotree reveal')
+                state.commands["open"](state)
+                vim.cmd("Neotree reveal")
               end
             end,
           },
@@ -250,14 +250,14 @@ return {
               ["on"] = { "order_by_name", nowait = false },
               ["os"] = { "order_by_size", nowait = false },
               ["ot"] = { "order_by_type", nowait = false },
-              -- ['<key>'] = function(state) ... end,
+              -- ["<key>"] = function(state) ... end,
             },
             fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
               ["<down>"] = "move_cursor_down",
               ["<C-n>"] = "move_cursor_down",
               ["<up>"] = "move_cursor_up",
               ["<C-p>"] = "move_cursor_up",
-              -- ['<key>'] = function(state, scroll_padding) ... end,
+              -- ["<key>"] = function(state, scroll_padding) ... end,
             },
           },
 

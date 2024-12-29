@@ -49,19 +49,19 @@ return {
       }
     })
     local debugpy_path = require("mason-registry").get_package("debugpy"):get_install_path()
-    require('dap-python').setup(debugpy_path .. "/venv/bin/python")
+    require("dap-python").setup(debugpy_path .. "/venv/bin/python")
     require("dap-python").test_runner = "pytest"
 
-    table.insert(require('dap').configurations.python, {
-      type = 'python',
-      request = 'launch',
+    table.insert(require("dap").configurations.python, {
+      type = "python",
+      request = "launch",
       name = "Launch current file",
       program = "${file}",
       cwd = vim.fn.getcwd(),
       env = "PYTHONPATH=.",
       pythonPath = function()
         local cwd = vim.fn.getcwd()
-        return vim.fn.input('Path to python interpreter: ', cwd .. '/.venv/bin/python')
+        return vim.fn.input("Path to python interpreter: ", cwd .. "/.venv/bin/python")
       end,
     })
   end,
