@@ -11,48 +11,42 @@ return {
       { "nvim-tree/nvim-web-devicons" },
       { "MunifTanjim/nui.nvim" },
       { "s1n7ax/nvim-window-picker" },
-      -- { "3rd/image.nvim" },
     },
     config = function ()
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-      vim.fn.sign_define("DiagnosticSignError",
-        {text = " ", texthl = "DiagnosticSignError"})
-      vim.fn.sign_define("DiagnosticSignWarn",
-        {text = " ", texthl = "DiagnosticSignWarn"})
-      vim.fn.sign_define("DiagnosticSignInfo",
-        {text = " ", texthl = "DiagnosticSignInfo"})
-      vim.fn.sign_define("DiagnosticSignHint",
-        {text = "󰌵", texthl = "DiagnosticSignHint"})
-
+      vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+      vim.fn.sign_define("DiagnosticSignWarn",  { text = " ", texthl = "DiagnosticSignWarn"  })
+      vim.fn.sign_define("DiagnosticSignInfo",  { text = " ", texthl = "DiagnosticSignInfo"  })
+      vim.fn.sign_define("DiagnosticSignHint",  { text = "󰌵",  texthl = "DiagnosticSignHint"  })
       require("neo-tree").setup({
-        close_if_last_wndow             = false,
-        popup_border_style              = "rounded",
-        enable_git_status               = true,
-        enable_diagnostics              = true,
-        open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
-        sort_case_insensitive           = false,
-        sort_function                   = nil,
-        use_default_mappings            = false,
-        default_component_configs = {
-          container = {
-            enable_character_fade = true,
+        close_if_last_wndow                  = false,
+        popup_border_style                   = "rounded",
+        enable_git_status                    = true,
+        enable_diagnostics                   = true,
+        open_files_do_not_replace_types      = { "terminal", "trouble", "qf" },
+        sort_case_insensitive                = false,
+        sort_function                        = nil,
+        use_default_mappings                 = false,
+        default_component_configs            = {
+          container                          = {
+            enable_character_fade            = true,
           },
-          indent = {
-            indent_size        = 2,
-            padding            = 1,
-            with_markers       = true,
-            indent_marker      = "|",
-            last_indent_marker = "└",
-            highlight          = "NeoTreeIndentMarker",
-            with_expanders     = nil,
-            expander_collapsed = "",
-            expander_expanded  = "",
-            expander_highlight = "NeoTreeExpander",
+          indent                             = {
+            indent_size                      = 2,
+            padding                          = 1,
+            with_markers                     = true,
+            indent_marker                    = "|",
+            last_indent_marker               = "└",
+            highlight                        = "NeoTreeIndentMarker",
+            with_expanders                   = nil,
+            expander_collapsed               = "",
+            expander_expanded                = "",
+            expander_highlight               = "NeoTreeExpander",
           },
-          icon = {
-            folder_closed = "",
-            folder_open = "",
-            folder_empty = "󱞞",
+          icon                               = {
+            folder_closed                    = "",
+            folder_open                      = "",
+            folder_empty                     = "󱞞",
             provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
               if node.type == "file" or node.type == "terminal" then
                 local success, web_devicons = pcall(require, "nvim-web-devicons")
@@ -66,52 +60,50 @@ return {
             end,
             -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
             -- then these will never be used.
-            default = "*",
-            highlight = "NeoTreeFileIcon"
+            default                          = "*",
+            highlight                        = "NeoTreeFileIcon"
           },
           modified = {
-            symbol = "[+]",
-            highlight = "NeoTreeModified",
+            symbol                           = "[+]",
+            highlight                        = "NeoTreeModified",
           },
           name = {
-            trailing_slash = false,
-            use_git_status_colors = true,
-            highlight = "NeoTreeFileName",
+            trailing_slash                   = false,
+            use_git_status_colors            = true,
+            highlight                        = "NeoTreeFileName",
           },
           git_status = {
             symbols = {
               -- Change type
-              added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified  = " ", -- or "", but this is redundant info if you use git_status_colors on the name
-              deleted   = "",-- this can only be used in the git_status source
-              renamed   = " ",-- this can only be used in the git_status source
+              added                          = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+              modified                       = " ", -- or "", but this is redundant info if you use git_status_colors on the name
+              deleted                        = "",-- this can only be used in the git_status source
+              renamed                        = " ",-- this can only be used in the git_status source
               -- Status type
-              untracked = " ",
-              ignored   = "",
-              unstaged  = "󰄱",
-              staged    = "",
-              conflict  = " ",
+              untracked                      = " ",
+              ignored                        = "",
+              unstaged                       = "󰄱",
+              staged                         = "",
+              conflict                       = " ",
             }
           },
           file_size = {
-            enabled = true,
-            required_width = 64, -- min width of window required to show this column
+            enabled                          = true,
+            required_width                   = 64, -- min width of window required to show this column
           },
           type = {
-            enabled = true,
-            required_width = 122, -- min width of window required to show this column
+            enabled                          = true,
+            required_width                   = 122, -- min width of window required to show this column
           },
           last_modified = {
-            enabled = true,
-            required_width = 88, -- min width of window required to show this column
+            enabled                          = true,
+            required_width                   = 88, -- min width of window required to show this column
           },
           created = {
-            enabled = true,
-            required_width = 110, -- min width of window required to show this column
+            enabled                          = true,
+            required_width                   = 110, -- min width of window required to show this column
           },
-          symlink_target = {
-            enabled = false,
-          },
+          symlink_target = { enabled = false },
         },
         commands = {},
         window = {
@@ -231,32 +223,32 @@ return {
                                           -- instead of relying on nvim autocmd events.
           window = {
             mappings = {
-              ["<bs>"]            = "navigate_up",
-              ["."]               = "set_root",
-              ["H"]               = "toggle_hidden",
+              ["<bs>"]  = "navigate_up",
+              ["."]     = "set_root",
+              ["H"]     = "toggle_hidden",
               --["/"] = "fuzzy_finder",
               --["D"] = "fuzzy_finder_directory",
               --["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
               -- ["D"] = "fuzzy_sorter_directory",
               --["f"] = "filter_on_submit",
-              ["<c-x>"]           = "clear_filter",
-              ["[g"]              = "prev_git_modified",
-              ["]g"]              = "next_git_modified",
-              ["o"]               = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
-              ["oc"]              = { "order_by_created", nowait = false },
-              ["od"]              = { "order_by_diagnostics", nowait = false },
-              ["og"]              = { "order_by_git_status", nowait = false },
-              ["om"]              = { "order_by_modified", nowait = false },
-              ["on"]              = { "order_by_name", nowait = false },
-              ["os"]              = { "order_by_size", nowait = false },
-              ["ot"]              = { "order_by_type", nowait = false },
+              ["<c-x>"] = "clear_filter",
+              ["[g"]    = "prev_git_modified",
+              ["]g"]    = "next_git_modified",
+              ["o"]     = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
+              ["oc"]    = { "order_by_created", nowait = false },
+              ["od"]    = { "order_by_diagnostics", nowait = false },
+              ["og"]    = { "order_by_git_status", nowait = false },
+              ["om"]    = { "order_by_modified", nowait = false },
+              ["on"]    = { "order_by_name", nowait = false },
+              ["os"]    = { "order_by_size", nowait = false },
+              ["ot"]    = { "order_by_type", nowait = false },
               -- ["<key>"] = function(state) ... end,
             },
             fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
-              ["<down>"]          = "move_cursor_down",
-              ["<C-n>"]           = "move_cursor_down",
-              ["<up>"]            = "move_cursor_up",
-              ["<C-p>"]           = "move_cursor_up",
+              ["<down>"] = "move_cursor_down",
+              ["<C-n>"]  = "move_cursor_down",
+              ["<up>"]   = "move_cursor_up",
+              ["<C-p>"]  = "move_cursor_up",
               -- ["<key>"] = function(state, scroll_padding) ... end,
             },
           },
@@ -297,7 +289,7 @@ return {
               ["gc"] = "git_commit",
               ["gp"] = "git_push",
               ["gg"] = "git_commit_and_push",
-              ["o"] = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
+              ["o"]  = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
               ["oc"] = { "order_by_created", nowait = false },
               ["od"] = { "order_by_diagnostics", nowait = false },
               ["om"] = { "order_by_modified", nowait = false },
@@ -309,47 +301,5 @@ return {
         },
       })
     end,
-  },
-  -- {  -- Vim上で画像を表示するプラグイン
-  --   "3rd/image.nvim",
-  --   lazy = false,
-  --   config = function ()
-  --     package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
-  --     package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
-  --     require("image").setup({
-  --       backend = "kitty",
-  --       integrations = {
-  --         markdown = {
-  --           enabled = true,
-  --           clear_in_insert_mode = false,
-  --           download_remote_images = true,
-  --           only_render_image_at_cursor = false,
-  --           filetypes = { "markdown", "vimwiki" }
-  --         },
-  --         neorg = {
-  --           enabled = true,
-  --           clear_in_insert_mode = false,
-  --           download_remote_images = true,
-  --           only_render_image_at_cursor = false,
-  --           filetypes = { "norg" },
-  --         },
-  --         html = {
-  --           enabled = false,
-  --         },
-  --         css = {
-  --           enabled = false,
-  --         },
-  --       },
-  --       max_width = nil,
-  --       max_height = nil,
-  --       max_width_window_percentage = nil,
-  --       max_height_window_percentage = 50,
-  --       window_overlap_clear_enabled = false,
-  --       window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-  --       editor_only_render_when_forcused = false,
-  --       tmux_show_only_in_active_window = false,
-  --       hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
-  --     })
-  --   end,
-  -- },
+  }
 }

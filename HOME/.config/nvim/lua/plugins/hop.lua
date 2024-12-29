@@ -13,7 +13,7 @@ return {
       { "<Leader>b", "<cmd>HopWordBC<CR>",      desc = "カーソルより前の単語頭にhop" },
       { "f",         "<cmd>HopChar2AC<CR>",     desc = "カーソルより後ろの入力文字にhop" },
       { "F",         "<cmd>HopChar2BC<CR>",     desc = "カーソルより前の入力文字にhop" },
-      { "t",         
+      { "t",
         function() require("hop").hint_char2({ direction = function() return require("hop.hint").HintDirection.AFTER_CURSOR end, current_line_only = true, hint_offset = -1 }) end,
         desc = "カーソル行内で指定文字の直前にhop"},
       {

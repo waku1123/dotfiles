@@ -19,8 +19,8 @@ return {
           color = color_palette.bg_dark,  -- "#1f2335
         },
         marks = {
-          Search = { color = color_palette.cyan },  -- #7dcfff
-          Error  = { color = color_palette.red },    -- #f7768e
+          Search = { color = color_palette.cyan },    -- #7dcfff
+          Error  = { color = color_palette.red },     -- #f7768e
           Warn   = { color = color_palette.yellow },  -- #e0af68
           Info   = { color = color_palette.green },   -- #9ece6a
           Hint   = { color = color_palette.blue },    -- #7aa2f7

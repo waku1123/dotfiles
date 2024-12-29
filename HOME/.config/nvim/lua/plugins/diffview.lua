@@ -11,18 +11,18 @@ return {
   config = function()
     local actions = require("diffview.actions")
     require("diffview").setup({
-      diff_binaries = false,
-      enhanced_diff_hl = false,
-      git_cmd = { "git" },
-      hg_cmd = { "hg" },
-      use_icons = true,
-      show_help_hints = true,
-      watch_index = true,
+      diff_binaries           = false,
+      enhanced_diff_hl        = false,
+      git_cmd                 = { "git" },
+      hg_cmd                  = { "hg" },
+      use_icons               = true,
+      show_help_hints         = true,
+      watch_index             = true,
       view = {
         default = {
-          layout = "diff2_horizontal",
+          layout              = "diff2_horizontal",
           disable_diagnostics = false,
-          winbar_info = false,
+          winbar_info         = false,
         },
       },
     })
