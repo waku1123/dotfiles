@@ -3,7 +3,7 @@ return {
   "hedyhli/outline.nvim",
   cmd = { "Outline", "OutlineOpen" },
   keys = {
-    { "<Leader>a", "<cmd>Outline<CR>", mode = "n", desc = "アウトライン表示をトグル" },
+    { "<Leader>ol", "<cmd>Outline<CR>", mode = "n", desc = "アウトライン表示をトグル" },
   },
   config = function()
     -- vim.keymap.set("n", "<Leader>ol", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
