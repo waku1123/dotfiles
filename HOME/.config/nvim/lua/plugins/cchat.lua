@@ -226,7 +226,7 @@ return {
         accept_diff = {
           normal = "<C-y>",
           insert = "<C-y>"
-        },,
+        },
         yank_diff = { normal = "gy" },
         show_diff = { normal = "gd" },
         show_system_prompt = { normal = "gp" },
