@@ -35,15 +35,15 @@ return {
         local chat = require("CopilotChat")
         chat.toggle({
           window = {
-            layout = "float",
+            layout   = "float",
             relative = "cursor",
-            border = "double",
-            width = 1,
-            height = 0.4,
-            title = "Copilot Chat",
-            footer = nil,
-            row = 1,
-            zindex = 1000,
+            border   = "double",
+            width    = 1,
+            height   = 0.4,
+            title    = "Copilot Chat",
+            footer   = nil,
+            row      = 1,
+            zindex   = 1000,
           },
         })
       end,
@@ -69,13 +69,13 @@ return {
         local chat = require("CopilotChat")
         chat.toggle({
           window = {
-            layout = "horizontal",
+            layout   = "horizontal",
             relative = "win",
-            border = "double",
-            width = 1,
-            height = 0.4,
-            title = "Copilot Chat",
-            footer = nil,
+            border   = "double",
+            width    = 1,
+            height   = 0.4,
+            title    = "Copilot Chat",
+            footer   = nil,
           },
         })
       end,
@@ -180,32 +180,31 @@ return {
         return select.visual(source) or select.line(source)
       end,
 
-      prompts = prompts,
-      question_header = "#### User ===> ",
-      answer_header = "#### Copilot ===> ",
-      error_header = "#### Error ===> ",
-      separator = "---",
-      show_folds = true,
-      show_help = true,
-      auto_follow_cursor = true,
-      auto_insert_mode = true,
+      prompts                  = prompts,
+      question_header          = "#### User ===> ",
+      answer_header            = "#### Copilot ===> ",
+      error_header             = "#### Error ===> ",
+      separator                = "---",
+      show_folds               = true,
+      show_help                = true,
+      auto_follow_cursor       = true,
+      auto_insert_mode         = true,
       clear_chat_on_new_prompt = false,
-      hightlight_selection = true,
-
-      context = "buffers",
-      history_path = vim.fn.stdpath("data") .. "/copilotchat_history",
-      callback = nil,
+      hightlight_selection     = true,
+      context                  = "buffers",
+      history_path             = vim.fn.stdpath("data") .. "/copilotchat_history",
+      callback                 = nil,
 
       window = {
-        layout = "horizontal",
+        layout   = "horizontal",
         relative = "win",
-        border = "double",
-        width = 1,
-        height = 0.4,
-        title = "Copilot Chat",
-        footer = nil,
-        row = 1,
-        zindex = 1000,
+        border   = "double",
+        width    = 1,
+        height   = 0.4,
+        title    = "Copilot Chat",
+        footer   = nil,
+        row      = 1,
+        zindex   = 1000,
       },
       mappings = {
         complete = {
@@ -227,19 +226,11 @@ return {
         accept_diff = {
           normal = "<C-y>",
           insert = "<C-y>"
-        },
-        yank_diff = {
-          normal = "gy",
-        },
-        show_diff = {
-          normal = "gd"
-        },
-        show_system_prompt = {
-          normal = "gp"
-        },
-        show_user_selection = {
-          normal = "gs"
-        },
+        },,
+        yank_diff = { normal = "gy" },
+        show_diff = { normal = "gd" },
+        show_system_prompt = { normal = "gp" },
+        show_user_selection = { normal = "gs" },
       },
     })
   end,

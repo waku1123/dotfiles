@@ -24,10 +24,10 @@ return {
             -- maxwidth = 500,
             -- ellipsis_char = "...",
             menu = ({
-              buffer = "[Buffer]",
-              nvim_lsp = "[LSP]",
-              luasnip = "[LuaSnip]",
-              nvim_lua = "[Lua]",
+              buffer        = "[Buffer]",
+              nvim_lsp      = "[LSP]",
+              luasnip       = "[LuaSnip]",
+              nvim_lua      = "[Lua]",
               latex_symbols = "[Latex]",
             }),
           })
@@ -52,11 +52,11 @@ return {
           }
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-b>"]     = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"]     = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<C-e>"]     = cmp.mapping.abort(),
+          ["<CR>"]      = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
@@ -106,22 +106,22 @@ return {
     config = function()
       require("nvim-autopairs").setup({
         -- Default Config
-        disable_filetype = {"TelescopePrompt", "spectre_panel"},
-        disable_in_macro = true,
-        disable_in_visualblock = false,
-        disable_in_replace_mode = true,
-        ignored_next_char  = [=[[%w%%%'%[%"%.%`%$]]=],
-        enable_moveright = true,
-        enable_afterquote = true,
-        enable_check_bracket_line = true,
+        disable_filetype                  = {"TelescopePrompt", "spectre_panel"},
+        disable_in_macro                  = true,
+        disable_in_visualblock            = false,
+        disable_in_replace_mode           = true,
+        ignored_next_char                 = [=[[%w%%%'%[%"%.%`%$]]=],
+        enable_moveright                  = true,
+        enable_afterquote                 = true,
+        enable_check_bracket_line         = true,
         enable_moveright_bracket_in_quote = true,
-        enable_abbr = false,
-        break_undo = true,
-        check_ts = false,
-        map_cr = true,
-        map_bs = true,
-        map_c_h = false,
-        map_c_w = false,
+        enable_abbr                       = false,
+        break_undo                        = true,
+        check_ts                          = false,
+        map_cr                            = true,
+        map_bs                            = true,
+        map_c_h                           = false,
+        map_c_w                           = false,
       })
     end
   },

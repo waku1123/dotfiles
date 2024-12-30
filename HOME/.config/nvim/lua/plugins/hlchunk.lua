@@ -17,8 +17,8 @@ return {
           right_arrow     = ">",
         },
         style = {
-          { fg = color_palette.blue1 },  -- #2ac3de
-          { fg = color_palette.red1 },    -- #db4b4b
+          { fg = color_palette.blue1 }, -- #2ac3de
+          { fg = color_palette.red1 },  -- #db4b4b
         },
         textobject    = "",
         max_file_size = 1024 * 1024,
@@ -35,7 +35,7 @@ return {
       line_num = {
           enable         = true,
           use_treesitter = true,
-          style          = color_palette.magenta,  -- "#bb9af7
+          style          = color_palette.magenta, --#bb9af7
       },
 
       blank = {

@@ -23,49 +23,25 @@ if not vim.g.vscode then
       local color_palette = require("tokyonight.colors").setup()
       require("bufferline").setup({
         highlights = {
-          error_selected = {
-            fg = color_palette.red,           -- #f7768e
-          },
-          warning_diagnostic_selected = {
-            fg = color_palette.orange,        -- #ff9e64
-          },
-          error_diagnostic_selected = {
-            fg = color_palette.red,           -- #f7768e
-          },
-          close_button_selected = {
-            fg = color_palette.yellow, -- "#e0af68
-          },
+          error_selected              = { fg = color_palette.red }    -- #f7768e
+          warning_diagnostic_selected = { fg = color_palette.orange } -- #ff9e64
+          error_diagnostic_selected   = { fg = color_palette.red }    -- #f7768e
+          close_button_selected       = { fg = color_palette.yellow } -- #e0af68
         },
         options = {
-          -- mode = "buffers", -- tabs | buffers
-          --style_preset = bufferline.style_preset.default,
           themable = true,
           numbers = function(opts)
             return string.format("%s.%s", opts.ordinal, opts.lower())
           end,
-          --close_command = "bdelete! %d",
-          --right_mouse_command = "bdelete! %d",
-          --left_mouse_command = "buffer %d",
-          --middle_mouse_command = nil,
           indicator = {
             icon = "|  ",
             style = "icon",
           },
-          -- buffer_close_icon = '󰅖',
-          -- modified_icon = '●',
-          -- close_icon = '',
-          -- left_trunc_marker = '',
-          -- right_trunc_marker = '',
-
-          -- name_formatter = function(buf)
-          --   return buf.path .. buf.name
-          -- end,
           max_name_length = 100,
           max_prefix_length = 15,
           truncate_names = true,
           tab_size = 30,
           diagnostics = "nvim_lsp",
-          -- diagnostics_update_in_insert = false
           diagnostics_indicator = function(count, _, _, _)
             return "(" .. count .. ")"
           end,

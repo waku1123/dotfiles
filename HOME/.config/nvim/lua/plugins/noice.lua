@@ -2,14 +2,14 @@
 local color_palette = require("tokyonight.colors").setup()
 
 local noice_cmd_types = {
-  CmdLine    = color_palette.blue0,     -- #3d59a1
-  Input      = color_palette.fg_dark,     -- #a9b1d6
-  Lua        = color_palette.purple,        -- #9d7cd8
-  Filter     = color_palette.green2,     -- #41a6b5
-  Rename     = color_palette.orange,     -- #ff9e64
-  Search     = color_palette. yellow,   -- #e0af68
-  Substitute = color_palette.teal,   -- #1abc9c
-  Help       = color_palette.comment,      -- #565f89
+  CmdLine    = color_palette.blue0,   --#3d59a1
+  Input      = color_palette.fg_dark, --#a9b1d6
+  Lua        = color_palette.purple,  --#9d7cd8
+  Filter     = color_palette.green2,  --#41a6b5
+  Rename     = color_palette.orange,  --#ff9e64
+  Search     = color_palette. yellow, --#e0af68
+  Substitute = color_palette.teal,    --#1abc9c
+  Help       = color_palette.comment, --#565f89
 }
 
 -- CmdLineや通知をpopupで表示するプラグイン
@@ -152,16 +152,16 @@ return {
       },
       markdown = {
         hover = {
-          ["|(%S-)|"] = vim.cmd.help, -- vim help links
-          ["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
+          ["|(%S-)|"]           = vim.cmd.help, -- vim help links
+          ["%[.-%]%((%S-)%)"]   = require("noice.util").open, -- markdown links
         },
         highlights = {
-          ["|%S-|"] = "@text.reference",
-          ["@%S+"] = "@parameter",
+          ["|%S-|"]             = "@text.reference",
+          ["@%S+"]              = "@parameter",
           ["^%s*(Parameters:)"] = "@text.title",
-          ["^%s*(Return:)"] = "@text.title",
-          ["^%s*(See also:)"] = "@text.title",
-          ["{%S-}"] = "@parameter",
+          ["^%s*(Return:)"]     = "@text.title",
+          ["^%s*(See also:)"]   = "@text.title",
+          ["{%S-}"]             = "@parameter",
         },
       },
       health = {
@@ -176,48 +176,21 @@ return {
       },
       throttle = 1000 / 30,
       views = {
-        notify = {
-          win_options = {
-            winblend = 10,
-          }
-        },
-        cmdline = {
-          win_options = {
-            winblend = 10,
-          }
-        },
+        notify        = { win_options = { winblend = 10 } },
+        cmdline       = { win_options = { winblend = 10 } },
         cmdline_popup = {
-          win_options = {
-            winblend = 10,
-          },
-          position = {
-            row = "50%",
-            col = "50%",
-          },
-          size = {
-            width = "100",
-            height = "auto",
-          },
+          win_options = { winblend = 10 },
+          position    = { row = "50%", col = "50%" },
+          size        = { width = "100", height = "auto" },
         },
         popupmenu = {
-          relative = "editor",
-          position = {
-            row = "33",
-            col = "50%",
-          },
-          size = {
-            width = "100", height = "10",
-          },
-          border = {
-            style = "rounded",
-            padding = { 0, 1 },
-          },
+          relative    = "editor",
+          position    = { row = "33", col = "50%" },
+          size        = { width = "100", height = "10" },
+          border      = { style = "rounded", padding = { 0, 1 } },
           win_options = {
             winblend = 0,
-            winhighlight = {
-              Normal = "Normal",
-              FloatBorder = "DiagnosticInfo",
-            },
+            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
           },
         },
       },
