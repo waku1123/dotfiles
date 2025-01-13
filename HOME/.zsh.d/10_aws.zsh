@@ -25,9 +25,3 @@ function download-s3(){
   fi
 }
 
-# asdf用にパスを通す
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-# pipenv補完設定
-if type pipenv > /dev/null 2>&1; then
-  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
-fi
