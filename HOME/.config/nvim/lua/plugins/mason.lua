@@ -164,6 +164,12 @@ local lsp_server_settings = {
   yamlls = {
     filetypes = { "yaml" },
   },
+  jsonls = {
+    filetypes = { "json" },
+  },
+  taplo = {
+    filetypes = { "toml" },
+  }
 }
 
 return {
