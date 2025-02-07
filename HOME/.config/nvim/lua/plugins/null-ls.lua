@@ -109,8 +109,8 @@ return {
       -- dockerfile
       null_ls.builtins.diagnostics.hadolint.with({ filetypes = { "dockerfile" } }),
       -- code security
-      -- null_ls.builtins.diagnostics.gitleaks.with(),
-      -- null_ls.builtins.diagnostics.semgrep.with(),
+      -- null_ls.builtins.diagnostics.gitleaks,
+      null_ls.builtins.diagnostics.semgrep,
 
 
     }
