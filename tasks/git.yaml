@@ -20,6 +20,8 @@ tasks:
     cmds:
       - ln -s {{.PROJECT_DIR}}/HOME/.config/gh ~/.config/gh
       - ln -s {{.PROJECT_DIR}}/HOME/.config/gh-dash ~/.config/gh-dash
+      - echo "[MUST] You should edit `user` in ~/.config/gh/hosts.yml"
+      - echo "git config get user.name"
 
   gh-dash:
     desc: install gh-dash extension of gh
