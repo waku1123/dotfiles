@@ -44,8 +44,6 @@ local lsp_servers = {
 -- 自動インストールするformatter
 local formatters = {
   -- python
-  --"black",
-  -- "isort",
   "ruff",
   -- Go
   "gofumpt",
@@ -364,7 +362,7 @@ return {
           max_width  = 0.9,
           max_height = 0.8,
           open_link  = "gx",
-          open_cmd   = "!chrome",
+          open_cmd   = "!arc",
         },
         -- diagnostic
         diagnostics = {
@@ -393,8 +391,8 @@ return {
           height = 0.5,
           keys = {
             edit   = "<CR>",
-            vsplit = "sv",
-            split  = "ss",
+            vsplit = "<C-s><C-v>",
+            split  = "<C-s><C-s>",
             tabe   = "<C-c>t",
             quit   = "q",
             close  = "<ESC>",
@@ -405,8 +403,8 @@ return {
           keys = {
             -- ファイルを開く
             edit   = "<CR>",
-            vsplit = "sv",
-            split  = "ss",
+            vsplit = "<C-s><C-v>",
+            split  = "<C-s><C-s>",
           }
         }
       })
