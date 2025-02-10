@@ -96,9 +96,33 @@ return {
       null_ls.builtins.formatting.goimports.with({
         filetypes = { "go" },
       }),
+      -- js/ts
       null_ls.builtins.formatting.biome.with({
         filetypes = { "javascript", "typescript", "jsx", "html", "css", "scss", "markdown" },
         extra_args = { "--config", "./biome.config.js" },
+      }),
+      -- json
+      null_ls.builtins.formatting.jq.with({
+        filetypes = { "json" },
+      }),
+      -- yaml
+      null_ls.builtins.formatting.yamlfmt.with({
+        filetypes = { "yaml" },
+        extra_args = {
+          -- see: https://github.com/google/yamlfmt/blob/main/docs/config-file.md#command
+          -- indent
+          indent = 2,
+          -- 多数の空行は1行に整形する
+          retain_line_breaks_single = true,
+          -- 最大行長は150文字
+          max_line_length = 150,
+          -- 行末の空白を削除
+          trim_trailing_whitespace = true,
+        },
+      }),
+      -- shellscript
+      null_ls.builtins.formatting.shfmt.with({
+        filetypes = { "sh", "bash", "zsh" },
       }),
       -- dart
       -- null_ls.builtins.diagnostics.dcm.with({ filetypes = { "dart" } }),
