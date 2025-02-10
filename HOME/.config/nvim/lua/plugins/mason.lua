@@ -48,7 +48,7 @@ local formatters = {
   -- "isort",
   "ruff",
   -- Go
-  "gofmpt",
+  "gofumpt",
   "goimports",
   -- lua
   "stylua",
