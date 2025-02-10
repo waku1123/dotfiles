@@ -1,5 +1,5 @@
 {
-  "table":{
+  "table": {
     "prefix": "table",
     "body": [
       "| $1 | $2 | $3 |",
