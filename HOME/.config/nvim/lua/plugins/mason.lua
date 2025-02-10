@@ -92,6 +92,8 @@ local diagnostics = {
 local dap_adapters = {
   -- rust
   "codelldb",
+  -- python
+  "debugpy",
 }
 
 local my_on_attach = function(client, bufnr)
