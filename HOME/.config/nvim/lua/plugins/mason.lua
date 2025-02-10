@@ -181,6 +181,9 @@ local lsp_server_settings = {
   },
   taplo = {
     filetypes = { "toml" },
+  },
+  bashls = {
+    filetypes = { "sh", "zsh" },
   }
 }
 
