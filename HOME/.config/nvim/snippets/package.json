@@ -3,21 +3,15 @@
   "contributes": {
     "snippets": [
       {
-        "language": [
-          "all"
-        ],
+        "language": ["all"],
         "path": "./all.json"
       },
       {
-        "language": [
-          "markdown"
-        ],
+        "language": ["markdown"],
         "path": "./markdown.json"
       },
       {
-        "language": [
-          "python"
-        ],
+        "language": ["python"],
         "path": "./python.json"
       }
     ]
