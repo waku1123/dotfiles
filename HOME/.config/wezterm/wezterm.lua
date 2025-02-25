@@ -26,15 +26,15 @@ config.use_fancy_tab_bar = false
 config.window_decorations = "TITLE|RESIZE|MACOS_FORCE_ENABLE_SHADOW"
 -- カラーテーマ
 -- NOTE: see all themes https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'tokyonight_night'
 -- 背景の透過度
 config.window_background_opacity = 0.9
 -- 背景のぼかし
 config.macos_window_background_blur = 9
 -- フォント
 config.font = wezterm.font_with_fallback {
-  "Hack Nerd Font",
-  "HackGen Console NF",
+  {family="Hack Nerd Font", weight="Regular"},
+  {family="HackGen Console NF", weight="Regular"},
 }
 -- フォントサイズ
 config.font_size = 13.0
@@ -48,5 +48,6 @@ config.disable_default_key_bindings = true
 local keybind = require 'keybinds'
 config.keys = keybind.keys
 config.key_tables = keybind.key_tables
+
 
 return config
