@@ -1,9 +1,7 @@
 -- 少ないキー数で様々な場所に遷移できるモーションを提供
 return {
-  "phaazon/hop.nvim",
-  lazy = true,
-  enabled = true,
-  branch = "v2",
+  "smoka7/hop.nvim",
+  version = "*",
   event = { "BufReadPre" },
   keys = {
       { "<Leader>/", "<cmd>HopPattern<CR>",     desc = "入力したパターンでhop" },
@@ -24,21 +22,32 @@ return {
   },
   config = function()
     require("hop").setup({
+      -- 移動先ラベルキー
       keys                    = "asdghklqwertyuiopzxcvbnmfj",
+      -- 中止キー
       quite_key               = "<Esc>",
-      term_seq_bias           = 0.5,
-      revirse_distribution    = false,
-      teasing                 = true,
+      -- ジャンプ先が1つしかない場合は自動ジャンプする
       jump_on_sole_occurrence = true,
+      -- HopChar* や HopPattern で大文字小文字を区別する
       case_insensitive        = true,
+      -- 独自のハイライトを行う
       create_hl_autocmd       = true,
-      direction               = nil,
+      -- ジャンプ位置の指定を開始位置にする
       hint_position           = require("hop.hint").HintPosition.BEGIN,
+      -- ジャンプ位置のオフセット
+      hint_offset             = 0,
+      -- 現在行のみのモード
       current_lint_only       = false,
-      upperCase_labels        = false,
-      char2_fallback_key      = nil,
-      extensions              = nil,
+      -- ラベルを大文字で表示しない
+      uppercase_labels        = false,
+      -- バッファを超えて動作するか
       multi_windows           = false,
+      -- direction               = nil,
+      -- term_seq_bias           = 0.5,
+      -- revirse_distribution    = false,
+      -- teasing                 = true,
+      -- char2_fallback_key      = nil,
+      -- extensions              = nil,
     })
   end
 }
