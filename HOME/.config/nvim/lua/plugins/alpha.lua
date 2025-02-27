@@ -231,6 +231,7 @@ return {
     local theme = require("alpha.themes.theta")
     local config = theme.config
     local dashboard = require("alpha.themes.dashboard")
+    require("alpha.term")
     local buttons = {
       type = "group",
       val = {
@@ -245,9 +246,63 @@ return {
       },
       position = "center",
     }
+    local gh_notify = {
+      type = "terminal",
+      command = "gh notify -s -a -n5",
+      width = 120,
+      height = 5,
+      opts = {
+        position = "center",
+        redraw = true,
+        window_config = {},
+      }
+    }
+    local gh_pr = {
+      type = "terminal",
+      command = "gh pr list -L 3",
+      width = 120,
+      height = 7,
+      opts = {
+        position = "center",
+        redraw = true,
+        window_config = {},
+      }
+    }
+    local git_status = {
+      type = "terminal",
+      command = "git status -s",
+      width = 120,
+      height = 5,
+      opts = {
+        position = "center",
+        redraw = true,
+        window_config = {},
+      }
+    }
 
+    local gh_info = {
+      type = "group",
+      val = {
+        { type = "text",    val = "GitHub Notifications", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "padding", val = 1 },
+        gh_notify,
+        { type = "padding", val = 1 },
+        { type = "text", val = "Git Status", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "padding", val = 1 },
+        git_status,
+        { type = "padding", val = 1 },
+        { type = "text",    val = "GitHub Pull Requests", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "padding", val = 1 },
+        gh_pr,
+      }
+    }
+
+    -- FIXME: 二列で表示する
     config.layout[2] = header_color()
     config.layout[6] = buttons
+    config.layout[7] = { type = "padding", val = 2 }
+    config.layout[8] = gh_info
+
     require("alpha").setup(config)
   end
 }
