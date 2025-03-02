@@ -1,3 +1,5 @@
+local tool_logo = require("tool_logo")
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -55,8 +57,12 @@ return {
       enabled = true,
       -- need install colorscript
       -- https://gitlab.com/dwt1/shell-color-scripts
+      width = 117,
+      preset = {
+        --ランダムなロゴを表示する
+        header = tool_logo.random_logo(),
+      },
       sections = {
-        -- TODO: alpha.lua のランダムヘッダを表示するようにしたい
         { section = "header" },
         -- TODO: telescopeを使うようにする?
         { section = "keys", gap = 1, padding = 1 },
