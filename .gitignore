@@ -3,3 +3,4 @@ plugin/
 themes/
 lazy-lock.json
 HOME/.config/lazygit/state.yml
+HOME/.config/yazi/flavors/*.yazi
