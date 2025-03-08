@@ -25,7 +25,7 @@ return{
     open_for_directories = false,
     keymaps = {
       open_file_in_vertical_split = "<C-v>",
-      open_file_in_horizontal_split = "<C-s>",
+      open_file_in_horizontal_split = "<C-x>",
     },
   },
   -- 👇 if you use `open_for_directories=true`, this is recommended
