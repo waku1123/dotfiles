@@ -15,3 +15,4 @@ tasks:
       - git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/.config/yazi/flavors/tokyo-night.yazi
       - git clone https://github.com/bennyyip/gruvbox-dark.yazi.git ~/.config/yazi/flavors/gruvbox-dark.yazi
       - git clone https://github.com/kmlupreti/ayu-dark.yazi.git ~/.config/yazi/flavors/ayu-dark.yazi
+      - git clone https://github.com/h-hg/yamb.yazi.git ~/.config/yazi/plugins/yamb.yazi
