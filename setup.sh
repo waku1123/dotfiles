@@ -37,6 +37,8 @@ else
 	task prepare:directories
 	echo "--- Setup starship ---"
 	task links:starship
+	echo "--- Setup yazi ---"
+	task yazi:deploy
 	echo "--- Setup GIt ---"
 	task git:setup
 	task lazygit
@@ -45,11 +47,14 @@ else
 	task links:ideavim
 	task zed:settings
 	task zed:keymap
+	task ghostty:deploy
+	task linters:deploy
 	echo "--- Setup Terminal App ---"
 	task links:warp
 	task links:wezterm
-	echo "--- SetUp asdf ---"
-	task asdf:plugins
-	task asdf:latest
-	task asdf:set_global
+	echo "--- SetUp mise ---"
+	# task asdf:plugins
+	# task asdf:latest
+	# task asdf:set_global
+	task mise:setup
 fi
