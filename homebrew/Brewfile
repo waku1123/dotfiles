@@ -138,8 +138,6 @@ cask "wezterm"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
 mas "Dropover", id: 1355679052
-mas "feedly", id: 865500966
-mas "FlipClock", id: 1181028777
 mas "GIPHY CAPTURE", id: 668208984
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Kindle", id: 302584613
