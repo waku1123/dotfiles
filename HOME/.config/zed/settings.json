@@ -37,7 +37,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Monokai Charcoal"
   },
   "tabs": {
     "git_status": true,
