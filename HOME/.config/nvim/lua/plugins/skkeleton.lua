@@ -3,10 +3,6 @@ return {
   {
     "vim-skk/skkeleton",
     enabled = true,
-    dependencies = {
-      "vim-denops/denops.vim",
-      "Shougo/ddc.vim",
-    },
     lazy = true,
     event = "BufReadPre",
     keys = {
