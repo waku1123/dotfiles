@@ -5,7 +5,6 @@ if not vim.g.vscode then
       "petertriho/nvim-scrollbar",
       lazy = true,
       event = { "BufReadPre" },
-      dependencies = "kevinhwang91/nvim-hlslens",
       config = function()
         local color_palette = require("tokyonight.colors").setup()
         require("scrollbar").setup({
