@@ -17,14 +17,16 @@ else
         require("codecompanion").setup({
           opts = {
             language = "Japanese",
+            -- log_level = "DEBUG",
           },
           strategies = {
             chat = {
               adapter = "copilot",
               roles = {
                 llm = function(adapter)
-                  return " CodeCompanion (" .. adapter.formatted_name .. ")"                end,
-                user = " Me"
+                  return " CodeCompanion (" .. adapter.formatted_name .. ") "
+                end,
+                user = " Me "
               },
             },
             inline = {
@@ -39,7 +41,11 @@ else
               return require("codecompanion.adapters").extend("copilot", {
                 schema = {
                   model = {
-                    default = "claude-3.7-sonnet",
+                    -- WARN: claude を指定するとBad Request になることがある?
+                    -- default = "claude-3.7-sonnet",
+                    -- default = "claude-3.5-sonnet",
+                    -- default = "gpt-4o",
+                    default = "o1",
                   },
                 },
               })
