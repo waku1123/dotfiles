@@ -5,9 +5,11 @@ else
     {
       "olimorris/codecompanion.nvim",
       keys = {
-        { "<Leader>ca", "<Cmd>CodeCompanionActions<CR>", mode = {"n", "v"}, desc = "Copilot アクションリストを表示"},
-        { "<Leader>cc", "<Cmd>CodeCompanionChat Toggle<CR>", mode = {"n", "v"} , desc = "Copilot Chat をトグル" },
+        { "<Leader>cf", "<cmd>CodeCompanion<CR>",            mode = {"n", "v"}, desc = "" },
+        { "<Leader>ca", "<Cmd>CodeCompanionActions<CR>",     mode = {"n", "v"}, desc = "Copilot アクションリストを表示" },
+        { "<Leader>cc", "<Cmd>CodeCompanionChat Toggle<CR>", mode = {"n", "v"}, desc = "Copilot Chat をトグル" },
       },
+      -- CodeCompanion の進捗をfidget で表示する場合
       -- init = function()
       --   require("plugins.spinners.fidget-cc-spinner"):init()
       -- end,

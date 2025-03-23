@@ -41,6 +41,7 @@ if not vim.g.vscode then
               "encoding",
             },
             lualine_c = { "branch" },
+            -- CodeCompanion の進捗を lualine で表示する場合
             lualine_x = { require("plugins.spinners.cc-compontnt"), "lsp-status" },
             lualine_y = { lint_progress },
             lualine_z = { "encoding", "fileformat", "filetype" },
