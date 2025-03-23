@@ -5,7 +5,7 @@ else
     {
       "olimorris/codecompanion.nvim",
       keys = {
-        { "<Leader>cf", "<cmd>CodeCompanion<CR>",            mode = {"n", "v"}, desc = "" },
+        { "<Leader>cf", "<cmd>CodeCompanion<CR>",            mode = {"n", "v"}, desc = "ユーザプロンプトを入力" },
         { "<Leader>ca", "<Cmd>CodeCompanionActions<CR>",     mode = {"n", "v"}, desc = "Copilot アクションリストを表示" },
         { "<Leader>cc", "<Cmd>CodeCompanionChat Toggle<CR>", mode = {"n", "v"}, desc = "Copilot Chat をトグル" },
       },
@@ -47,9 +47,8 @@ else
           },
           display = {
             chat = {
-              intro_message = "CodeCompanion へようこそ ✨! `?` キーでオプションを表示します",
+              intro_message = "`?キー`でオプションを表示、`gd` でデバッグ情報を表示します。",
               show_header_separator = true,
-              separator = "-",
               show_references = true,
               show_settings = false,
               show_token_count = true,
