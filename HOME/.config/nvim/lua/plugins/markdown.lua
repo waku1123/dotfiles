@@ -8,7 +8,7 @@ if not vim.g.vscode then
     -- markdownレンダリング
     {
       "OXY2DEV/markview.nvim",
-      ft = { "markdown" },
+      ft = { "markdown", "codecompanion" },
     },
     { "nvim-treesitter/nvim-treesitter", lazy = true },
     { "nvim-tree/nvim-web-devicons", lazy = true },
