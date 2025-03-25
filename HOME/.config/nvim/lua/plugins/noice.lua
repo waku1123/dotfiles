@@ -2,14 +2,14 @@
 local color_palette = require("tokyonight.colors").setup()
 
 local noice_cmd_types = {
-  CmdLine    = color_palette.blue0,   --#3d59a1
-  Input      = color_palette.fg_dark, --#a9b1d6
-  Lua        = color_palette.purple,  --#9d7cd8
-  Filter     = color_palette.green2,  --#41a6b5
-  Rename     = color_palette.orange,  --#ff9e64
-  Search     = color_palette. yellow, --#e0af68
-  Substitute = color_palette.teal,    --#1abc9c
-  Help       = color_palette.comment, --#565f89
+  CmdLine    = color_palette.blue0,   -- #3d59a1
+  Input      = color_palette.fg_dark, -- #a9b1d6
+  Lua        = color_palette.purple,  -- #9d7cd8
+  Filter     = color_palette.green2,  -- #41a6b5
+  Rename     = color_palette.orange,  -- #ff9e64
+  Search     = color_palette. yellow, -- #e0af68
+  Substitute = color_palette.teal,    -- #1abc9c
+  Help       = color_palette.comment, -- #565f89
 }
 
 -- CmdLineや通知をpopupで表示するプラグイン
