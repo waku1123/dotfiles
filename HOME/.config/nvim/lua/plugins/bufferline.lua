@@ -28,6 +28,8 @@ if not vim.g.vscode then
           },
           options = {
             themable = true,
+            -- バッファタブ名は斜字体にしない
+            style_preset = require("bufferline").style_preset.no_italic,
             numbers = function(opts)
               return string.format("%s.%s", opts.ordinal, opts.lower())
             end,
