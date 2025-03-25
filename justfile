@@ -204,6 +204,7 @@ apps:
   @duti -s dev.zed.Zed .toml all
   @duti -s dev.zed.Zed .xml all
   @duti -s dev.zed.Zed .yaml all
+  @duti -s dev.zed.Zed .fish all
 
 # OSの設定、ツールのインストール
 initial: system-preferences brew-restore 
