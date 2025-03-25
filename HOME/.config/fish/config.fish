@@ -4,11 +4,12 @@
 ############
 set PATH /opt/homebrew/bin $PATH
 # RUST
-set PATH $HOME/cargo/bin $PATH
+set PATH $HOME/.cargo/bin $PATH
 # psql
 set PATH /opt/homebrew/Cellar/libpq/15.3_1/bin $PATH
 # mysql
 set PATH /opt/homebrew/opt/mysql-client/bin $PATH
+
 
 #########################
 # ENViRONMENT VARIABLES #
@@ -153,7 +154,7 @@ complete -c aws -f -a '(
 # Plugin の設定 #
 #################
 # yuys13/fish-autols
-set -U autols_cmd ls -la
+set -U autols_cmd ll
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
