@@ -15,6 +15,19 @@ zsh:
   @test -L ~/.zprofile || ln -s {{pwd}}/HOME/.zprofile ~/.zprofile
   @echo "you need run 'source ~/.zshrc && source ~/.zprofile'"
 
+# fish の設定ファイルを展開
+fish:
+  @test -d ~/.config/fish || mkdir -p ~/.config/fish/conf.d/
+  @test -L ~/.config/fish/config.fish || ln -s {{pwd}}/HOME/.config/fish/config.fish ~/.config/fish/config.fish
+  @test -L ~/.config/fish/conf.d/bobthefish.fish || ln -s {{pwd}}/HOME/.config/fish/conf.d/bobthefish.fish ~/.config/fish/conf.d/bobthefish.fish
+  # デフォルトシェルをfishに変更
+  echo $(which fish) | sudo tee -a /etc/shells
+  chsh -s $(which fish)
+  # fisher のインストール
+  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+  @test -L ~/.config/fish/fish_plugins || ln -s {{pwd}}/HOME/.config/fish/fish_plugins ~/.config/fish/fish_plugins
+  fisher update
+
 #  Brewfile からパッケージをインストール
 brew-restore:
   # Brewfile から全てのパッケージをインストール
@@ -160,6 +173,37 @@ linters:
   @test -L ~/.config/yamllint || ln -s {{pwd}}/HOME/.config/yamllint ~/.config/yamllint
   # markdownlint 設定ファイルを展開
   @test -L ~/.markdownlintrc || ln -s {{pwd}}/HOME/.config/markdownlint/.markdownlintrc ~/.markdownlintrc
+
+# ファイルの関連付け設定
+apps:
+  @duti -s dev.zed.Zed public.plain-text all
+  @duti -s dev.zed.Zed public.data all
+  @duti -s dev.zed.Zed .css all
+  @duti -s dev.zed.Zed .csv all
+  @duti -s dev.zed.Zed .d.ts all
+  @duti -s dev.zed.Zed .env all
+  @duti -s dev.zed.Zed .ini all
+  @duti -s dev.zed.Zed .js all
+  @duti -s dev.zed.Zed .json all
+  @duti -s dev.zed.Zed .jsonc all
+  @duti -s dev.zed.Zed .lock all
+  @duti -s dev.zed.Zed .lua all
+  @duti -s dev.zed.Zed .map all
+  @duti -s dev.zed.Zed .md all
+  @duti -s dev.zed.Zed .mjs all
+  @duti -s dev.zed.Zed .php all
+  @duti -s dev.zed.Zed .py all
+  @duti -s dev.zed.Zed .scss all
+  @duti -s dev.zed.Zed .sh all
+  @duti -s dev.zed.Zed .sql all
+  @duti -s dev.zed.Zed .test.js all
+  @duti -s dev.zed.Zed .test.ts all
+  @duti -s dev.zed.Zed .ts all
+  @duti -s dev.zed.Zed .tsx all
+  @duti -s dev.zed.Zed .txt all
+  @duti -s dev.zed.Zed .toml all
+  @duti -s dev.zed.Zed .xml all
+  @duti -s dev.zed.Zed .yaml all
 
 # OSの設定、ツールのインストール
 initial: system-preferences brew-restore 
