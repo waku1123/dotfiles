@@ -14,14 +14,48 @@ My dotfiles for MacOSX.
 
 ## Contents
 
+this repo include configuration files of following tools
+
+### Shell
+
 - [zsh](https://zsh.sourceforge.io/Doc/Release/zsh_toc.html)
+- [fish](https://fishshell.com/)
+- [Starship](https://starship.rs/ja-jp/)
+
+### CLI
+
 - [Homebrew](https://brew.sh/index_ja)
 - [Git](https://git-scm.com/)
-- [Starship](https://starship.rs/ja-jp/)
-- [NeoVim](https://neovim.io/doc/user/index.html)
+  - [gh](https://github.com/cli/cli)
+    - [gh-dash](https://github.com/dlvhdr/gh-dash)
+    - [gh-notify](https://github.com/meiji163/gh-notify)
+    - [gh-copilot](https://docs.github.com/ja/copilot/managing-copilot/configure-personal-settings/installing-github-copilot-in-the-cli)
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- [mise](https://mise.jdx.dev/)
+- [yazi](https://yazi-rs.github.io/)
+- [superfile](https://superfile.netlify.app/)
+
+### GUI Apps
+
+- [raycast.app](https://www.raycast.com/)
+
+### Editors
+
+- [Neovim](https://neovim.io/doc/user/index.html)
 - [ideavim](https://pleiades.io/help/idea/using-product-as-the-vim-editor.html)
+- [zed](https://zed.dev/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+
+### Linters
+
+- [yamllint](https://github.com/adrienverge/yamllint)
+- [markdownlint](https://github.com/DavidAnson/markdownlint)
+
+### Terminal Multi Plexer
+
 - [Warp.app](https://www.warp.dev/)
 - [Wezterm.app](https://wezfurlong.org/wezterm/index.html)
+- [ghostty.app](https://ghostty.org/)
 
 ## Neovim Plugins
 
