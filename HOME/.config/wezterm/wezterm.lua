@@ -66,7 +66,7 @@ config.use_fancy_tab_bar = true
 -- NOTE: see all themes https://wezfurlong.org/wezterm/colorschemes/index.html
 config.color_scheme = 'tokyonight_night'
 -- 背景の透過度
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 -- 背景のぼかし
 config.macos_window_background_blur = 9
 -- フォント
