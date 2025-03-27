@@ -8,7 +8,9 @@ if not vim.g.vscode then
       keys = {
         -- search todo
         { "<leader>std",      "<cmd>TodoTelescope keywords=TODO,FIXME,WARN<CR>",                                 mode = "n", opt, desc = "TODO 検索" },
-        -- search book mark
+        -- resume
+        { "<leader>r",        "<cmd>Telescope resume<CR>",                                                       mode = "n", opt, desc = "直前のTelescopeでの検索を再開"},
+        -- ブックマーク検索(Search Book Marks)
         { "<leader>sbm",      "<cmd>Telescope bookmarks list<CR>",                                               mode = "n", opt, desc = "ブックマークを検索" },
         { "<M-d><M-c>",       "<cmd>Telescope docker containers theme=ivy<CR>",                                  mode = "n", opt, desc = "Docker コンテナを検索" },
         { "<M-d><M-i>",       "<cmd>Telescope docker images theme=ivy<CR>",                                      mode = "n", opt, desc = "Docker イメージを検索" },
@@ -43,10 +45,10 @@ if not vim.g.vscode then
             },
             initial_mode = "insert",
             sorting_strategy = "ascending", --検索結果を上から下に並べる
-            layout_strategy = "vertical",
+            layout_strategy = "horizontal",
             layout_config = {
               width = 0.9,
-              height = 0.9,
+              height = 0.5,
             },
             winblend = 10,         --ウィンドウを若干半透明にする
             color_devicons = true,
@@ -77,13 +79,13 @@ if not vim.g.vscode then
           pickers = {
             find_files = {
               no_ignore = true,
-              layout_strategy = "vertical",
+              layout_strategy = "horizontal",
               layout_config = {
                 prompt_position = "bottom",
               },
             },
             live_grep = {
-              layout_strategy = "vertical",
+              layout_strategy = "horizontal",
               layout_config = {
                 prompt_position = "bottom",
               },
@@ -114,7 +116,7 @@ if not vim.g.vscode then
               show_scores = true,
               match_algorithm = "fzf",
               disable_devicons = false,
-              open_buffer_indicators = {previous = "•", others = "∘"},
+              open_buffer_indicators = {previous = "", others = "󰺕"},
               result_limit = 40,
             },
             -- コマンド履歴を検索/実行できる拡張
