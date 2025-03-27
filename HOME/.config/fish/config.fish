@@ -39,7 +39,7 @@ set -g theme_date_format "+[%Y/%m/%d %H:%M:%S]"
 # プロンプトから入力欄の前に改行をする
 set -g theme_newline_cursor yes
 
-# 改行後入力欄の前に表示する文字を設定する（Nerd Font が文字化けしてます）
+# 改行後入力欄の前に表示する文字を設定する
 set -g theme_newline_prompt "\e[32m\e[m "
 
 # setup mise
