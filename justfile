@@ -23,6 +23,10 @@ fish:
   # デフォルトシェルをfishに変更
   echo $(which fish) | sudo tee -a /etc/shells
   chsh -s $(which fish)
+  @echo "you need restart your terminal for switch to fish shell"
+
+# fishプラグインマネージャ
+fisher:
   # fisher のインストール
   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
   @test -L ~/.config/fish/fish_plugins || ln -s {{pwd}}/HOME/.config/fish/fish_plugins ~/.config/fish/fish_plugins
