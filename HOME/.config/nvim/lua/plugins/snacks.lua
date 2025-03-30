@@ -345,7 +345,7 @@ if not vim.g.vscode then
         }
       },
       words = {
-        enabled = true,
+        enabled = false,
         debounce = 200,
         notify_jump = false,
         notify_end = true,
