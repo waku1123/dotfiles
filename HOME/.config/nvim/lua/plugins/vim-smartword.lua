@@ -19,7 +19,7 @@ return {
   {
     "atusy/budouxify.nvim",
     -- 有効にすると vim-smartword での移動のレスポンスが悪くなるので無効化
-    enable = false,
+    enabled = false,
     dependencies = {
       "atusy/budoux.lua",
     },
