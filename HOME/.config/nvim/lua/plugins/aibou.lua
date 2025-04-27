@@ -1,10 +1,11 @@
 return {
   {
     "atusy/aibou.nvim",
+    lazy = false,
     config = function()
       vim.keymap.set(
         "n",
-        "<leader>ai",
+        "<Leader>ai",
         function()
           require("aibou.codecompanion").start({
             system_prompt = table.concat({
