@@ -4,6 +4,7 @@ if vim.g.vscode then
   vim.keymap.set("n", "<Leader><Leader>", "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
 
   -- タブ移動
+  -- FIXME: mode の判定が効いていないかも?
   vim.keymap.set("n", "H", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
   vim.keymap.set("n", "L", "<Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>")
 
