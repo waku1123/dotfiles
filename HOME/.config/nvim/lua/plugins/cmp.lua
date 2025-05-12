@@ -4,9 +4,11 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
+      { "f3fora/cmp-spell" },  -- 英語入力時のスペル補完ソース
       { "hrsh7th/cmp-nvim-lsp" },  -- LSP補完
       { "hrsh7th/cmp-buffer" },  -- バッファ補完
       { "hrsh7th/cmp-path" },  -- パス補完
+      { "hrsh7th/cmp-cmdline" }, -- コマンドライン入力の補完ソース
       -- { "hrsh7th/vim-vsnip" },  -- スニペット補完
       {
         "L3MON4D3/LuaSnip",
@@ -45,7 +47,8 @@ return {
               nvim_lua      = "[Lua]",
               latex_symbols = "[Latex]",
               Copilot       = "[Copilot]",
-
+              path          = "[Path]",
+              cmdline       = "[Cmdline]",
             }),
           })
         },
@@ -112,6 +115,17 @@ return {
         }, {
           { name = "buffer" },
           { name = "path" },
+          { name = "cmdline"},
+          {
+              name = "spell",
+              option = {
+                keep_all_entries = false,
+                enable_in_context = function()
+                  return true
+                end,
+                preselect_correct_word = true,
+              },
+          },
           { name = "copilot" },
         }),
         experimental = {
@@ -146,39 +160,14 @@ return {
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end
   },
-  -- 括弧を自動で補完する
-  {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({
-        -- Default Config
-        disable_filetype                  = {"TelescopePrompt", "spectre_panel", "snacks_picker_input"},
-        disable_in_macro                  = true,
-        disable_in_visualblock            = false,
-        disable_in_replace_mode           = true,
-        ignored_next_char                 = [=[[%w%%%'%[%"%.%`%$]]=],
-        enable_moveright                  = true,
-        enable_afterquote                 = true,
-        enable_check_bracket_line         = true,
-        enable_moveright_bracket_in_quote = true,
-        enable_abbr                       = false,
-        break_undo                        = true,
-        check_ts                          = false,
-        map_cr                            = true,
-        map_bs                            = true,
-        map_c_h                           = false,
-        map_c_w                           = false,
-      })
-    end
-  },
   -- Github Copilotのサジェストを補完リストに表示する
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup({
-        suggestion = { enabled = true },
-        panel = { enabled = true }
-      })
-    end
-  }
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   config = function()
+  --     require("copilot_cmp").setup({
+  --       suggestion = { enabled = true },
+  --       panel = { enabled = true }
+  --     })
+  --   end
+  -- }
 }
