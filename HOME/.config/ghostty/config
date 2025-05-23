@@ -1,27 +1,47 @@
+# メインフォント
 font-family = "Hack Nerd Font"
-font-family = "Hack Gen Console NF"
-font-size = 14
-theme = Wombat
+# サブフォント(フォールバック)
+font-family = "HackGen Console NF"
+# フォントサイズ
+font-size = 15
+
+# カラーテーマ
+theme = GitHub Dark
+
+# ウィンドウの左右の余白
 window-padding-x = 4,2
+# ウィンドウの背景透過度
 background-opacity = 0.95
+# 背景のぼかし度合い
 background-blur-radius = 20
+# カーソルの点滅
 cursor-style-blink = true
 
-keybind = "all:ctrl+shift+l=resize_split:right,20"
-keybind = "all:ctrl+shift+h=resize_split:left,20"
-keybind = "all:ctrl+shift+k=resize_split:up,20"
-keybind = "all:ctrl+shift+j=resize_split:down,20"
+############
+# KeyBinds #
+############
+#
+macos-option-as-alt = true
+# ホットキーウィンドウの設定
+quick-terminal-position = "top"
+quick-terminal-screen = "main"
+quick-terminal-animation-duration = 0.1
 
+# ホットキーウィンドウ表示トグルのキーバインド
+keybind = "global:shift+opt+space=toggle_quick_terminal"
+
+# この設定ファイルを開く
+keybind = "all:cmd+,=open_config"
+
+# 分割ペインのフォーカス移動キーバインド
 keybind = "all:ctrl+opt+shift+l=goto_split:right"
 keybind = "all:ctrl+opt+shift+h=goto_split:left"
 keybind = "all:ctrl+opt+shift+k=goto_split:top"
 keybind = "all:ctrl+opt+shift+j=goto_split:bottom"
 keybind = "all:ctrl+opt+shift+tab=goto_split:next"
 
-keybind = "all:cmd+,=open_config"
-
-quick-terminal-position = "top"
-quick-terminal-screen = "main"
-quick-terminal-animation-duration = 0.1
-keybind = "global:shift+opt+space=toggle_quick_terminal"
-
+# 分割したペインのリサイズキーバインド
+keybind = "all:ctrl+shift+l=resize_split:right,20"
+keybind = "all:ctrl+shift+h=resize_split:left,20"
+keybind = "all:ctrl+shift+k=resize_split:up,20"
+keybind = "all:ctrl+shift+j=resize_split:down,20"
