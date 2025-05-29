@@ -9,6 +9,15 @@ return {
   config = function()
     local null_ls = require("null-ls")
     local sources = {
+      -- python
+      require("none-ls.diagnostics.ruff").with({
+        filetypes = { "python" },
+        extra_args = { "--select", "I", "--fix" },
+      }),
+      require("none-ls.formatting.ruff").with({
+        filetypes = { "python" },
+        extra_args = { "--config", "./pyproject.toml" },
+      }),
       -- markdown は nvim-lint
       null_ls.builtins.formatting.stylua.with({
         filetypes = { "lua" },
