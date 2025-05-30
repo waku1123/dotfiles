@@ -26,7 +26,7 @@ else
           },
           wo ={},
         },
-        on_ready = function(hub)
+        on_ready = function(_)
           vim.notify("MCPHub has ready")
           -- dd(hub)
         end,
