@@ -8,7 +8,7 @@ font-family = "HackGen Console NF"
 font-size = 15.5
 
 # カラーテーマ
-theme = GitHub Dark
+theme = Duotone Dark
 
 # ウィンドウの左右の余白
 window-padding-x = 4,2
