@@ -5,7 +5,7 @@ font-family = "Hack Nerd Font"
 # サブフォント(フォールバック)
 font-family = "HackGen Console NF"
 # フォントサイズ
-font-size = 15
+font-size = 15.5
 
 # カラーテーマ
 theme = GitHub Dark
