@@ -35,7 +35,6 @@ brew "curl"
 brew "direnv"
 brew "duti"
 brew "fd"
-brew "icu4c@76"
 brew "fish"
 brew "fzf"
 brew "gawk"
@@ -46,6 +45,7 @@ brew "git"
 brew "git-delta"
 brew "glow"
 brew "gnupg"
+brew "icu4c@76"
 brew "graphviz"
 brew "grex"
 brew "groff"
@@ -74,7 +74,6 @@ brew "openjdk"
 brew "pdm"
 brew "peco"
 brew "php"
-brew "pipenv"
 brew "poetry"
 brew "procs"
 brew "python-launcher"
@@ -142,7 +141,6 @@ cask "wezterm"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
 mas "Dropover", id: 1355679052
-mas "GIPHY CAPTURE", id: 668208984
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Kindle", id: 302584613
 mas "Kindle Classic", id: 405399194
