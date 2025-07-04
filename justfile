@@ -4,6 +4,15 @@ pwd := `pwd`
 # デフォルトはタスクのリスト表示
 default: _list
 
+# claude code 用設定ファイル
+claude:
+  @type -q npm || mise install node@latest
+  @type -q claude || npm install -g @anthropic-ai/claude-code
+  @test -d ~/.claude || mkdir -p ~/.claude
+  @test -L ~/.claude/CLAUDE.md || ln -s {{pwd}}/HOME/claude/CLAUDE.md ~/.claude/CLAUDE.md
+  @test -L ~/.claude/settings.json || ln -s {{pwd}}/HOME/claude/settings.json ~/.claude/settings.json
+  @claude mcp add-json {{pwd}}/HOME/claude/mcp_config.json
+
 # 定義済タスクリスト表示
 _list:
   @just --list
@@ -17,7 +26,6 @@ zsh:
 
 # fish の設定ファイルを展開
 fish:
-  @test -d ~/.config/fish || mkdir -p ~/.config/fish/conf.d/
   @test -L ~/.config/fish/config.fish || ln -s {{pwd}}/HOME/.config/fish/config.fish ~/.config/fish/config.fish
   @test -L ~/.config/fish/conf.d/bobthefish.fish || ln -s {{pwd}}/HOME/.config/fish/conf.d/bobthefish.fish ~/.config/fish/conf.d/bobthefish.fish
   # デフォルトシェルをfishに変更
