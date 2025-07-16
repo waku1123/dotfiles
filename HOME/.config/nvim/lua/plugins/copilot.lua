@@ -26,12 +26,16 @@ return {
         debounce = 75,
         trigger_on_accept = true,
         keymap = {
-          accept = "<M-Tab>",
-          accept_word = false,
-          accept_line = false,
+          -- 提案を全て受け入れる
+          accept = "<Tab>",
+          -- 提案を単語単位で受け入れる
+          accept_word = "<M-Tab>",
+          -- 提案を行単位で受け入れる
+          accept_line = "<S-Tab>",
           next = "<M-]>",
           prev = "<M-[>",
-          dismiss = "<C-l>",
+          -- 提案を拒否する
+          dismiss = "<C-Tab>",
         },
       },
       filetypes = {
@@ -54,9 +58,10 @@ return {
         trace_lsp_progress = false,
         log_lsp_messages = false,
       },
+      -- NOTE: NEED node.js version must be > 20
       copilot_node_command = "node",
       workspace_folders = {},
-      copilot_model = "gpt-4o-copilot",
+      copilot_model = "claude-sonnet-4",
       server_opts_overrides = {},
     })
   end,
