@@ -1,84 +1,43 @@
 {
-  "nativeMCPServers": {
-    "neovim": {
-      "disabled_prompts": [
-        "parrot"
-      ],
-      "disabled_resources": []
-    },
-    "mcphub": {
-      "disabled_prompts": [
-        "create_native_server"
-      ],
-      "disabled_resources": [
-        "mcphub://docs",
-        "mcphub://native_server_guide",
-        "mcphub://changelog"
-      ]
-    }
-  },
   "mcpServers": {
-    "github.com/tavily-ai/tavily-mcp": {
-      "autoApprove": [
-        "tavily-search",
-        "tavily-extract",
-        "tavily-map",
-        "tavily-crawl"
-      ],
-      "disabled": false,
-      "command": "/Users/yss/.local/share/mise/shims/npx",
-      "env": {
-        "TAVILY_API_KEY": "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"
-      },
-      "args": [
-        "-y",
-        "tavily-mcp@0.2.1"
-      ]
-    },
-    "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking": {
-      "command": "/Users/yss/.local/share/mise/shims/npx",
-      "autoApprove": [
-        "sequentialthinking"
-      ],
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "disabled": false
-    },
     "github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server": {
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
       "autoApprove": [
         "read_documentation",
         "search_documentation",
         "recommend"
       ],
-      "disabled": false,
       "command": "uvx",
+      "disabled": false,
       "env": {
         "FASTMCP_LOG_LEVEL": "ERROR"
-      },
-      "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ]
+      }
     },
     "github.com/awslabs/mcp/tree/main/src/terraform-mcp-server": {
+      "args": [
+        "awslabs.terraform-mcp-server@latest"
+      ],
       "autoApprove": [
         "SearchUserProvidedModule",
         "SearchSpecificAwsIaModules",
         "SearchAwsccProviderDocs",
         "SearchAwsProviderDocs"
       ],
-      "disabled": false,
       "command": "uvx",
+      "disabled": false,
       "disabled_resources": [],
       "env": {
         "FASTMCP_LOG_LEVEL": "ERROR"
-      },
-      "args": [
-        "awslabs.terraform-mcp-server@latest"
-      ]
+      }
     },
     "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/yss/PROJECTS/"
+      ],
       "autoApprove": [
         "read_file",
         "read_multiple_files",
@@ -92,15 +51,58 @@
         "create_directory",
         "edit_file"
       ],
-      "disabled": false,
       "command": "/Users/yss/.local/share/mise/shims/npx",
-      "env": [],
+      "disabled": false,
+      "env": []
+    },
+    "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking": {
       "args": [
         "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/yss/PROJECTS/"
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "autoApprove": [
+        "sequentialthinking"
+      ],
+      "command": "/Users/yss/.local/share/mise/shims/npx",
+      "disabled": false
+    },
+    "github.com/tavily-ai/tavily-mcp": {
+      "args": [
+        "-y",
+        "tavily-mcp@0.2.1"
+      ],
+      "autoApprove": [
+        "tavily-search",
+        "tavily-extract",
+        "tavily-map",
+        "tavily-crawl"
+      ],
+      "command": "/Users/yss/.local/share/mise/shims/npx",
+      "disabled": false,
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "disabled_prompts": [
+        "create_native_server"
+      ],
+      "disabled_resources": [
+        "mcphub://docs",
+        "mcphub://native_server_guide",
+        "mcphub://changelog"
+      ]
+    },
+    "neovim": {
+      "disabled_prompts": [
+        "parrot"
+      ],
+      "disabled_resources": [],
+      "disabled_tools": [
+        "delete_items"
       ]
     }
   }
 }
-
