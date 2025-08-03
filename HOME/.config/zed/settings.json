@@ -38,6 +38,7 @@
     "light": "One Light",
     "dark": "Catppuccin Mocha - No Italics"
   },
+  // アイコンテーマ(extension のインストールが必要)
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
@@ -135,6 +136,10 @@
   },
   "languages": {
     "Python": {
+      // Pythonタブサイズは4スペース
+      "tab_size": 4,
+      // Pythonのインデントはスペース
+      "hard_tabs": false,
       "enable_language_server": true,
       "preferred_line_length": 150,
       "show_whitespaces": "all",
