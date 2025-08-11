@@ -31,7 +31,7 @@ config.use_fancy_tab_bar = true
 
 -- カラーテーマ
 -- NOTE: see all themes https://wezfurlong.org/wezterm/colorschemes/index.html
-config.color_scheme = "Ef-Duo-Dark"
+config.color_scheme = "Duotone Dark"
 -- 背景の透過度
 config.window_background_opacity = 0.85
 -- 背景のぼかし
