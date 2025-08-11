@@ -2,6 +2,7 @@
 ############
 # set PATH #
 ############
+# Homebrew
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 # RUST
@@ -13,38 +14,66 @@ fish_add_path /opt/homebrew/opt/mysql-client/bin
 
 
 #########################
-# ENViRONMENT VARIABLES #
+# ENVIRONMENT VARIABLES #
 #########################
 set -Ux LANG ja_JP.UTF-8
 set -Ux KCODE u
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
-# Neovim
-set -Ux XDG_CONFIG_HOME $HOME/.config
-# direnv
-set -Ux EDITOR nvim
-# android sdk
-set -Ux ANDROID_HOME $HOME/Library/Android/sdk
-# set PATH $ANDROID_HOME/tools $PATH
-fish_add_path $ANDROID_HOME/tools
-# set PATH $ANDROID_HOME/platform-tools $PATH
-fish_add_path $ANDROID_HOME/platform-tools
+# XDG PATHs
+set -q XDG_CONFIG_HOME || set -gx XDG_CONFIG_HOME $HOME/.config
+set -q XDG_DATA_HOME || set -gx XDG_DATA_HOME $HOME/.local/share
+set -q XDG_CACHE_HOME || set -gx XDG_CACHE_HOME $HOME/.cache
+# fish CONFIG PATHs
+set -g FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
+set -g FISH_CONFIG $FISH_CONFIG_DIR/config.fish
+set -g FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
+# fish CONFIG
+# NERD FONT を使用可能にする
+set -gx theme_nerd_fonts yes
 # vi モードのインジケータを常に表示する
-set -g theme_display_vi yes
-
+set -gx theme_display_vi yes
 # ユーザ名とホスト名を常に表示する
-set -g theme_display_user yes
-set -g theme_display_hostname yes
-
+set -gx theme_display_user yes
+set -gx theme_display_hostname yes
 # 日付の表示書式を変更する
-set -g theme_date_format "+[%Y/%m/%d %H:%M:%S]"
-
+set -gx theme_date_format "+[%Y/%m/%d %H:%M:%S]"
 # プロンプトから入力欄の前に改行をする
-set -g theme_newline_cursor yes
-
+set -gx theme_newline_cursor yes
 
 # 改行後入力欄の前に表示する文字を設定する
-set -g theme_newline_prompt "\e[32m\e[m "
+function fish_mode_prompt
+  switch $fish_bind_mode
+    case default
+      # Normal Mode(緑)
+      set -gx theme_newline_prompt "\e[92m󰫻\e[m "
+    case insert
+      # Insert Mode(シアン)
+      set -gx theme_newline_prompt "\e[96m󰫶\e[m "
+    case visual
+      # Visual Mode(オレンジ)
+      set -gx theme_newline_prompt "\e[38;5;208m󰬃\e[m "
+    case replace_one
+      # Replace One Mode(黄) - r key (一文字だけ置換)
+      set -gx theme_newline_prompt "\e[38;5;205m󰫿󰫼\e[m "
+    case replace
+      # Replace Mode(黄) - R key(ESCで抜けるまで置換)
+      set -gx theme_newline_prompt "\e[91m󰫿\e[m "
+  end
+  commandline -f repaint
+  echo ""
+end
+
+# neovim
+set -gx EDITOR nvim
+
+# android sdk
+# set -Ux ANDROID_HOME $HOME/Library/Android/sdk
+# set PATH $ANDROID_HOME/tools $PATH
+# fish_add_path $ANDROID_HOME/tools
+# set PATH $ANDROID_HOME/platform-tools $PATH
+# fish_add_path $ANDROID_HOME/platform-tools
+
 
 # setup mise
 /opt/homebrew/bin/mise activate fish | source
@@ -55,8 +84,8 @@ set -g theme_newline_prompt "\e[32m\e[m "
 abbr -a paths "echo \$PATH | tr ' ' '\n'"
 # sc で ~/.config/fish/config.fish を再読み込み
 abbr -a sc source ~/.config/fish/config.fish
-# c で clear
-abbr -a c clear
+# c で clear -> ls -l
+abbr -a c 'clear && ll'
 # pbc で pbcopy
 abbr -a pbc pbcopy
 # vim で nvim
@@ -150,8 +179,8 @@ function fish_user_key_bindings
     # The argument specifies the initial mode (insert, "default" or visual).
     fish_vi_key_bindings --no-erase insert
 
-    # yy で クリップボードにコピー
-    bind yy fish_clipboard_copy
+    # Normal Mode で <S-y> で クリップボードにコピー
+    bind Y fish_clipboard_copy
     bind p fish_clipboard_paste
     # コマンド履歴を見る
     bind \cr peco_select_history
