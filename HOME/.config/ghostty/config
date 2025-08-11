@@ -16,6 +16,8 @@ window-padding-x = 4,2
 background-opacity = 0.75
 # 背景のぼかし度合い
 background-blur-radius = 15
+# カーソルのスタイル
+cursor-style = block
 # カーソルの点滅
 cursor-style-blink = true
 
