@@ -46,7 +46,7 @@ return {
       -- FIXME: blank が正しく機能しないのはプラグインバグらしい。https://github.com/shellRaining/hlchunk.nvim/issues/123
       blank = {
         enable = true,
-        chars = { "․" },
+        chars = { "" },
         style = {
           -- vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
           { fg = color_palette.fg_gutter },
