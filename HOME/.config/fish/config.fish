@@ -13,13 +13,18 @@ fish_add_path /opt/homebrew/opt/libpq/bin
 fish_add_path /opt/homebrew/opt/mysql-client/bin
 
 
+# HWS-案件用ローカル開発環境
+#set -gx LDFLAGS "-L/opt/homebrew/opt/bzip2/lib"
+#set -gx CPPFLAGS "-I/opt/homebrew/opt/bzip2/include"
+#fish_add_path /opt/homebrew/opt/bzip2/bin/
+
 #########################
 # ENVIRONMENT VARIABLES #
 #########################
 set -Ux LANG ja_JP.UTF-8
 set -Ux KCODE u
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
-# XDG PATHs
+# XDG PATHs 
 set -q XDG_CONFIG_HOME || set -gx XDG_CONFIG_HOME $HOME/.config
 set -q XDG_DATA_HOME || set -gx XDG_DATA_HOME $HOME/.local/share
 set -q XDG_CACHE_HOME || set -gx XDG_CACHE_HOME $HOME/.cache
@@ -28,45 +33,6 @@ set -g FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 set -g FISH_CONFIG $FISH_CONFIG_DIR/config.fish
 set -g FISH_CACHE_DIR $XDG_CACHE_HOME/fish
 
-# fish CONFIG
-# NERD FONT を使用可能にする
-set -gx theme_nerd_fonts yes
-# vi モードのインジケータを常に表示する
-set -gx theme_display_vi yes
-# ユーザ名とホスト名を常に表示する
-set -gx theme_display_user yes
-set -gx theme_display_hostname yes
-# 日付の表示書式を変更する
-set -gx theme_date_format "+[%Y/%m/%d %H:%M:%S]"
-# プロンプトから入力欄の前に改行をする
-set -gx theme_newline_cursor yes
-
-# 改行後入力欄の前に表示する文字を設定する
-function fish_mode_prompt
-  switch $fish_bind_mode
-    case default
-      # Normal Mode(緑)
-      set -gx theme_newline_prompt "\e[92m󰫻\e[m "
-    case insert
-      # Insert Mode(シアン)
-      set -gx theme_newline_prompt "\e[96m󰫶\e[m "
-    case visual
-      # Visual Mode(オレンジ)
-      set -gx theme_newline_prompt "\e[38;5;208m󰬃\e[m "
-    case replace_one
-      # Replace One Mode(黄) - r key (一文字だけ置換)
-      set -gx theme_newline_prompt "\e[38;5;205m󰫿󰫼\e[m "
-    case replace
-      # Replace Mode(黄) - R key(ESCで抜けるまで置換)
-      set -gx theme_newline_prompt "\e[91m󰫿\e[m "
-  end
-  commandline -f repaint
-  echo ""
-end
-
-# neovim
-set -gx EDITOR nvim
-
 # android sdk
 # set -Ux ANDROID_HOME $HOME/Library/Android/sdk
 # set PATH $ANDROID_HOME/tools $PATH
@@ -74,7 +40,48 @@ set -gx EDITOR nvim
 # set PATH $ANDROID_HOME/platform-tools $PATH
 # fish_add_path $ANDROID_HOME/platform-tools
 
+# vi モードのインジケータを常に表示する
+set -g theme_display_vi yes
 
+# ユーザ名とホスト名を常に表示する
+set -g theme_display_user yes
+set -g theme_display_hostname yes
+
+# 日付の表示書式を変更する
+set -g theme_date_format "+[%Y/%m/%d %H:%M:%S]"
+
+# プロンプトから入力欄の前に改行をする
+set -g theme_newline_cursor yes
+
+# 改行後入力欄の前に表示する文字を設定する
+set -g theme_newline_prompt "\e[92m\e[m "
+# 直前のコマンド実行結果に応じてプロンプトの色を変える
+function __update_detailed_prompt_status --on-event fish_prompt
+    switch $status
+        case 0
+            # 成功（緑）
+            set -g theme_newline_prompt "\e[92m\e[m "
+        case 1
+            # 一般的なエラー（赤）
+            set -g theme_newline_prompt "\e[91m\e[m "
+        case 126
+            # コマンドが実行可能でない（オレンジ）
+            set -g theme_newline_prompt "\e[38;5;208m\e[m "
+        case 127
+            # コマンドが見つからない（紫）
+            set -g theme_newline_prompt "\e[95m\e[m "
+        case 130
+            # Ctrl+Cで中断（シアン）
+            set -g theme_newline_prompt "\e[96m\e[m "
+        case '*'
+            # その他のエラー（黄）
+            set -g theme_newline_prompt "\e[93m\e[m "
+    end
+end
+
+
+# neovim
+set -gx EDITOR nvim
 # setup mise
 /opt/homebrew/bin/mise activate fish | source
 
@@ -84,7 +91,7 @@ set -gx EDITOR nvim
 abbr -a paths "echo \$PATH | tr ' ' '\n'"
 # sc で ~/.config/fish/config.fish を再読み込み
 abbr -a sc source ~/.config/fish/config.fish
-# c で clear -> ls -l
+# c で clear
 abbr -a c 'clear && ll'
 # pbc で pbcopy
 abbr -a pbc pbcopy
@@ -179,8 +186,8 @@ function fish_user_key_bindings
     # The argument specifies the initial mode (insert, "default" or visual).
     fish_vi_key_bindings --no-erase insert
 
-    # Normal Mode で <S-y> で クリップボードにコピー
-    bind Y fish_clipboard_copy
+    # yy で クリップボードにコピー
+    bind yy fish_clipboard_copy
     bind p fish_clipboard_paste
     # コマンド履歴を見る
     bind \cr peco_select_history
@@ -206,7 +213,7 @@ complete -c aws -f -a '(
 # function の定義 #
 ###################
 function notify
-  echo "コマンド実行が完了しました" | say -v Ava
+  echo "command execution is finished" | say -v Ava
 end
 
 #################
@@ -220,3 +227,8 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# uv
+fish_add_path "/Users/sugawarayss/.local/bin"
+
+# string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
