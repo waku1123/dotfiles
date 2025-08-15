@@ -1,6 +1,7 @@
 -- 少ないキー数で様々な場所に遷移できるモーションを提供
 return {
   "smoka7/hop.nvim",
+  enabled = false,
   version = "*",
   event = { "BufReadPre" },
   keys = {
