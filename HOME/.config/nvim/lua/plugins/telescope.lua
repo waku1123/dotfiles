@@ -80,6 +80,7 @@ if not vim.g.vscode then
         local action_layout = require("telescope.actions.layout")
         local open_with_trouble = require("trouble.sources.telescope").open
         local add_to_trouble = require("trouble.sources.telescope").add
+        local wk = require("which-key")
         telescope.setup({
           defaults = {
             vimgrep_arguments = {
@@ -194,6 +195,64 @@ if not vim.g.vscode then
         telescope.load_extension("docker")
         telescope.load_extension("bookmarks")
         telescope.load_extension("smart_open")
+        -- キーマップを設定
+        wk.add({
+          -- search todo
+          {
+            "<leader>std",
+            "<cmd>TodoTelescope keywords=TODO,FIXME,WARN<CR>",
+            mode = "n",
+            icon = "",
+            desc = "TODO 検索",
+          },
+          -- ブックマーク検索(Search Book Marks)
+          {
+            "<leader>sbm",
+            "<cmd>Telescope bookmarks list<CR>",
+            mode = "n",
+            icon = "󰂼",
+            desc = "ブックマークを検索",
+          },
+          {
+            "<M-d><M-c>",
+            "<cmd>Telescope docker containers theme=ivy<CR>",
+            mode = "n",
+            icon = "󰡨",
+            desc = "Docker コンテナを検索",
+          },
+          {
+            "<M-d><M-i>",
+            "<cmd>Telescope docker images theme=ivy<CR>",
+            mode = "n",
+            icon = "󰡨",
+            desc = "Docker イメージを検索",
+          },
+          {
+            "<M-d><M-p>",
+            "<cmd>Telescope docker compose theme=ivy<CR>",
+            mode = "n",
+            icon = "󰡨",
+            desc = "Docker Compose を曖昧検索",
+          },
+          {
+            "<M-d><M-l>",
+            "<cmd>Telescope docker files theme=ivy<CR>",
+            mode = "n",
+            icon = "󰡨",
+            desc = "Dockerfileを曖昧検索",
+          },
+          {
+            "<Leader><Leader>",
+            function()
+              require("telescope").extensions.smart_open.smart_open({ cwd_only = true })
+            end,
+            mode = "n",
+            icon = "",
+            desc = "スマートファイル検索",
+          },
+          -- { "<M-g><M-b>",       "<cmd>Telescope git_branches<CR>",                                                 mode = "n", opt, desc = "Git ブランチを検索" },
+          { "Q", "<cmd>Telescope cmdline<CR>", mode = "n", icon = "", desc = "Cmdline" },
+        })
       end,
     },
     { "nvim-lua/plenary.nvim" },

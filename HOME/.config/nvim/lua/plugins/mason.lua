@@ -304,8 +304,7 @@ return {
     },
     config = function()
       -- LSP handlers
-      vim.lsp.handlers["textDocument/publishDiagnostics"] =
-        vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
       -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(require("noice.lsp.hover").on_hover, { border = "double" })
 
       local mason_lspconfig = require("mason-lspconfig")
@@ -347,28 +346,8 @@ return {
   {
     "nvimdev/lspsaga.nvim",
     event = { "LspAttach" },
-    keys = {
-      -- カーソル下の情報を表示
-      { "K", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "カーソル下の情報を表示" },
-      -- 呼び出し階層を表示
-      { "go", "<cmd>Lspsaga outgoing_calls<CR>", mode = "n", desc = "呼び出し階層を表示" },
-      -- 定義へジャンプ
-      { "gd", "<cmd>Lspsaga goto_definition<CR>", mode = "n", desc = "定義にジャンプ" },
-      { "gD", "<cmd>Lspsaga peek_definition<CR>", mode = "n", desc = "定義にジャンプ" },
-      -- 呼出階層を表示
-      { "gr", "<cmd>Lspsaga finder<CR>", mode = "n", desc = "参照先の表示" },
-      -- 型定義へジャンプ
-      { "gt", "<cmd>Lspsaga goto_type_definition<CR>", mode = "n", desc = "型定義にジャンプ" },
-      -- コードアクションを表示
-      { "ga", "<cmd>Lspsaga code_action<CR>", mode = "n", desc = "コードアクションを表示" },
-      -- 次の診断へジャンプ
-      { "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", mode = "n", desc = "次の診断へジャンプ" },
-      -- 前の診断へジャンプ
-      { "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", mode = "n", desc = "前の診断へジャンプ" },
-      -- アウトライン表示
-      { "<Leader>ol", "<cmd>Lspsaga outline<CR>", mode = "n", desc = "アウトライン表示(Lspsaga)" },
-    },
     config = function()
+      local wk = require("which-key")
       require("lspsaga").setup({
         border = "double",
         devicon = true,
@@ -524,6 +503,27 @@ return {
             close = "<ESC>",
           },
         },
+      })
+      wk.add({
+        -- カーソル下の情報を表示
+        { "K", "<cmd>Lspsaga hover_doc<CR>", mode = { "n" }, icon = "", desc = "カーソル下の情報を表示" },
+        -- 呼び出し階層を表示
+        { "go", "<cmd>Lspsaga outgoing_calls<CR>", mode = { "n" }, desc = "呼び出し階層を表示" },
+        -- 定義へジャンプ
+        { "gd", "<cmd>Lspsaga goto_definition<CR>", mode = { "n" }, desc = "定義にジャンプ" },
+        { "gD", "<cmd>Lspsaga peek_definition<CR>", mode = { "n" }, desc = "定義にジャンプ" },
+        -- 呼出階層を表示
+        { "gr", "<cmd>Lspsaga finder<CR>", mode = { "n" }, desc = "参照先の表示" },
+        -- 型定義へジャンプ
+        { "gt", "<cmd>Lspsaga goto_type_definition<CR>", mode = { "n" }, desc = "型定義にジャンプ" },
+        -- コードアクションを表示
+        { "ga", "<cmd>Lspsaga code_action<CR>", mode = { "n" }, desc = "コードアクションを表示" },
+        -- 次の診断へジャンプ
+        { "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", mode = { "n" }, desc = "次の診断へジャンプ" },
+        -- 前の診断へジャンプ
+        { "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", mode = { "n" }, desc = "前の診断へジャンプ" },
+        -- アウトライン表示
+        { "<Leader>ol", "<cmd>Lspsaga outline<CR>", mode = { "n" }, icon = "󰭸", desc = "アウトライン表示(Lspsaga)" },
       })
     end,
     dependencies = {

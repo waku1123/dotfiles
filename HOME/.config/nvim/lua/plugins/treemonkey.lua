@@ -1,7 +1,8 @@
 -- treesitter を利用してカーソル位置に対応するノードを選択するプラグイン
+-- flash.nvimで代替可能なので無効化
 return {
   "atusy/treemonkey.nvim",
-  enabled = true,
+  enabled = false,
   init = function()
     vim.keymap.set({ "x", "o" }, "m", function()
       require("treemonkey").select({

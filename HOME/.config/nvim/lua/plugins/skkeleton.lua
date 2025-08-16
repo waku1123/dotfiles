@@ -2,14 +2,13 @@
 return {
   {
     "vim-skk/skkeleton",
-    enabled = false,
-    lazy = true,
+    lazy = false,
     event = "BufReadPre",
-    keys = {
-      { "<C-j>", "<Plug>(skkeleton-toggle)", mode = "i", desc = "IMEをトグル" },
-      { "<C-j>", "<Plug>(skkeleton-toggle)", mode = "c", desc = "IMEをトグル" },
-    },
     config = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<C-j>", "<Plug>(skkeleton-toggle)", mode = { "i", "c" }, icon = "", desc = "IMEをトグル" },
+      })
       local dictionaries = {}
       local handle = io.popen("ls $HOME/.skk/*")
       if handle then
@@ -95,7 +94,8 @@ return {
   { "Shougo/ddc.vim" },
   {
     "delphinus/skkeleton_indicator.nvim",
-    enabled = false,
+    enabled = true,
+    event = "BufReadPre",
     version = "v2",
     opts = {},
   },
