@@ -252,7 +252,7 @@ return {
       mode = {
         "n", -- normal mode
         "x", -- visual mode only
-        "o", -- operator pending mode (d/c/y などの範囲指定の待機中)
+        --"o", -- operator pending mode (d/c/y などの範囲指定の待機中)
       },
       function()
         require("flash").jump()
@@ -315,7 +315,7 @@ return {
       desc = "単語の先頭にジャンプ",
     },
     {
-      "<Leader>k",
+      "<Leader>j",
       mode = "n",
       function()
         require("flash").jump({
