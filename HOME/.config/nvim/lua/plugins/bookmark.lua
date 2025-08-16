@@ -16,7 +16,7 @@ return {
     })
     wk.add({
       {
-        "<Leader>bmm",
+        ";mm",
         function()
           require("bookmarks").bookmark_toggle()
         end,
@@ -25,7 +25,7 @@ return {
         desc = "ブックマークをトグル",
       },
       {
-        "<Leader>bmi",
+        ";mi",
         function()
           require("bookmarks").bookmark_ann()
         end,
@@ -34,7 +34,7 @@ return {
         desc = "ブックマークの注釈を追加/編集",
       },
       {
-        "<Leader>bml",
+        ";ml",
         function()
           require("bookmarks").bookmark_list()
         end,
@@ -43,7 +43,7 @@ return {
         desc = "QuickFix にブックマーク一覧を表示",
       },
       {
-        "<Leader>bmj",
+        ";mj",
         function()
           require("bookmarks").bookmark_next()
         end,
@@ -52,7 +52,7 @@ return {
         desc = "次のブックマークにジャンプ",
       },
       {
-        "<Leader>bmk",
+        ";mk",
         function()
           require("bookmarks").bookmark_prev()
         end,
@@ -61,7 +61,7 @@ return {
         desc = "前のブックマークにジャンプ",
       },
       {
-        "<Leader>bmc",
+        ";mc",
         function()
           require("bookmarks").bookmark_clean()
           vim.notify("Clear Bookmarks in Local Buffer")
@@ -71,7 +71,7 @@ return {
         desc = "ローカルバッファーのブックマークを除去",
       },
       {
-        "<Leader>bmx",
+        ";mx",
         function()
           require("bookmarks").bookmark_clear_all()
           vim.notify("Clear All Bookmarks")
