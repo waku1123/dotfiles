@@ -414,7 +414,15 @@ if not vim.g.vscode then
     },
     keys = {
       -- Top Pickers & Explorer
-      -- { "<leader><leader>", function() Snacks.picker.smart() end,                 desc = "スマートファイル検索から表示" },
+      {
+        "<leader><leader>",
+        function()
+          Snacks.picker.smart({
+            multi = { "files", "recent", "buffers" },
+          })
+        end,
+        desc = "スマートファイル検索から表示",
+      },
       {
         "<leader>s,",
         function()
@@ -534,7 +542,13 @@ if not vim.g.vscode then
         end,
         desc = "Autocmds",
       },
-      -- { "Q",                function() Snacks.picker.commands() end,              desc = "Commandを検索" },
+      {
+        "Q",
+        function()
+          Snacks.picker.commands()
+        end,
+        desc = "Commandを検索",
+      },
       {
         "<leader>sd",
         function()
