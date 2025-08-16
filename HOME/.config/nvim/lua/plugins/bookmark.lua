@@ -5,7 +5,7 @@ return {
   event = { "VimEnter" },
   keys = {
     {
-      ";m",
+      "<Leader>bmm",
       function()
         require("bookmarks").bookmark_toggle()
       end,
@@ -13,7 +13,7 @@ return {
       desc = "ブックマークをトグル",
     },
     {
-      ";i",
+      "<Leader>bmi",
       function()
         require("bookmarks").bookmark_ann()
       end,
@@ -21,7 +21,7 @@ return {
       desc = "ブックマークの注釈を追加/編集",
     },
     {
-      ";c",
+      "<Leader>bmc",
       function()
         require("bookmarks").bookmark_clean()
         print("Clear Bookmarks in Local Buffer")
@@ -30,7 +30,7 @@ return {
       desc = "ローカルバッファーのブックマークを除去",
     },
     {
-      ";j",
+      "<Leader>bmj",
       function()
         require("bookmarks").bookmark_next()
       end,
@@ -38,7 +38,7 @@ return {
       desc = "次のブックマークにジャンプ",
     },
     {
-      ";k",
+      "<Leader>bmk",
       function()
         require("bookmarks").bookmark_prev()
       end,
@@ -46,7 +46,7 @@ return {
       desc = "前のブックマークにジャンプ",
     },
     {
-      ";l",
+      "<Leader>bml",
       function()
         require("bookmarks").bookmark_list()
       end,
@@ -54,7 +54,7 @@ return {
       desc = "QuickFix にブックマーク一覧を表示",
     },
     {
-      ";x",
+      "<Leader>bmx",
       function()
         require("bookmarks").bookmark_clear_all()
         print("Clear All Bookmarks")
