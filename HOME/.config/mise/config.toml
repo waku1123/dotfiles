@@ -5,3 +5,6 @@ node = "latest"
 pnpm = "latest"
 python = "3.12"
 yarn = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
