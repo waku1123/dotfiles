@@ -120,18 +120,18 @@ if not vim.g.vscode then
             mode = "n",
             desc = "バッファを右に移動",
           },
-          {
-            "<C-H>",
-            "<Cmd>BufferLineCloseLeft<CR>",
-            mode = "n",
-            desc = "左のバッファを閉じる",
-          },
-          {
-            "<C-L>",
-            "<Cmd>BufferLineCloseRight<CR>",
-            mode = "n",
-            desc = "右のバッファを閉じる",
-          },
+          -- {
+          --   "<C-H>",
+          --   "<Cmd>BufferLineCloseLeft<CR>",
+          --   mode = "n",
+          --   desc = "左のバッファを閉じる",
+          -- },
+          -- {
+          --   "<C-L>",
+          --   "<Cmd>BufferLineCloseRight<CR>",
+          --   mode = "n",
+          --   desc = "右のバッファを閉じる",
+          -- },
           {
             "<M-c>",
             "<Cmd>BufferLinePickClose<CR>",
