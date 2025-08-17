@@ -108,14 +108,6 @@ local my_on_attach = function(client, bufnr)
   for _, value in pairs(lsp_servers) do
     if client == value then
       -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-      -- WhichKey が gf を使用しているので使えない。。。
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.format {async=true}<CR>", { noremap = true, silent = false, desc = "フォーマットを実行" })
-      -- "K" でカーソル下の変数情報を表示
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {  noremap = true, silent = false, desc = "カーソル下の変数情報を表示" })
-      -- "gr" でカーソル下の変数を参照している箇所の一覧表示
-      --vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-      -- 定義へジャンプ
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = false, desc = "定義へジャンプ" })
       -- 宣言へジャンプ
       vim.api.nvim_buf_set_keymap(
         bufnr,
@@ -132,8 +124,6 @@ local my_on_attach = function(client, bufnr)
         "<cmd>lua vim.lsp.buf.implementation()<CR>",
         { noremap = true, silent = false, desc = "実装へジャンプ" }
       )
-      -- 型定義へジャンプ
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = false, desc = "型定義へジャンプ" })
       -- 変数名のリネーム
       vim.api.nvim_buf_set_keymap(
         bufnr,
@@ -167,12 +157,59 @@ local my_on_attach = function(client, bufnr)
     end
   end
 end
+-- プロジェクトルートを探す関数
+local function find_project_root()
+  local current_dir = vim.fn.expand("%:p:h") -- 現在のファイルのディレクトリ
+  local root_markers = { "pyproject.toml", "requirements.txt" }
+
+  -- まず上向きに探索
+  local root_from_up = require("utils").search_up(current_dir, root_markers)
+  if root_from_up then
+    return root_from_up
+  end
+
+  -- 見つからなかった場合は下向きに探索（モノレポ対応）
+  local root_from_down = require("utils").search_down(vim.fn.getcwd(), root_markers)
+  if root_from_down then
+    return root_from_down
+  end
+
+  return vim.fn.getcwd()
+end
+-- Python の venv を自動検出するための関数
+local function find_python_venv()
+  local root_dir = find_project_root()
+  vim.notify("Project root: " .. root_dir, vim.log.levels.INFO)
+
+  -- 仮想環境のパスパターン
+  local venv_paths = {
+    root_dir .. "/.venv/bin/python", -- Linux/Mac
+    root_dir .. "/.venv/Scripts/python.exe", -- Windows
+  }
+
+  for _, path in ipairs(venv_paths) do
+    -- local exists = vim.fn.filereadable(path) == 1
+    local executable = vim.fn.executable(path) == 1
+
+    if executable then
+      vim.notify("Found Python venv: " .. path)
+      return path
+    else
+      vim.notify("Python venv not found at: " .. path, vim.log.levels.WARN)
+    end
+  end
+  -- 見つからない場合はシステムのpython
+  local system_python = vim.fn.exepath("python3") or vim.fn.exepath("python")
+  vim.notify("Using system Python: " .. system_python, vim.log.levels.WARN)
+  return system_python
+end
+
 -- 各:withLSPサーバの設定
 local lsp_server_settings = {
   pyright = {
     python = {
-      venvPath = ".",
-      pythonPath = "./.venv/bin/python",
+      venvPath = find_project_root(),
+      pythonPath = find_python_venv(),
       -- import 文の sort は ruffに任せる
       disableOrganizeImports = true,
       -- チェック周りも ruff に任せる

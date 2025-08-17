@@ -93,4 +93,42 @@ utils.slice_table = function(obj, start, finish)
   return output
 end
 
+-- 親ディレクトリを辿ってプロジェクトルートを探す
+utils.search_up = function(dir, root_markers)
+  for _, marker in ipairs(root_markers) do
+    if vim.fn.filereadable(dir .. "/" .. marker) == 1 or vim.fn.isdirectory(dir .. "/" .. marker) == 1 then
+      return dir
+    end
+  end
+  local parent = vim.fn.fnamemodify(dir, ":h")
+  if parent == dir then
+    return nil -- ルートディレクトリに到達
+  end
+  -- 再帰的に親ディレクトリを探索
+  return search_up(parent)
+end
+
+-- 配下のディレクトリでdir
+utils.search_down = function(dir, root_markers)
+  -- 現在のディレクトリにmarkersがあるかチェック
+  for _, marker in ipairs(root_markers) do
+    if vim.fn.filereadable(dir .. "/" .. marker) == 1 or vim.fn.isdirectory(dir .. "/" .. marker) == 1 then
+      return dir
+    end
+  end
+
+  -- 配下のディレクトリを探索（1階層のみ）
+  local subdirs = vim.fn.globpath(dir, "*", 0, 1)
+  for _, subdir in ipairs(subdirs) do
+    if vim.fn.isdirectory(subdir) == 1 then
+      for _, marker in ipairs(markers) do
+        if vim.fn.filereadable(subdir .. "/" .. marker) == 1 or vim.fn.isdirectory(subdir .. "/" .. marker) == 1 then
+          return subdir
+        end
+      end
+    end
+  end
+  return nil
+end
+
 return utils
