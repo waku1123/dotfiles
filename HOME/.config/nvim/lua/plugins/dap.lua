@@ -11,30 +11,6 @@ return {
   ft = { "python" },
   keys = {
     {
-      "<F8>",
-      ":DapContinue<CR>",
-      mode = "n",
-      desc = "デバッグ再開",
-    },
-    {
-      "<F9>",
-      ":DapStepOver<CR>",
-      mode = "n",
-      desc = "ステップオーバー",
-    },
-    {
-      "<F10>",
-      ":DapStepInto<CR>",
-      mode = "n",
-      desc = "ステップイントゥ",
-    },
-    {
-      "<F7>",
-      ":DapStepOut<CR>",
-      mode = "n",
-      desc = "ステップアウト",
-    },
-    {
       "<Leader>tm",
       ":lua require('dap-python').test_method()<CR>",
       mode = "n",
@@ -123,12 +99,41 @@ return {
       request = "launch",
       name = "Launch current file",
       program = "${file}",
-      cwd = vim.fn.getcwd(),
+      cwd = require("utils").find_project_root({ "pyproject.toml" }),
       env = "PYTHONPATH=.",
-      pythonPath = function()
-        local cwd = vim.fn.getcwd()
-        return vim.fn.input("Path to python interpreter: ", cwd .. "/.venv/bin/python")
-      end,
+      pythonPath = require("utils").find_python_venv({"pyproject.toml"}),
+      --pythonPath = function()
+      --  local cwd = vim.fn.getcwd()
+      --  return vim.fn.input("Path to python interpreter: ", cwd .. "/.venv/bin/python")
+      --end,
     })
+    local wk = require("which-key")
+    wk.add({
+      {
+        "<F8>",
+        ":DapContinue<CR>",
+        mode = "n",
+        desc = "デバッグ再開",
+      },
+      {
+        "<F9>",
+        ":DapStepOver<CR>",
+        mode = "n",
+        desc = "ステップオーバー",
+      },
+      {
+        "<F10>",
+        ":DapStepInto<CR>",
+        mode = "n",
+        desc = "ステップイントゥ",
+      },
+      {
+        "<F7>",
+        ":DapStepOut<CR>",
+        mode = "n",
+        desc = "ステップアウト",
+      },
+    })
+
   end,
 }
