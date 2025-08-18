@@ -4,6 +4,9 @@
       "args": [
         "mcp-server-fetch"
       ],
+      "autoApprove": [
+        "fetch"
+      ],
       "command": "uvx"
     },
     "github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server": {
@@ -55,7 +58,10 @@
         "move_file",
         "write_file",
         "create_directory",
-        "edit_file"
+        "edit_file",
+        "list_directory_with_sizes",
+        "read_media_file",
+        "read_text_file"
       ],
       "command": "/Users/yss/.local/share/mise/shims/npx",
       "disabled": false,
@@ -88,13 +94,21 @@
         "read_memory",
         "write_memory",
         "list_memories",
-        "think_about_collected_information"
+        "think_about_collected_information",
+        "activate_project",
+        "onboarding",
+        "search_for_pattern",
+        "think_about_task_adherence"
       ],
       "command": "uvx"
     }
   },
   "nativeMCPServers": {
     "mcphub": {
+      "autoApprove": [
+        "get_current_servers",
+        "toggle_mcp_server"
+      ],
       "disabled_prompts": [
         "create_native_server"
       ],
@@ -105,6 +119,16 @@
       ]
     },
     "neovim": {
+      "autoApprove": [
+        "execute_command",
+        "find_files",
+        "list_directory",
+        "read_file",
+        "read_multiple_files",
+        "write_file",
+        "move_item",
+        "edit_file"
+      ],
       "disabled_prompts": [
         "parrot"
       ],

@@ -5,6 +5,9 @@
       "args": [
         "mcp-server-fetch"
       ],
+      "autoApprove": [
+        "fetch"
+      ],
       "command": "uvx"
     },
     "filesystem": {
@@ -25,7 +28,10 @@
         "move_file",
         "write_file",
         "create_directory",
-        "edit_file"
+        "edit_file",
+        "list_directory_with_sizes",
+        "read_media_file",
+        "read_text_file"
       ]
     },
     "aws-document": {
@@ -57,7 +63,10 @@
         "read_memory",
         "write_memory",
         "list_memories",
-        "think_about_collected_information"
+        "think_about_collected_information",
+        "activate_project",
+        "onboarding",
+        "search_for_pattern"
       ]
     },
     "aws-terraform": {
