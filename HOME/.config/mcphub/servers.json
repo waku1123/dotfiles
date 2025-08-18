@@ -1,5 +1,11 @@
 {
   "mcpServers": {
+    "fetch": {
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "command": "uvx"
+    },
     "github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server": {
       "args": [
         "awslabs.aws-documentation-mcp-server@latest"
@@ -66,22 +72,25 @@
       "command": "/Users/yss/.local/share/mise/shims/npx",
       "disabled": false
     },
-    "github.com/tavily-ai/tavily-mcp": {
+    "serena": {
       "args": [
-        "-y",
-        "tavily-mcp@0.2.1"
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant"
       ],
       "autoApprove": [
-        "tavily-search",
-        "tavily-extract",
-        "tavily-map",
-        "tavily-crawl"
+        "find_file",
+        "find_symbol",
+        "list_dir",
+        "read_memory",
+        "write_memory",
+        "list_memories",
+        "think_about_collected_information"
       ],
-      "command": "/Users/yss/.local/share/mise/shims/npx",
-      "disabled": false,
-      "env": {
-        "TAVILY_API_KEY": "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"
-      }
+      "command": "uvx"
     }
   },
   "nativeMCPServers": {
