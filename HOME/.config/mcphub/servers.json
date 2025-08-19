@@ -9,6 +9,33 @@
       ],
       "command": "uvx"
     },
+    "filesystem": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${ALLOWED_DIRECTORY}"
+      ],
+      "autoApprove": [
+        "list_allowed_directories",
+        "list_directory",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file",
+        "edit_file",
+        "directory_tree",
+        "create_directory",
+        "get_file_info",
+        "list_directory_with_sizes",
+        "move_file"
+      ],
+      "command": "npx",
+      "env": {
+        "ALLOWED_DIRECTORY": "~/PROJECTS/"
+      }
+    },
     "github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server": {
       "args": [
         "awslabs.aws-documentation-mcp-server@latest"
@@ -41,42 +68,12 @@
         "FASTMCP_LOG_LEVEL": "ERROR"
       }
     },
-    "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/yss/PROJECTS/"
-      ],
-      "autoApprove": [
-        "read_file",
-        "read_multiple_files",
-        "list_directory",
-        "search_files",
-        "get_file_info",
-        "list_allowed_directories",
-        "directory_tree",
-        "move_file",
-        "write_file",
-        "create_directory",
-        "edit_file",
-        "list_directory_with_sizes",
-        "read_media_file",
-        "read_text_file"
-      ],
-      "command": "/Users/yss/.local/share/mise/shims/npx",
-      "disabled": false,
-      "env": []
-    },
-    "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking": {
+    "sequentialthinking": {
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ],
-      "autoApprove": [
-        "sequentialthinking"
-      ],
-      "command": "/Users/yss/.local/share/mise/shims/npx",
-      "disabled": false
+      "command": "npx"
     },
     "serena": {
       "args": [
