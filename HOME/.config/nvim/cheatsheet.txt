@@ -4,28 +4,92 @@ manページを検索(Snacks)                             | <Leader>sM
 
 
 ## Zen mode @snacks
-Zen mode をトグル                                   | <Leader>z
+Zen mode をトグル                                  | <Leader>z
 
 
-## File Explorer
-ファイルエクスプローラ(yazi)表示(トグル)            | <C-t><C-t>
-ファイルエクスプローラ(Snacks)                      | <Leader>e
+## Neotree @neotree @explorer
+ファイルエクスプローラ表示(トグル)                  | <C-t><C-t>
+ディレクトリ折畳/展開トグル                         | <space>
+開く                                               | <CR>
+キャンセル                                          | <ESC>
+プレビュー表示/非表示トグル                         | P
+プレビューにフォーカス                              | l
+水平分割でファイルを開く                            | <C-s>
+垂直分割でファイルを開く                            | <C-v>
+ディレクトリ折畳                                    | C
+全てのディレクトリを折畳                            | z
+ファイルを新規作成                                  | a
+ディレクトリを新規作成                              | A
+削除                                                | d
+リネーム                                            | r
+クリップボードにコピー                              | y
+カットしてクリップボードにコピー                    | x
+クリップボードからペースト                          | p
+移動                                                | m
+ウィンドウを閉じる                                  | q
+リフレッシュ                                        | R
+ヘルプを表示                                        | ?
+前の source                                         | <
+次の source                                         | >
+ファイルの詳細を表示                                | i
+
+## Snacks @explorer
+ファイルエクスプローラ                              | <Leader>e
 
 ## Snacks @history
-コマンド履歴(Snacks)                                | <Leader>s:
+コマンド履歴(Snacks)                                | <Leader>:
 通知履歴(Snacks)                                    | <Leader>n
 undo履歴を検索                                      | <Leader>su
 検索履歴を検索                                      | <Leader>s/
 
 ## Scnacks Search
-キーマップを検索(Snacks)                            | <Leader>skm
+レジスタを検索(Snacks)                              | <Leader>s"
+キーマップを検索(Snacks)                            | <Leader>sk
 LSP diagnostic を検索(Snacks)                       | <Leader>sd
-コマンドを検索(Snacks)                              | <S-q>
+コマンドを検索(Snacks)                              | <Leader>sC
+キーマップを検索(Snacks)                            | <Leader>sk
 Nerd Font Icon を検索(Snacks)                       | <Leader>si
 Quickfix List を検索(Snacks)                        | <Leader>sq
 プラグインを検索(Snacks)                            | <Leader>sp
 Locallist を検索(Snacks)                            | <Leader>sl
 autocmds を検索(Snacks)                             | <Leader>sa
+
+## superfile @spf @explorer
+superfile を開く                                    | spf or <Leader>f
+ヘルプメニューを開く                                | ?
+superfile の終了                                    | q or esc
+side bar にフォーカスを移動                         | s
+processes pane にフォーカスを移動                   | p
+metadata pane にフォーカスを移動                    | m
+command 実行バーを開く                              | :
+preview page を表示/非表示                          | f
+フッターを表示/非表示                               | F
+
+## superfile @spf @filepanel
+現在のファイルパネルをエディタで開く                | <S-E>
+DotFile の表示を切替                                | .
+検索モードに入る                                    | /
+選択モードを通常モードを切替える                    | v
+ファイルパネルの表示順を変更                        | o
+ファイルパネルを新規表示                            | n
+ファイルパネルを閉じる(フォーカスがあるもの)        | w
+ファイルパネルのフォーカスを移動                    | <S-l>, <S-h>
+ファイルパネルを親ディレクトリに移動                | h or <BS>
+ファイルパネルで開いているディレクトリをピン留め    | <S-p>
+
+## superfile @spf @filecontrol
+新しいファイル/フォルダを作成                       | <C-n>
+選択したファイル/フォルダを既定のアプリで開く       | <CR>
+デフォルトエディタで選択したファイルを開く          | e
+現在のディレクトリをデフォルトエディタで開く        | <S-e>
+選択したファイル/フォルダをリネーム                 | <C-r>
+選択したファイル/フォルダをコピー                   | <C-c>
+選択したファイル/フォルダをカット                   | <C-x>
+クリップボードパネルの内容を全てペースト            | <C-v>
+選択したファイル/フォルダを削除                     | <C-d>
+選択したファイル/フォルダを圧縮                     | <C-a>
+選択したファイル/フォルダを展開                     | <C-e>
+
 
 ## Mason @lsp
 パッケージをインストール                            | i
@@ -35,23 +99,39 @@ autocmds を検索(Snacks)                             | <Leader>sa
 インストールのキャンセル                            | <C-c>
 ヘルプを表示                                        | g?
 
+## Copilot @copilot
+Copilotパネルを表示                                 | :Copilot panel
+(パネル) 前へジャンプ                               | [[
+(パネル) 次へジャンプ                               | ]]
+(パネル) 採択                                       | <M-l>
+(パネル) リフレッシュ                               | gr
+(パネル) 開く                                       | <M-CR>
+(サジェスト) 採択                                   | <M-l>
+(サジェスト) 次のサジェスト                         | <M-]>
+(サジェスト) 前のサジェスト                         | <M-[>
+(サジェスト) 却下                                   | <C-l>
 
-## AI @copilot
+## CopilotChat @copilot
 CopilotChatを垂直分割で開く(CodeCompanion)          | <Leader>cc
 CopilotActionsメニューを開く(CodeCompanion)         | <Leader>ca
-ペアプログラミングを開始する(aibou)                 | <Leader>ai
 
 
 ## BufferEdit @buffer
 リドゥ(<C-r>をリマップ)                             | <S-u>
-左のバッファにフォーカス                            | <M-h>
-右のバッファにフォーカス                            | <M-l>
-上のバッファにフォーカス                            | <M-k>
-下のバッファにフォーカス                            | <M-j>
+左のバッファにフォーカス                            | sh
+右のバッファにフォーカス                            | sl
+上のバッファにフォーカス                            | sk
+下のバッファにフォーカス                            | sj
+右のバッファと位置を入れ替える                      | <C-s>l
+左のバッファと位置を入れ替える                      | <C-s>h
+上のバッファと位置を入れ替える                      | <C-s>k
+下のバッファと位置を入れ替える                      | <C-s>j
 バッファリストをTelescopeで表示                     | <Leader>fb
 バッファを左に移動                                  | <Leader>h
 バッファを右に移動                                  | <Leader>l
 バッファを閉じる                                    | <Leader>bd
+左のバッファ全てを閉じる                            | <C-S-h>
+右のバッファ全てを閉じる                            | <C-S-l>
 コードを折畳む                                      | zc
 コードを展開する                                    | zo
 コードを全て折畳む                                  | zM
@@ -67,22 +147,25 @@ CopilotActionsメニューを開く(CodeCompanion)         | <Leader>ca
 前の空白行にジャンプ                                | {
 次の空白行にジャンプ                                | }
 
+
 ## Obsidian
 Obsidian ノートを検索する                           | <Leader>o
 Obsidian ノートを作成する                           | <Leader>on
 Obsidian デイリーノートを作成する                   | <Leader>ot
 
 ## SplitWindow @split
-バッファを上に分割して開く                          | ssk
-バッファを下に分割して開く                          | ssj
-バッファを左に分割して開く                          | svh
-バッファを右に分割して開く                          | svl
-ウィンドウサイズ調整モードに入る                    | <C-E>
+バッファを上に分割して開く                          | <C-k>
+バッファを下に分割して開く                          | <C-j>
+バッファを左に分割して開く                          | <C-h>
+バッファを右に分割して開く                          | <C-l>
+ウィンドウサイズ調整モードに入る                    | <C-S-E>
 ウィンドウサイズ調整                                | h, j, k, l
 ウィンドウサイズ確定                                | <CR>
 
 ## Terminal
-ターミナルを開く(Snacks)                            | <F3>
+ターミナルをフロートウィンドウで開く                | <C-t><C-f>
+ターミナルを垂直分割で開く(左右)                    | <C-t><C-v>
+ターミナルを水平分割で開く(上下)                    | <C-t><C-m>
 lazygit を開く                                      | <Leader>gg
 ファイルをGithubで開く                              | <Leader>gB
 
@@ -188,21 +271,28 @@ Display troublesin locallist                        | <Leader>xl
 デクリメント                                        | <C-x>
 
 ## Outline @aerial @outline
-アウトラインを表示                                  | <leader>ol
+アウトラインを表示(aerial.nvim)                     | <leader>aa
+アウトラインを表示(Outline.nvim)                    | <leader>ol
 
 ## Telescope
-ファイル内容で検索(Snacks)                          | <F5>
+ファイル内容で検索(Telescope)                       | <F4>
 ファイル名で検索(Telescope)                         | <Leader><Leader>
 TODOコメントを検索(Telescope)                       | <Leader>std
 キーマップ一覧から検索(Telescope)                   | <Leader>skm
 コマンド履歴から検索(Telescope)                     | <Leader>s:
 
+## Hop
+hop to matched 'input pattern'                      | <Leader>/
+hop to vertical current Line column                 | <Leader>v
+hop to after Cursor Word                            | <Leader>w
+hop to before Cursor Word                           | <Leader>b
+hop to after Cursor char                            | <Leader>f
+hop to before Cursor char                           | <Leader>F
+hop before to after Cursor Line                     | <Leader>t
+hop before to before Cursor Line                    | <Leader>T
+
 ## Bookmark
-ブックマークをトグル                                | ;mm
-ブックマークに注釈を追加する                        | ;mi
-バッファのブックマークをクリアする                  | ;mc
-ブックマークを一覧表示する                          | ;ml
-保存済みのブックマークを全てクリアする              | ;mx
+ブックマークをトグル                                | mm
 ブックマークリストから検索(Telescope)               | <Leader>sbm
 
 ## Translate
@@ -226,6 +316,30 @@ TODOコメントを検索(Telescope)                       | <Leader>std
 (カーソル上の)エラー説明を表示                      | :RustLsp explainError cycle
 ホバーアクションを表示                              | :RustLsp hover {range}
 
+
 ## JaPaneseIME
 Toggle inLine IME                                   | <C-j>
 
+## Wezterm @wezterm
+New Window                                          | <⌘-n>
+Toggle Fullscreen                                   | <A-Enter>
+Quit Wezterm                                        | <⌘-q>
+Reload Configuration                                | <⌘-r>
+Show Command Palette                                | F1
+Quick Select Mode                                   | <S-C-Space>
+Search Mode                                         | <⌘-f>
+Copy Mode                                           | F4
+Debug Overlay                                       | F12
+
+## Wezterm-Tab @wezterm @tab
+New Tab                                             | <⌘-t>
+Active Right Tab                                    | <C-Tab>
+Active Left Tab                                     | <C-S-Tab>
+
+## Wezterm-Pane @wezterm @Pane
+Split Horizontally                                  | <⌘-d>
+Split Vertically                                    | <⌘-S-d>
+Change Focus Pane                                   | <C-A-Tab>
+Swap Pane                                           | <C-S-A-Tab>
+Close Pane                                          | <⌘-w>
+Change Pane Size                                    | <⌘-C-→>, <⌘-C-←>, <⌘-C-↓>, <⌘-C-↑>
