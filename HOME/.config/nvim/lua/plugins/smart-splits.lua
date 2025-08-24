@@ -11,7 +11,7 @@ return {
         "prompt",
       },
       ignore_filetypes = {
-        "snacks_picker_list",
+        -- "snacks_picker_list",
       },
       default_amount = 3,
       at_edge = "wrap",
