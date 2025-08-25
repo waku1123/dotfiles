@@ -29,7 +29,7 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      -- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local lspkind = require("lspkind")
       local luasnip = require("luasnip")
       -- require("luasnip.loaders/from_vscode").lazy_load({ paths = {"./snippets"} })
@@ -156,7 +156,7 @@ return {
         matching = { disallow_symbol_nonprefix_matching = false },
       })
 
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+      -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
   -- Github Copilotのサジェストを補完リストに表示する
