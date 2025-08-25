@@ -14,7 +14,6 @@
 .venv/
 venv/
 
-# asdf
 .tool-versions
 
 # Node.js
@@ -31,7 +30,15 @@ __pycache__/
 .pytest_cache/
 .coverage
 
+(hoge|fuga|piyo|moge|foo|bar|bazz).*
 hoge.*
+fuga.*
+piyo.*
+moge.*
+foo.*
+bar.*
+bazz.*
+debug.*
 recreate_container.sh
 sample_csv/
 
@@ -50,5 +57,27 @@ localhost*pem
 # VSCODE setp counter
 .VSCodeCounter/
 
-# .mise.toml
+# mise
 .mise.toml
+
+.env.azure
+
+# cline
+.clinerules/
+
+# プロジェクト全体で共有する設定(アーキテクチャ設計、コーディング標準、共通ワークフローなど)
+CLAUDE.md
+# プロジェクト固有の個人設定
+CLAUDE.local.md
+
+**/.claude/settings.local.json
+
+# serenaのプロジェクト設定指示ファイル
+.serena/**
+
+# 開発用に出力したpickleファイル
+*.pkl
+
+# IntelliJ や Neovim(rest.nvim) のHTTPリクエストファイル
+.restclients/**.env
+.restclients/**.env.json
